@@ -1,0 +1,15 @@
+#wo_map{
+  width:100%;
+  height:400px;
+  color:#EB5B27;
+  .mapboxgl-popup{
+    .mapboxgl-popup-anchor-bottom{
+
+    }
+    .mapboxgl-popup-content{
+        border-radius: 0px;
+        padding:1em;
+    }
+  }
+
+}

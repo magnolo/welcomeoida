@@ -1,4 +1,100 @@
+html, body {
+  padding: 0px;
+  margin: 0px; }
+
 body {
-  background: #000; }
+  background: #fff;
+  font-family: Helvetica;
+  font-size: 16px; }
+
+.autocomplete-suggestions {
+  font-size: 0.9em;
+  border: 1px solid #f0f0f0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background: #FFF;
+  overflow: auto;
+  position: absolute;
+  width: 350px !important;
+  max-width: 100% !important; }
+
+.autocomplete-suggestion {
+  padding: 5px;
+  opacity: 0.5;
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0; }
+
+.autocomplete-selected {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  opacity: 1; }
+
+.autocomplete-suggestions strong {
+  font-weight: normal;
+  color: #EB5B27; }
+
+.autocomplete-group {
+  padding: 2px 5px; }
+
+.autocomplete-group strong {
+  display: block;
+  border-bottom: 1px solid #000; }
+
+.form.styled {
+  color: #EB5B27;
+  position: fixed;
+  top: 80px;
+  left: 40px;
+  width: 250px;
+  background-color: #fff; }
+  .form.styled h3 {
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0em 1em;
+    text-align: center; }
+  .form.styled .input-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 1em 2em;
+    position: relative; }
+    .form.styled .input-container label {
+      position: absolute;
+      font-size: 1em;
+      display: none; }
+    .form.styled .input-container input {
+      width: 100%;
+      border: 0px;
+      border-bottom: 1px solid #EB5B27;
+      font-size: 0.9em; }
+    .form.styled .input-container input:-moz-placeholder {
+      color: #EB5B27; }
+    .form.styled .input-container input::-moz-placeholder {
+      color: #EB5B27; }
+    .form.styled .input-container input:-ms-input-placeholder {
+      color: #EB5B27; }
+    .form.styled .input-container input::-webkit-input-placeholder {
+      color: #EB5B27; }
+  .form.styled button.btn {
+    border: 3px solid #EB5B27;
+    background-color: #fff;
+    color: #EB5B27;
+    font-size: 1.3em;
+    padding: .5em;
+    width: 100%;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+    margin-top: 1em; }
+    .form.styled button.btn:hover {
+      background-color: #EB5B27;
+      color: #fff; }
+
+#wo_map {
+  width: 100%;
+  height: 400px;
+  color: #EB5B27; }
+  #wo_map .mapboxgl-popup .mapboxgl-popup-content {
+    border-radius: 0px;
+    padding: 1em; }
 
 /*# sourceMappingURL=app.css.map */

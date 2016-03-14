@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'api'], function(){
   Route::get('pois/humans', 'PoiController@humans');
+  Route::post('pois/humans', 'PoiController@createHuman');
 });
 /*
 |--------------------------------------------------------------------------
