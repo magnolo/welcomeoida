@@ -21,7 +21,7 @@ body{
 .form.styled{
   color:$color;
   position:fixed;
-  top:80px;
+  top:40px;
   left:40px;
   width:250px;
   background-color: #fff;
@@ -39,8 +39,27 @@ body{
       position:absolute;
       font-size:1em;
       display: none;
+
       &.error{
-        font-size:0.7em;
+        font-size: 0.7em;
+        top: 1em;
+        left: 100%;
+        min-width: 220px;
+        background: $color;
+        color:$white;
+        padding: 3px;
+        box-shadow:2px 2px 5px rgba(0,0,0,0.2);
+        &::before{
+          content:'';
+          width: 0;
+        	height: 0;
+        	border-top: 10px solid transparent;
+        	border-bottom: 10px solid transparent;
+        	border-right:10px solid $color;
+          position: absolute;
+          left:-10px;
+          top:0px
+        }
       }
     }
     input{
@@ -48,23 +67,40 @@ body{
       border:0px;
       border-bottom:1px solid $color;
       font-size:0.9em;
+      padding:.2em;
+      transition: all .15s ease;
+      &:-moz-placeholder {
+          color: $color;
+      }
+      &::-moz-placeholder {
+          color: $color;
+      }
+      &:-ms-input-placeholder {
+          color: $color;
+      }
+      &::-webkit-input-placeholder {
+          color: $color;
+      }
       &:focus{
-
+        background-color: $white;
+        color:$color;
+        outline:none;
+        &:-moz-placeholder {
+            color: $white;
+        }
+        &::-moz-placeholder {
+            color: $white;
+        }
+        &:-ms-input-placeholder {
+            color: $white;
+        }
+        &::-webkit-input-placeholder {
+            color: $white;
+        }
       }
     }
 
-    input:-moz-placeholder {
-        color: $color;
-    }
-    input::-moz-placeholder {
-        color: $color;
-    }
-    input:-ms-input-placeholder {
-        color: $color;
-    }
-    input::-webkit-input-placeholder {
-        color: $color;
-    }
+
   }
   button.btn{
     border:3px solid $color;
@@ -80,5 +116,24 @@ body{
       background-color: $color;
       color:#fff;
     }
+    &:disabled{
+      color:$grey;
+      border-color:$grey;
+      &:hover{
+        background-color:#fff;
+      }
+    }
+  }
+  @media screen and (max-width:699px){
+    position:static;
+    margin:1em auto;
+    max-width: 100%;
+
+  }
+}
+.sweet-alert{
+  border-radius:0px;
+  button{
+    border-radius:0px;
   }
 }
