@@ -1,6 +1,9 @@
 var elixir = require('laravel-elixir');
+// require('./tasks/angular.task.js');
+require('./tasks/bower.task.js');
+// require('./tasks/ngHtml2Js.task.js');
+require('laravel-elixir-livereload');
 
-require('laravel-elixir-wiredep');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,6 +16,21 @@ require('laravel-elixir-wiredep');
  */
 
 elixir(function(mix) {
+  mix
+    .bower()
+    // .angular('./angular/')
+    // .ngHtml2Js('./angular/**/*.html')
+    .sass('./resources/assets/sass/**/*.scss', 'public/css')
+    .livereload([
+      'public/js/vendor.js',
+      'public/js/partials.js',
+      'public/js/app.js',
+      'public/css/vendor.css',
+      'public/css/app.css'
+    ], {
+      liveCSS: true
+    });
 
-  mix.wiredep();
+  //uncomment this for gulp tdd
+  //.phpUnit();
 });
