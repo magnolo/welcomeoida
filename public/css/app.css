@@ -53,15 +53,15 @@ body {
     padding: 0em 1em;
     text-align: center; }
   .form.styled .input-container {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: inline-block;
     padding: 1em 2em;
     position: relative; }
     .form.styled .input-container label {
       position: absolute;
       font-size: 1em;
       display: none; }
+      .form.styled .input-container label.error {
+        font-size: 0.7em; }
     .form.styled .input-container input {
       width: 100%;
       border: 0px;

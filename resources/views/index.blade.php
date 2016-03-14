@@ -14,8 +14,12 @@
           <h3>Zeig uns, dass du dabei bist!</h3>
           <form id="solidarisch" >
               <div class="input-container">
-              <label>Name</label>
-              <input type="text" placeholder="Name" name="name" id="name" />
+              <label>Vorname</label>
+              <input type="text" placeholder="Vorname" minlength="3" required name="firstname" id="firstname" />
+            </div>
+              <div class="input-container">
+              <label>Nachname</label>
+              <input type="text" placeholder="Nachname" minlength="3" required name="name" id="name" />
             </div>
               <div class="input-container">
               <label>Email</label>
@@ -23,7 +27,7 @@
             </div>
             <div class="input-container">
               <label>Adresse</label>
-              <input type="text" placeholder="Adresse" name="address" id="address" />
+              <input type="text" placeholder="Adresse" required name="location" minlength="3" id="location" />
             </div>
             <button class="btn" type="submit">Ich bin solidarisch</button>
           </form>
