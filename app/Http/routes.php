@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::group(['prefix' => 'api'], function(){
+
+Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
   Route::get('pois/humans', 'PoiController@humans');
   Route::post('pois/humans', 'PoiController@createHuman');
 });
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -31,4 +30,9 @@ Route::group(['prefix' => 'api'], function(){
 
 Route::group(['middleware' => ['web']], function () {
     //
+    Route::get('/', ['as' => 'home', function () {
+          return view('index');
+    }]);
+     Route::get('/social/redirect/{provider}', 'Auth\AuthController@getSocialRedirect');
+     Route::get('/social/handle/{provider}', 'Auth\AuthController@getSocialHandle');
 });

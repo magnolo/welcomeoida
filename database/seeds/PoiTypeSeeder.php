@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\PoiType;
+use App\Models\PoiType;
 
 class PoiTypeSeeder extends Seeder
 {
@@ -14,7 +14,7 @@ class PoiTypeSeeder extends Seeder
     public function run()
     {
         //
-
+        DB::table('point_of_interests_types')->delete();
         $poiType = new PoiType([
           'id' => 1,
           'slug' => 'human',

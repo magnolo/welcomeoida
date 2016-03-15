@@ -1,0 +1,34 @@
+@import "_colors";
+.autocomplete-suggestions {
+  font-size: 0.9em;
+  border: 1px solid #f0f0f0;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  background: #FFF;
+  overflow: auto;
+  position: absolute;
+  width: 350px !important;
+  max-width: 100% !important;
+}
+.autocomplete-suggestion {
+  padding: 5px;
+  opacity: 0.5;
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0;
+}
+.autocomplete-selected {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  opacity: 1;
+}
+.autocomplete-suggestions strong {
+  font-weight: normal;
+  color: $color;
+}
+.autocomplete-group {
+  padding: 2px 5px;
+}
+.autocomplete-group strong {
+  display: block;
+  border-bottom: 1px solid #000;
+}

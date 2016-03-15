@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use Faker\Factory as Faker;
-use App\Poi;
+use App\Models\Poi;
 
 class PoiSeeder extends Seeder
 {

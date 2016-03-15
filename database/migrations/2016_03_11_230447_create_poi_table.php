@@ -18,8 +18,8 @@ class CreatePoiTable extends Migration
 
             $table->string('slug');
             $table->string('title');
-            $table->float('lat');
-            $table->float('lng');
+            $table->double('lat');
+            $table->double('lng');
             $table->string('street_name')->nullable();
             $table->string('address')->nullable();
             $table->string('building_number')->nullable();

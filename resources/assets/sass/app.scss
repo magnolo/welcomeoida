@@ -1,139 +1,102 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "_colors";
 
-html,body{
-  padding:0px;
-  margin:0px;
-
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
-body{
+body {
   background: #fff;
   font-family: Helvetica;
-  font-size:16px;
+  font-size: 16px;
 }
-.autocomplete-suggestions { font-size:0.9em;border: 1px solid #f0f0f0;box-shadow:2px 2px 5px rgba(0,0,0,0.2); background: #FFF; overflow: auto; position:absolute; width:350px !important; max-width:100% !important}
-.autocomplete-suggestion { padding: 5px;opacity: 0.5;white-space: nowrap; overflow: hidden; border-bottom:1px solid #f0f0f0}
-.autocomplete-selected { cursor:pointer; background-color:#f0f0f0;opacity: 1}
-.autocomplete-suggestions strong { font-weight: normal; color: $color; }
-.autocomplete-group { padding: 2px 5px; }
-.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
-
-.form.styled{
-  color:$color;
-  position:fixed;
-  top:40px;
-  left:40px;
-  width:250px;
-  background-color: #fff;
-  h3{
-    font-size: 1em;
-    font-weight: normal;
-    padding:0em 1em;
-    text-align: center;
+#solidarischForm {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 250px;
+  @media screen and (max-width: 699px){
+    position: static;
+    margin:0 auto;
   }
-  .input-container{
-    display:inline-block;;
-    padding:1em 2em;
-    position:relative;
-    label{
-      position:absolute;
-      font-size:1em;
-      display: none;
-
-      &.error{
-        font-size: 0.7em;
-        top: 1em;
-        left: 100%;
-        min-width: 220px;
-        background: $color;
-        color:$white;
-        padding: 3px;
-        box-shadow:2px 2px 5px rgba(0,0,0,0.2);
-        &::before{
-          content:'';
-          width: 0;
-        	height: 0;
-        	border-top: 10px solid transparent;
-        	border-bottom: 10px solid transparent;
-        	border-right:10px solid $color;
-          position: absolute;
-          left:-10px;
-          top:0px
-        }
+}
+.form {
+  background-color: $white;
+  border-radius: 2px;
+  h3,
+  small,
+  p {
+    color: $color;
+  }
+  .row {
+    margin-bottom: 0;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=passwort] {
+    height: 2.5rem;
+    border-bottom-color: $color;
+    &:focus {
+      border-bottom-color: $color;
+      box-shadow: 0 1px 0 $color;
+      + label {
+        color: $color;
       }
     }
-    input{
-      width:100%;
-      border:0px;
-      border-bottom:1px solid $color;
-      font-size:0.9em;
-      padding:.2em;
-      transition: all .15s ease;
-      &:-moz-placeholder {
-          color: $color;
-      }
-      &::-moz-placeholder {
-          color: $color;
-      }
-      &:-ms-input-placeholder {
-          color: $color;
-      }
-      &::-webkit-input-placeholder {
-          color: $color;
-      }
-      &:focus{
-        background-color: $white;
-        color:$color;
-        outline:none;
-        &:-moz-placeholder {
-            color: $white;
-        }
-        &::-moz-placeholder {
-            color: $white;
-        }
-        &:-ms-input-placeholder {
-            color: $white;
-        }
-        &::-webkit-input-placeholder {
-            color: $white;
-        }
+    &.valid {
+      border-bottom: 1px solid $green;
+      box-shadow: 0 1px 0 0 $green;
+      + label {
+        color: $green !important;
       }
     }
-
-
   }
-  button.btn{
-    border:3px solid $color;
+
+  label {
+    color: $color;
+  }
+  div.error {
+    position: absolute;
+    font-size: 0.7em;
+    top: 1em;
+    left: 100%;
+    min-width: 220px;
+    background: $color;
+    color: $white !important;
+    padding: 3px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+      border-right: 11px solid $color;
+      position: absolute;
+      left: -11px;
+      top: 0;
+    }
+  }
+  .btn {
+    margin-top: 1em;
+    padding: 0 0.5em;
+    width: 100%;
+    border: 3px solid $color;
     background-color: #fff;
-    color:$color;
-    font-size:1.3em;
-    padding:.5em;
-    width:100%;
-    cursor:pointer;
-    transition:all .15s ease-in-out;
-    margin-top:1em;
-    &:hover{
-      background-color: $color;
-      color:#fff;
+    color: $color;
+    width: 100%;
+    cursor: pointer;
+    height: auto;
+    min-height: 48px;
+    &[disabled] {
+      border: 3px solid #DFDFDF;
     }
-    &:disabled{
-      color:$grey;
-      border-color:$grey;
-      &:hover{
-        background-color:#fff;
-      }
-    }
-  }
-  @media screen and (max-width:699px){
-    position:static;
-    margin:1em auto;
-    max-width: 100%;
-
   }
 }
-.sweet-alert{
-  border-radius:0px;
-  button{
-    border-radius:0px;
+.sweet-alert {
+  border-radius: 2px;
+  button {
+    border-radius: 2px;
   }
 }
