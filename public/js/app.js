@@ -79,7 +79,7 @@ $(function () {
 	//open popup for click on human marker
 	map.on('click', function (e) {
 		map.featuresAt(e.point, {
-			radius: 7.5,
+			radius: 15,
 			includeGeometry: true,
 			layer: 'humans'
 		}, function (err, features) {
