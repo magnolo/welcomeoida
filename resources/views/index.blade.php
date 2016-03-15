@@ -47,6 +47,7 @@
       </div>
       <div >
         <a href="/social/redirect/facebook">FB</a>
+        <a href="/social/redirect/twitter">Twitter</a>
       </div>
       <ul>
       @if(!Auth::check())
