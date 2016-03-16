@@ -15,6 +15,15 @@ $.extend($.validator.messages, {
   creditcard: "Geben Sie bitte eine gültige Kreditkarten-Nummer ein."
 });
 $(function () {
+	//Sidenav
+	$(".button-collapse").sideNav();
+
+
+	$(".rotateText").textrotator({
+  animation: "flipUp", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+  separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+  speed: 2000 // How many milliseconds until the next word show.
+});
 
 	//define mapbox api
 	mapboxgl.accessToken = 'pk.eyJ1IjoibWFnbm9sbyIsImEiOiJuSFdUYkg4In0.5HOykKk0pNP1N3isfPQGTQ';

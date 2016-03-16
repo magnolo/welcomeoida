@@ -61,7 +61,7 @@ class AuthController extends Controller
    public function getLogout()
    {
        \Auth::logout();
-       return redirect()->route('auth.login')
+       return redirect()->route('pages.home')
            ->with('status', 'success')
            ->with('message', 'Logged out');
    }
@@ -160,7 +160,7 @@ class AuthController extends Controller
 
         if( $this->auth->user()->hasRole('user'))
         {
-            return redirect()->route('home');
+            return redirect()->route('pages.home');
         }
         if( $this->auth->user()->hasRole('administrator'))
         {

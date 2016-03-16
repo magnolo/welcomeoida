@@ -5,8 +5,20 @@ body {
 
 body {
   background: #fff;
-  font-family: Helvetica;
+  font-family: 'Sarala', sans-serif;
   font-size: 16px; }
+
+h1, h2, h3, h4 {
+  color: #EB5B27; }
+
+.blued {
+  color: #11A0D2; }
+
+.greeny {
+  color: #B8DAB7; }
+
+.relative {
+  position: relative; }
 
 #solidarischForm {
   position: absolute;
@@ -90,6 +102,16 @@ body {
   border-radius: 2px; }
   .sweet-alert button {
     border-radius: 2px; }
+
+.block {
+  margin: 3rem 0; }
+  .block h1, .block h2, .block h3, .block h3, .block h4, .block h5 {
+    margin: .5rem 0; }
+  .block h2 {
+    font-size: 2.5rem; }
+  .block p {
+    max-width: 50%;
+    margin: 2rem auto; }
 
 .autocomplete-suggestions {
   font-size: 0.9em;

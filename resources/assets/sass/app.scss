@@ -1,4 +1,5 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
 @import "_colors";
 
 html,
@@ -8,8 +9,20 @@ body {
 }
 body {
   background: #fff;
-  font-family: Helvetica;
+font-family: 'Sarala', sans-serif;
   font-size: 16px;
+}
+h1,h2,h3,h4{
+  color:$color;
+}
+.blued{
+  color:$blued;
+}
+.greeny{
+  color:$greeny;
+}
+.relative{
+  position:relative;
 }
 #solidarischForm {
   position: absolute;
@@ -98,5 +111,18 @@ body {
   border-radius: 2px;
   button {
     border-radius: 2px;
+  }
+}
+.block{
+  margin:3rem 0;
+  h1,h2,h3,h3,h4,h5{
+    margin:.5rem 0;
+  }
+  h2{
+    font-size:2.5rem;
+  }
+  p{
+    max-width: 50%;
+    margin:2rem auto;
   }
 }
