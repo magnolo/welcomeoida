@@ -54,8 +54,9 @@ class AuthController extends Controller
        else
        {
            return redirect()->back()
+              ->with('title', 'Anmeldeproblem!')
                ->with('message','Email und Passwort stimmen nicht ')
-               ->with('status', 'danger')
+               ->with('status', 'error')
                ->withInput();
        }
    }
@@ -80,12 +81,6 @@ class AuthController extends Controller
                ->withErrors($validator)
                ->withInput();
        }
-       /*if($this->captchaCheck() == false)
-       {
-           return redirect()->back()
-               ->withErrors(['Wrong Captcha'])
-               ->withInput();
-       }*/
        $data = [
            'first_name'    => $input['first_name'],
            'last_name'     => $input['last_name'],

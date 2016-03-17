@@ -6,6 +6,7 @@
     <title>#welcomeoida</title>
     <link href='https://fonts.googleapis.com/css?family=Sarala:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
     @yield('head')
@@ -24,10 +25,10 @@
           <li><a href="mobile.html" class="orange-text text-darken-4">Aktiv werden</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-          <li>share this</li>
-          <li><a href="sass.html"><i class="material-icons">facebook</i></a></li>
-          <li><a href="badges.html"><i class="material-icons">menu</i></a></li>
-          <li><a href="collapsible.html"><i class="material-icons">menu</i></a></li>
+          <li>share this&nbsp;</li>
+          <li><a href="sass.html" class="icon"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="badges.html" class="icon"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="collapsible.html" class="icon"><i class="fa fa-google"></i></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="sass.html">Sass</a></li>
@@ -38,68 +39,26 @@
       </div>
     </nav>
     <div class="row">
-        <ul>
+        <div class="col s12 ">
+        <ul class="pull-right">
           @if(!Auth::check())
-               <li><a href="{{ route('auth.login')}}" class="modal-trigger">Login</a></li>
-               <li><a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">FB</a></li>
+               <li><a href="{{ route('auth.login') }}" class="modal-trigger">Login</a></li>
           @else
                <li><a href="#">{{ Auth::user()->first_name }}</a></li>
                <li><a href="{{ route('authenticated.logout') }}">Logout</a></li>
           @endif
         </ul>
+      </div>
     </div>
     @yield('content')
-    <!--<div id="modalLogin" class="modal">
+    <div id="modalLogin" class="modal">
     <div class="modal-content">
-      <h4>Login</h4>
-      <div class="row" >
-        <div class="col s12 m6">
-          {!! Form::open(array('route' => 'auth.login-post')) !!}
-
-          <div class="row">
-            <div class="input-field col s12">
-              {!! Form::email('',$value = null, $attributes = ['name' => 'email']) !!}
-              {!! Form::label('email', 'E-Mail Address') !!}
-            </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s12">
-                <input type="password" minlength="3" name="password" id="login_password" />
-                <label>Password</label>
-              </div>
-          </div>
-          <div class="row">
-            <div class="switch">
-              <label>
-                <input type="checkbox" name="remember">
-                <span class="lever"></span>
-                Angemeldet bleiben
-              </label>
-            </div>
-          </div>
-          <div class="row">
-          <div class="col s12 ">
-            <button class="waves-effect waves-light btn col s12" type="submit" >Anmelden</button>
-          </div>
-        </div>
-      </div>
-      {!! Form::close() !!}
-
-
-
-
-    </div>
-        </form>
-      </div>
-        <div class="col s12 m6">
-            <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">FB</a>
-        </div>
-      </div>
+      @include('includes.forms.login')
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Schließen</a>
     </div>
-  </div>-->
+  </div>
 
     <script src="{!! asset('js/vendor.js') !!}"></script>
     @yield('scriptPlugins')

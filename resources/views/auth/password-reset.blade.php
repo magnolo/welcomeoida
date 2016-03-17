@@ -1,16 +1,17 @@
 @extends('layouts.main')
 @section('content')
-
-        {!! Form::open(['url' => route('auth.password-post'), 'class' => 'form-signin' ] ) !!}
-
-        @include('includes.status')
-
-        <h2 class="form-signin-heading">Password Reset</h2>
+@include('includes.status')
+  <div class="row">
+      <div class="col s12 m6 l4 offset-m3 offset-l4">
+        {!! Form::open(['url' => route('auth.password-post'), 'class' => 'validate-me' ] ) !!}
+        <h2 class="form-signin-heading">Passwort zurücksetzen</h2>
+        <div class="input-field col s12">
+        {!! Form::email('email', null, ['required', 'autofocus', 'id' => 'inputEmail' ]) !!}
         <label for="inputEmail" class="sr-only">Email address</label>
-        {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email address', 'required', 'autofocus', 'id' => 'inputEmail' ]) !!}
+      </div>
 
-        <br />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Send me a reset link</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sende mir einen Link</button>
 
         {!! Form::close() !!}
+      </div>
 @stop

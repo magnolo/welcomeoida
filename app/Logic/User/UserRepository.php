@@ -34,7 +34,7 @@ class UserRepository {
         $data = [
             'first_name'    => $user->first_name,
             'token'         => $token,
-            'subject'       => 'Example.com: Password Reset Link',
+            'subject'       => 'welcomeoida.at: Erstelle ein neues Passwort',
             'email'         => $user->email
         ];
         $this->userMailer->passwordReset($user->email, $data);

@@ -54,6 +54,7 @@ class PasswordResetController extends Controller {
         if($validator->fails())
         {
             return redirect()->back()
+                ->with('title', 'Fehler bei der Eingabe')
                 ->withErrors($validator);
         }
         $password = Password::where('token', '=', $token)->first();
@@ -68,6 +69,6 @@ class PasswordResetController extends Controller {
         $password->delete();
         return redirect()->route('auth.login')
             ->with('status', 'success')
-            ->with('message', 'Passwort erfolgreich geändert!');
+            ->with('title', 'Passwort erfolgreich geändert!');
     }
 }

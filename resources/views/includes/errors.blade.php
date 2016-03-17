@@ -1,7 +1,5 @@
 @if($errors->has())
-@foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-@endforeach
+
     @section('scripts')
     <script>
       var message =

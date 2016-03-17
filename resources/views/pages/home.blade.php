@@ -44,7 +44,7 @@
       </div>
     </div>
   </div>
-    <button class="waves-effect waves-light btn" type="submit" >Ich bin solidarisch</button>
+    <button class="waves-effect waves-light btn full" type="submit" >Ich bin solidarisch</button>
     </form>
 </div>
 <!--<div class="form styled" id="eventForm">

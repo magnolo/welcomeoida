@@ -17,4 +17,11 @@ $(function () {
 	$('body').removeClass('overflow-none');
 	$('#loader').fadeOut();
 
+	//Form Validator
+	$('.validate-me').validate({
+		errorElement:'div',
+		errorPlacement: function(error, element) {
+		 error.appendTo( element.parent(".input-field"));
+	 }
+ });
 });

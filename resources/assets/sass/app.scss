@@ -53,10 +53,12 @@ h1,h2,h3,h4{
   @media screen and (max-width: 699px){
     position: static;
     margin:0 auto;
+    width: 100%;
+    
   }
 }
-.form {
-  background-color: $white;
+form, .form {
+  background-color: $white ;
   border-radius: 2px;
   h3,
   small,
@@ -68,7 +70,7 @@ h1,h2,h3,h4{
   }
   input[type=text],
   input[type=email],
-  input[type=passwort] {
+  input[type=password] {
     height: 2.5rem;
     border-bottom-color: $color;
     &:focus {
@@ -111,22 +113,50 @@ h1,h2,h3,h4{
       left: -11px;
       top: 0;
     }
+    @media screen and (max-width:991px){
+      position:relative;
+      left:0;
+      top:-2px;
+      &::before{
+        border-top: 0px solid transparent;
+        border-bottom: 11px solid $color;
+        border-right: 11px solid transparent;
+        border-left: 11px solid transparent;
+        left:0px;
+        top:-11px;
+      }
+    }
   }
   .btn {
     margin-top: 1em;
     padding: 0 0.5em;
-    width: 100%;
     border: 3px solid $color;
     background-color: #fff;
     color: $color;
-    width: 100%;
+
     cursor: pointer;
     height: auto;
     min-height: 48px;
+    &.full{
+      width: 100%;
+    }
+
     &[disabled] {
       border: 3px solid #DFDFDF;
     }
+    &:hover{
+      background-color: $color;
+      color:$white;
+    }
   }
+}
+.icon{
+  width:48px;
+  text-align:center;
+}
+.modal{
+  background-color: $white;
+  max-width: 600px;
 }
 .sweet-alert {
   border-radius: 2px;
