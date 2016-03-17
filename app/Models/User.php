@@ -27,7 +27,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public static $rules = [
+       'first_name'            => 'required',
+       'last_name'             => 'required',
+       'email'                 => 'required|email|unique:users',
+       'password'              => 'required|min:6|max:20',
+       'password_confirmation' => 'required|same:password',
+       'g-recaptcha-response'  => 'required|captcha'
+   ];
+   public static $messages = [
+       'first_name.required'   => 'Vorname wird benötigt',
+       'last_name.required'    => 'Nachname wird benötigt',
+       'email.required'        => 'Email wird benötigt',
+       'email.email'           => 'Email ist ungültig',
+       'password.required'     => 'Password wird benötigt',
+       'password.min'          => 'Password muss aus mindestens 6 Zeichen bestehen',
+       'password.max'          => 'Password darf nicht mehr als 20 Zeichen enthalten',
+       'g-recaptcha-response.required' => 'Captcha wird benötigt'
+   ];
     public function roles(){
       return $this->belongsToMany('App\Models\Role')->withTimestamps();
     }

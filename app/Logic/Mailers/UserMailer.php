@@ -5,14 +5,14 @@ class UserMailer extends Mailer {
     {
         $view       = 'emails.activate-link';
         $subject    = $data['subject'];
-        $fromEmail  = 'tuts@codingo.me';
+        $fromEmail  = env('FROM_MAIL');
         $this->sendTo($email, $subject, $fromEmail, $view, $data);
     }
     public function passwordReset($email, $data)
     {
         $view       = 'emails.password-reset';
         $subject    = $data['subject'];
-        $fromEmail  = 'tuts@codingo.me';
+        $fromEmail  = env('FROM_MAIL');
         $this->sendTo($email, $subject, $fromEmail, $view, $data);
     }
 }

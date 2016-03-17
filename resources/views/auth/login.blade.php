@@ -1,40 +1,33 @@
-
+@extends('layouts.main')
 @section('content')
 
+      <div class="row">
+          <div class="col s12 m6 offset-m3">
 
-        {!! Form::open(['url' => route('auth.login-post'), 'class' => 'form-signin', 'data-parsley-validate' ] ) !!}
-
+        {!! Form::open(array('route' => 'auth.login-post')) !!}
 
         @include('includes.status')
 
         <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="input-field">
 
-        <label for="inputEmail" class="sr-only">Email address</label>
         {!! Form::email('email', null, [
-            'class'                         => 'form-control',
-            'placeholder'                   => 'Email address',
             'required',
             'id'                            => 'inputEmail',
-            'data-parsley-required-message' => 'Email is required',
-            'data-parsley-trigger'          => 'change focusout',
-            'data-parsley-type'             => 'email'
         ]) !!}
+          <label for="inputEmail" class="sr-only">Email address</label>
+        </div>
+        <div class="input-field">
 
-        <label for="inputPassword" class="sr-only">Password</label>
         {!! Form::password('password', [
-            'class'                         => 'form-control',
-            'placeholder'                   => 'Password',
             'required',
             'id'                            => 'inputPassword',
-            'data-parsley-required-message' => 'Password is required',
-            'data-parsley-trigger'          => 'change focusout',
-            'data-parsley-minlength'        => '6',
-            'data-parsley-maxlength'        => '20'
         ]) !!}
-
+        <label for="inputPassword" class="sr-only">Password</label>
+      </div>
         <div class="checkbox">
             <label>
-                {!! Form::checkbox('remember', 1) !!} Remember me
+                {!! Form::checkbox('remember', 1) !!} Angemeldet bleiben
 
             </label>
         </div>
@@ -48,5 +41,6 @@
         <a href="{{ route('social.redirect', ['provider' => 'google']) }}" class="btn btn-lg btn-primary btn-block google" type="submit">Google</a>
 
         {!! Form::close() !!}
-
+      </div>
+    </div>
 @stop

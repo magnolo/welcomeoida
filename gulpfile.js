@@ -22,6 +22,7 @@ elixir(function(mix) {
     // .ngHtml2Js('./angular/**/*.html')
     .sass('./resources/assets/sass/**/*.scss', 'public/css')
     .scripts(['translation.js', 'main.js'], 'public/js/app.js')
+    .scripts(['map.js'], 'public/js/map.js')
     .livereload([
       'resources/views/**/*.php',
       'public/js/vendor.js',

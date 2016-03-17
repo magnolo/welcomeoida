@@ -7,7 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Logic\User\UserRepository;
 use App\Models\User;
 use App\Models\Password;
-use Validator, Input, Hash;
+use Validator, Hash;
+use Illuminate\Support\Facades\Input;
 
 class PasswordResetController extends Controller {
     public function getPasswordReset()
@@ -31,12 +32,13 @@ class PasswordResetController extends Controller {
         if(empty($user))
         {
             return redirect()->back()
-                ->withErrors(['User with this email does not exist']);
+                ->withErrors(['Ein Benutzer mit dieser Email ist uns nicht bekannt']);
         }
         $userRepository->resetPassword( $user );
         return redirect()->back()
             ->with('status', 'success')
-            ->with('message', 'Check your inbox!');
+            ->with('title', 'Anfrage erfolgreich')
+            ->with('message', 'Du hast Post!');
     }
     public function getPasswordResetForm( $token )
     {
@@ -58,7 +60,7 @@ class PasswordResetController extends Controller {
         if(empty($password))
         {
             return view('pages.status')
-                ->with('error', 'Reset token is invalid');
+                ->with('error', 'Reset token ist ungültig');
         }
         $user = User::where('email', '=', $password->email)->first();
         $user->password = Hash::make(Input::get('password'));
@@ -66,6 +68,6 @@ class PasswordResetController extends Controller {
         $password->delete();
         return redirect()->route('auth.login')
             ->with('status', 'success')
-            ->with('message', 'Password changed successfully!');
+            ->with('message', 'Passwort erfolgreich geändert!');
     }
 }

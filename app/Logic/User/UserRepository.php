@@ -1,8 +1,8 @@
 <?php namespace App\Logic\User;
 use App\Logic\Mailers\UserMailer;
-use App\Role;
-use App\User;
-use App\Password;
+use App\Models\Role;
+use App\Models\User;
+use App\Models\Password;
 use Hash, Carbon\Carbon;
 
 class UserRepository {

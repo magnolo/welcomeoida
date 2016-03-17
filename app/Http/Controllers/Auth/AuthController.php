@@ -14,6 +14,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Input;
 use Validator, Auth;
 
+
 class AuthController extends Controller
 {
     //use CaptchaTrait;
@@ -43,7 +44,7 @@ class AuthController extends Controller
        {
            if( $this->auth->user()->hasRole('user'))
            {
-               return redirect()->route('user.home');
+               return redirect()->route('pages.home');
            }
            if( $this->auth->user()->hasRole('administrator'))
            {
@@ -53,7 +54,7 @@ class AuthController extends Controller
        else
        {
            return redirect()->back()
-               ->with('message','Incorrect email or password')
+               ->with('message','Email und Passwort stimmen nicht ')
                ->with('status', 'danger')
                ->withInput();
        }
@@ -63,7 +64,7 @@ class AuthController extends Controller
        \Auth::logout();
        return redirect()->route('pages.home')
            ->with('status', 'success')
-           ->with('message', 'Logged out');
+           ->with('message', 'Erfolgreich abgemeldet');
    }
    public function getRegister()
    {
@@ -79,12 +80,12 @@ class AuthController extends Controller
                ->withErrors($validator)
                ->withInput();
        }
-       if($this->captchaCheck() == false)
+       /*if($this->captchaCheck() == false)
        {
            return redirect()->back()
                ->withErrors(['Wrong Captcha'])
                ->withInput();
-       }
+       }*/
        $data = [
            'first_name'    => $input['first_name'],
            'last_name'     => $input['last_name'],
@@ -94,7 +95,7 @@ class AuthController extends Controller
        $this->userRepository->register($data);
        return redirect()->route('auth.login')
            ->with('status', 'success')
-           ->with('message', 'You are registered successfully. Please login.');
+           ->with('message', 'Du hast dich erfolgreich registriert. Du kannst die jetzt anmelden.');
    }
    public function getSocialRedirect( $provider )
     {

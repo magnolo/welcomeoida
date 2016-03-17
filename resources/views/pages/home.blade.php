@@ -96,4 +96,5 @@
 @stop
 @section('scripts')
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
+ {!! Html::script('/js/map.js') !!}
 @stop

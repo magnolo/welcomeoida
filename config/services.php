@@ -46,4 +46,11 @@ return [
         'client_secret' => env('TWITTER_APP_SECRET'),
         'redirect' => env('TWITTER_REDIRECT'),
     ],
+    
+    'google' => [
+        'client_id'     => env('GOOGLE_ID'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT')
+    ]
+
 ];

@@ -40,7 +40,7 @@
     <div class="row">
         <ul>
           @if(!Auth::check())
-               <li><a href="{{ route('auth.login') }}">Login</a></li>
+               <li><a href="{{ route('auth.login')}}" class="modal-trigger">Login</a></li>
                <li><a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">FB</a></li>
           @else
                <li><a href="#">{{ Auth::user()->first_name }}</a></li>
@@ -48,24 +48,63 @@
           @endif
         </ul>
     </div>
-    <div id="loader">
-      <div class="preloader-wrapper big active">
-        <div class="spinner-layer spinner-red-only">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
+    @yield('content')
+    <!--<div id="modalLogin" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4>
+      <div class="row" >
+        <div class="col s12 m6">
+          {!! Form::open(array('route' => 'auth.login-post')) !!}
+
+          <div class="row">
+            <div class="input-field col s12">
+              {!! Form::email('',$value = null, $attributes = ['name' => 'email']) !!}
+              {!! Form::label('email', 'E-Mail Address') !!}
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                <input type="password" minlength="3" name="password" id="login_password" />
+                <label>Password</label>
+              </div>
+          </div>
+          <div class="row">
+            <div class="switch">
+              <label>
+                <input type="checkbox" name="remember">
+                <span class="lever"></span>
+                Angemeldet bleiben
+              </label>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col s12 ">
+            <button class="waves-effect waves-light btn col s12" type="submit" >Anmelden</button>
           </div>
         </div>
       </div>
-    </div>
-    @yield('content')
-    @yield('scripts')
-    <script src="{!! asset('js/vendor.js') !!}"></script>
-    <script src="{!! asset('js/app.js') !!}"></script>
+      {!! Form::close() !!}
 
+
+
+
+    </div>
+        </form>
+      </div>
+        <div class="col s12 m6">
+            <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}">FB</a>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Schließen</a>
+    </div>
+  </div>-->
+
+    <script src="{!! asset('js/vendor.js') !!}"></script>
+    @yield('scriptPlugins')
+    <script src="{!! asset('js/app.js') !!}"></script>
+    @yield('scripts')
     {{--livereload--}}
     @if ( env('APP_ENV') === 'local' )
     <script type="text/javascript">
