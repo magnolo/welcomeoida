@@ -53,7 +53,7 @@ class AuthController extends Controller
        }
        else
        {
-           return redirect()->back()
+           return redirect()->route('auth.login')
               ->with('title', 'Anmeldeproblem!')
                ->with('message','Email und Passwort stimmen nicht ')
                ->with('status', 'error')

@@ -12,7 +12,6 @@
 </div>
 </div>
 <div class="row relative">
-<div id="wo_map"></div>
 <div class="row form z-depth-1" id="solidarischForm">
     <div class="row">
     <p class="col s12 center-align">Zeig uns, dass du dabei bist!</p>
@@ -27,7 +26,7 @@
     </div>
       <div class="row">
       <div class="input-field col s12">
-        <input type="text" minlength="3" name="name" id="name" />
+        <input type="text" minlength="3" name="lastname" id="lastname" />
         <label>Nachname</label>
       </div>
     </div>
@@ -47,6 +46,8 @@
     <button class="waves-effect waves-light btn full" type="submit" >Ich bin solidarisch</button>
     </form>
 </div>
+<div id="wo_map"></div>
+
 <!--<div class="form styled" id="eventForm">
     <h3>Was planst du?</h3>
     <small>Erstelle dir einen Account um Events anzulegen</small>

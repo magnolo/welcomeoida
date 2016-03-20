@@ -15,6 +15,9 @@
 Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
   Route::get('pois/humans', 'PoiController@humans');
   Route::post('pois/humans', 'PoiController@createHuman');
+  Route::group(['middleware' => ['auth:api'], 'prefix' => 'admin'], function(){
+    Route::get('pois/humans', 'Admin\AdminController@humans');
+  });
 });
 
 /*
@@ -46,9 +49,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/social/redirect/{provider}', ['as' => 'social.redirect', 'uses' => 'Auth\AuthController@getSocialRedirect']);
     Route::get('/social/handle/{provider}', ['as' => 'social.handle', 'uses'=> 'Auth\AuthController@getSocialHandle']);
 
-
     Route::group(['middleware' => 'auth:all'], function(){
         Route::get('/logout', ['as' => 'authenticated.logout', 'uses' => 'Auth\AuthController@getLogout']);
     });
 
+    Route::group(['middleware' => 'auth:administrator'], function(){
+      Route::get('/admin', ['as' => 'admin.home', 'uses' => 'Admin\AdminController@home']);
+    });
 });

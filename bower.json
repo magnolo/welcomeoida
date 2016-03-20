@@ -24,6 +24,7 @@
     "sweetalert": "^1.1.3",
     "Materialize": "materialize#^0.97.5",
     "jquery.simple-text-rotator": "*",
-    "components-font-awesome": "^4.5.0"
+    "components-font-awesome": "^4.5.0",
+    "datatables.net": "^1.10.11"
   }
 }

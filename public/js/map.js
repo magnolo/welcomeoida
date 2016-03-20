@@ -85,7 +85,8 @@ $(function(){
        error.appendTo( element.parent(".input-field"));
      },
   		submitHandler: function (form) {
-  			newHuman.name = $('#firstname').val();
+  			newHuman.firstname = $('#firstname').val();
+  			newHuman.lastname = $('#lastname').val();
   			newHuman.email = $('#email').val();
   			newHuman.lat = newHuman.address.geometry.coordinates[0];
   			newHuman.lng = newHuman.address.geometry.coordinates[1];
@@ -102,7 +103,16 @@ $(function(){
   				source.setData(url);
   				$('#solidarisch')[0].reset();
           $('#solidarisch label').removeClass('active');
-  			})
+  			}).error(function(response){
+					swal({
+						title: "Ouch!",
+						text: "Da ist etwas schiefgelaufen!",
+						type: "error",
+						confirmButtonText: "Ok!",
+						confirmButtonColor: "#EB5B27"
+					});
+					$('#solidarisch .btn').removeAttr('disabled');
+				});
   		}
   	});
 

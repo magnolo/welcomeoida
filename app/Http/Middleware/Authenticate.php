@@ -35,19 +35,29 @@ class Authenticate
     // }
     public function handle($request, Closure $next, $role)
     {
+
         if(!$this->auth->check())
         {
-            return redirect()->route('auth.login')
-                ->with('status', 'success')
-                ->with('message', 'Please login.');
+            if($request->ajax()){
+              return response('Not allowed', 401);
+            }
+            else{
+              return redirect()->route('auth.login')
+                  ->with('status', 'error')
+                  ->with('message', 'Bitte melde dich an.');
+            }
+
         }
+
         if($role == 'all')
         {
             return $next($request);
         }
         if( $this->auth->guest() || !$this->auth->user()->hasRole($role))
         {
-            abort(403);
+          return redirect()->route('auth.login')
+              ->with('status', 'error')
+              ->with('message', 'Bitte melde dich an.');
         }
         return $next($request);
     }

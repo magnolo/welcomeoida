@@ -29,9 +29,18 @@ $(function () {
 	//Modal opener
 	$('.modal-trigger').leanModal();
 
+	//Init Tabs
+	$('ul.tabs').tabs();
+
+	//Init Selects
+
+
 	//RemoveLoader
 	$('body').removeClass('overflow-none');
 	$('#loader').fadeOut();
+
+	//Init DataTables
+	$('.dataTable').DataTable();
 
 	//Form Validator
 	$('.validate-me').validate({

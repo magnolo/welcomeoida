@@ -18,7 +18,7 @@
       'required',
       'id'                            => 'inputFirstName',
   ]) !!}
-  <label for="inputFirstName" class="sr-only">Vorname</label>
+  <label for="inputFirstName">Vorname</label>
 </div>
 </div>
 <div class="row">
@@ -27,7 +27,7 @@
         'required',
         'id'                            => 'inputLastName',
     ]) !!}
-    <label for="inputLastName" class="sr-only">Nachname</label>
+    <label for="inputLastName">Nachname</label>
 </div>
 </div>
 <div class="row">
@@ -36,7 +36,7 @@
       'required',
       'id'                            => 'inputPassword',
   ]) !!}
-  <label for="inputPassword" class="sr-only">Passwort</label>
+  <label for="inputPassword" >Passwort</label>
 </div>
 </div>
 <div class="row">

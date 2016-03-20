@@ -21,6 +21,12 @@ class PoiTypeSeeder extends Seeder
           'title' => 'Human'
         ]);
         $poiType->save();
+        $poiType = new PoiType([
+          'id' => 2,
+          'slug' => 'event',
+          'title' => 'Event'
+        ]);
+        $poiType->save();
 
     }
 }

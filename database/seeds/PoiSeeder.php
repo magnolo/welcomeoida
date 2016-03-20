@@ -17,12 +17,19 @@ class PoiSeeder extends Seeder
         //
         $faker = Faker::create();
     	foreach (range(1,300) as $index) {
-          $name = $faker->name;
+          $firstname = $faker->firstName;
+          $lastname = $faker->lastName;
+
+          $title = $firstname." ".substr($lastname,0,1).".";
           $poi = new Poi([
-              'slug' => str_slug($name),
-	            'title' => $name,
-	            'lat' => $faker->latitude,
-	            'lng' => $faker->longitude,
+              'slug' => str_slug($title),
+	            'title' => $title,
+              'first_name' => $firstname,
+              'last_name' => $lastname,
+              'email' => $faker->email,
+	            'lat' => $faker->latitude(47.940267,48.349861),
+	            'lng' => $faker->longitude(16.158142,16.586609),
+              'ip_address' => $faker->ipv4,
 	            'type_id' => 1
 	        ]);
           $poi->save();

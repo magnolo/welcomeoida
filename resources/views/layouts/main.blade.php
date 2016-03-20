@@ -40,13 +40,20 @@
     </nav>
     <div class="row">
         <div class="col s12 ">
+
         <ul class="pull-right">
+
           @if(!Auth::check())
-               <li><a href="{{ route('auth.login') }}" class="modal-trigger">Login</a></li>
+               <li><a href="#modalLogin" class="modal-trigger">Login</a></li>
           @else
                <li><a href="#">{{ Auth::user()->first_name }}</a></li>
+               @if(Auth::user()->hasRole("administrator"))
+                 <li><a href="{{ route('admin.home') }}">Admin</a></li>
+              @endif
                <li><a href="{{ route('authenticated.logout') }}">Logout</a></li>
           @endif
+
+
         </ul>
       </div>
     </div>
