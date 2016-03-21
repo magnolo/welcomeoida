@@ -13,8 +13,12 @@
 
 
 Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
+  Route::get('pois/all', 'PoiController@all');
   Route::get('pois/humans', 'PoiController@humans');
   Route::post('pois/humans', 'PoiController@createHuman');
+  Route::post('pois/events', 'PoiController@createEvent');
+
+  Route::post('images', 'ImageController@upload');
   Route::group(['middleware' => ['auth:api'], 'prefix' => 'admin'], function(){
     Route::get('pois/humans', 'Admin\AdminController@humans');
   });

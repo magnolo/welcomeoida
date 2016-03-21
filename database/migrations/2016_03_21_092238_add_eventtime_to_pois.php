@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnsToPois extends Migration
+class AddEventtimeToPois extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,9 @@ class AddColumnsToPois extends Migration
     {
         Schema::table('point_of_interests', function (Blueprint $table) {
             //
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('url')->nullable();
-            $table->string('phone')->nullable();
+            $table->dateTime('from_date')->nullable();
+            $table->dateTime('to_date')->nullable();
+            
         });
     }
 
@@ -31,7 +29,7 @@ class AddColumnsToPois extends Migration
     {
         Schema::table('point_of_interests', function (Blueprint $table) {
             //
-            $table->dropColumn(['first_name', 'last_name', 'url','email']);
+            $table->dropColumn(['from_date', 'to_date']);
         });
     }
 }

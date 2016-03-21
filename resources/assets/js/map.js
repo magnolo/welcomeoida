@@ -8,6 +8,12 @@ $(function(){
 		email: '',
 		address: null
 	};
+	var newEvent = {
+		name: '',
+		email: '',
+		address: null
+	};
+
 
 	//setup popup
 	var popup = new mapboxgl.Popup({
@@ -26,14 +32,15 @@ $(function(){
 	map.addControl(new mapboxgl.Navigation());
 
 	//setup GeoJSONSource from local API
-	var url = '/api/pois/humans';
+	var url = '/api/pois/all';
 	var source = new mapboxgl.GeoJSONSource({
 		data: url
 	});
 
+
 	//setup marker data for humans from lokal api
 	map.on('style.load', function () {
-		map.addSource('peoples', source);
+		map.addSource('pois', source);
 		map.addLayer({
 			"id": "humans",
 			"interactive": true,
@@ -46,16 +53,34 @@ $(function(){
           delay:0
 				},
 			},
-			"source": "peoples",
+			"source": "pois",
+			"filter": ["==", "type_id",1]
+			// "layout": {
+			// 		 "icon-image": "{marker-symbol}-15",
+			// 		 "text-offset": [0, 0.6],
+			// 		 "text-anchor": "top"
+			//  }
 		});
-    // setTimeout(function(){
-    //   map.setPaintProperty('humans', 'circle-radius', 3);
-    // },1000);
-    // var style = map.getStyle();
-    // var layerNames = [];
-    // for(var layer in style.layers){
-    //   console.log( style.layers[layer].id);
-    // }
+		map.addLayer({
+			"id": "events",
+			"interactive": true,
+			"type": "symbol",
+			// "paint": {
+			// 	"circle-color": '#00ff00',
+			// 	"circle-radius": 5,
+      //   "circle-radius-transition": {
+			// 		duration: 250,
+      //     delay:0
+			// 	},
+			// },
+			"source": "pois",
+			"filter": ["==", "type_id",2],
+		 "layout": {
+		 		 "icon-image": "marker-15",
+		 		 "text-offset": [0, 0.6],
+		 		 "text-anchor": "top"
+		  }
+		});
 
 	});
 
@@ -64,19 +89,40 @@ $(function(){
 		map.featuresAt(e.point, {
 			radius: 15,
 			includeGeometry: true,
-			layer: 'humans'
+			layer: ['humans','events'],
 		}, function (err, features) {
 			if (err || !features.length) {
 				popup.remove();
 				return;
 			}
 			var feature = features[0];
+			var data = feature.properties;
+			var html = '';
+			if(data.type_id == 1){
+				html = data.title;
+			}
+			else{
+				if(data.image.id){
+					html += "<img class='title-image' src='"+data.image.path+"' />";
+				}
+				html += "<h5>"+data.title+"</h5>";
+			}
 			popup.setLngLat(feature.geometry.coordinates)
-				.setHTML(feature.properties.name)
+				.setHTML(html)
 				.addTo(map);
 		})
 	});
 
+	// Use the same approach as above to indicate that the symbols are clickable
+	// by changing the cursor style to 'pointer'.
+	map.on('mousemove', function (e) {
+	    map.featuresAt(e.point, {
+	        radius:15, // Half the marker size (15px).
+	        layer: 'humans'
+	    }, function (err, features) {
+	        map.getCanvas().style.cursor = (!err && features.length) ? 'pointer' : '';
+	    });
+	});
 
   	//validate and submit solidarisch form
   	$('#solidarisch').validate({
@@ -112,6 +158,49 @@ $(function(){
 						confirmButtonColor: "#EB5B27"
 					});
 					$('#solidarisch .btn').removeAttr('disabled');
+				});
+  		}
+  	});
+
+		//validate and submit solidarisch form
+  	$('#event').validate({
+      errorElement:'div',
+      errorPlacement: function(error, element) {
+       error.appendTo( element.parent(".input-field"));
+     },
+  		submitHandler: function (form) {
+
+				newEvent.title =$('#event_title').val();
+				newEvent.address = newHuman.address;
+  			newEvent.from_date = $('#event_from').val();
+  			newEvent.phone = $('#event_phone').val();
+  			newEvent.url = $('#event_url').val();
+				newEvent.description = $('#event_description').val();
+  			newEvent.lat = newHuman.address.geometry.coordinates[0];
+  			newEvent.lng = newHuman.address.geometry.coordinates[1];
+				newEvent.image_id = newImage.id;
+  			$('#event .btn').attr('disabled', true);
+  			$.post('/api/pois/events', newEvent, function (response) {
+  				swal({
+  					title: "Baam!",
+  					text: "Deine Veranstaltung wurde erfolgreich gespeichert!",
+  					type: "success",
+  					confirmButtonText: "Ok!",
+  					confirmButtonColor: "#EB5B27"
+  				});
+  				resetMarker();
+  				source.setData(url);
+  				$('#event')[0].reset();
+          $('#event label').removeClass('active');
+  			}).error(function(response){
+					swal({
+						title: "Ouch!",
+						text: "Da ist etwas schiefgelaufen!",
+						type: "error",
+						confirmButtonText: "Ok!",
+						confirmButtonColor: "#EB5B27"
+					});
+					$('#event .btn').removeAttr('disabled');
 				});
   		}
   	});
@@ -228,4 +317,40 @@ $(function(){
   			zoom: 11
   		});
   	}
+
+		$('#showEventsForm').on('click', function(){
+	 	 	if( $('#eventForm').hasClass('hidden')){
+	 		 	$('#eventForm').animateCss('fadeInDown','', '#event');
+	 			$('#solidarischForm').animateCss('zoomOutLeft', 'hidden');
+
+	 	 	}
+	 		else{
+	 			$('#solidarischForm').animateCss('fadeInDown');
+	  			$('#eventForm').animateCss('zoomOutLeft', 'hidden');
+	  	 	}
+
+	 	});
+	 	var newImage = null;
+	 	$("#image-upload").dropzone({
+	 		init:function(){
+	 			 this.on("success", function(file) {
+	 					newImage = JSON.parse(file.xhr.response);
+	 			 });
+	 		},
+	 		paramName:'image',
+	 		maxFilesize: 4,
+	 		multiple:false,
+	 		maxFiles:1,
+	 		addRemoveLinks:true,
+	 		acceptedFiles:'image/*',
+	 		url: "/api/images",
+	 		thumbnailWidth:336,
+	 		thumbnailHeight:150,
+	 		dictRemoveFile:'Bild löschen',
+	 		dictInvalidFileType:'Bilddatei?',
+	 		dictFileTooBig:'Die Datei ist zu groß!',
+	 		// success:function(file){
+	 		// 	console.log(JSON.parse(file.xhr.response));
+	 		// }
+	 	});
 })

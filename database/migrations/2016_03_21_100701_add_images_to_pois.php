@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnsToPois extends Migration
+class AddImagesToPois extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,7 @@ class AddColumnsToPois extends Migration
     {
         Schema::table('point_of_interests', function (Blueprint $table) {
             //
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('url')->nullable();
-            $table->string('phone')->nullable();
+            $table->integer('image_id')->unsigned()->nullable();
         });
     }
 
@@ -31,7 +27,7 @@ class AddColumnsToPois extends Migration
     {
         Schema::table('point_of_interests', function (Blueprint $table) {
             //
-            $table->dropColumn(['first_name', 'last_name', 'url','email']);
+            $table->dropColumn('image_id');
         });
     }
 }

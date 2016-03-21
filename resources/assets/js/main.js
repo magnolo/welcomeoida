@@ -16,9 +16,6 @@ $(function () {
 	//Init Tabs
 	$('ul.tabs').tabs();
 
-	//Init Selects
-
-
 	//RemoveLoader
 	$('body').removeClass('overflow-none');
 	$('#loader').fadeOut();
@@ -33,4 +30,19 @@ $(function () {
 		 error.appendTo( element.parent(".input-field"));
 	 }
  });
+
+});
+
+$.fn.extend({
+    animateCss: function (animationName, doneClass, element) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+				$(this).removeClass('hidden');
+        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+						$(this).addClass(doneClass);
+						/*$('html, body').animate({
+						 scrollTop: $(element).offset().top
+					 }, 1000);*/
+        });
+    }
 });

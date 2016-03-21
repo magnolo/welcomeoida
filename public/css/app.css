@@ -25,6 +25,9 @@ h1, h2, h3, h4 {
 .overflow-none {
   overflow: hidden; }
 
+.hidden {
+  display: none; }
+
 #loader {
   position: fixed;
   top: 0px;
@@ -40,14 +43,33 @@ h1, h2, h3, h4 {
     margin-left: -32px;
     margin-top: -32px; }
 
+#usermenu {
+  position: absolute;
+  right: 0px; }
+  #usermenu a {
+    color: #EB5B27;
+    font-size: 1.5em; }
+
 #solidarischForm {
   position: absolute;
   top: 40px;
   left: 40px;
-  width: 250px;
+  width: 347px;
   z-index: 1; }
   @media screen and (max-width: 699px) {
     #solidarischForm {
+      position: static;
+      margin: 0 auto;
+      width: 100%; } }
+
+#eventForm {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 347px;
+  z-index: 1; }
+  @media screen and (max-width: 699px) {
+    #eventForm {
       position: static;
       margin: 0 auto;
       width: 100%; } }
@@ -95,6 +117,18 @@ form, .form {
       form input[type=password].valid + label, .form input[type=text].valid + label,
       .form input[type=email].valid + label,
       .form input[type=password].valid + label {
+        color: #4CAF50 !important; }
+  form textarea, .form textarea {
+    border-bottom-color: #EB5B27; }
+    form textarea:focus, .form textarea:focus {
+      border-bottom-color: #EB5B27 !important;
+      box-shadow: 0 1px 0 #EB5B27 !important; }
+      form textarea:focus + label, .form textarea:focus + label {
+        color: #EB5B27 !important; }
+    form textarea.valid, .form textarea.valid {
+      border-bottom: 1px solid #4CAF50;
+      box-shadow: 0 1px 0 0 #4CAF50; }
+      form textarea.valid + label, .form textarea.valid + label {
         color: #4CAF50 !important; }
   form label, .form label {
     color: #EB5B27; }
@@ -162,7 +196,7 @@ form, .form {
 
 .block {
   margin: 3rem 0;
-  margin-bottom: 6rem; }
+  margin-bottom: 1rem; }
   .block h1, .block h2, .block h3, .block h3, .block h4, .block h5 {
     margin: .5rem 0; }
   .block h2 {
@@ -170,6 +204,56 @@ form, .form {
   .block p {
     max-width: 50%;
     margin: 2rem auto; }
+
+.dropzone {
+  margin: 1rem 0;
+  border: 2px solid #EB5B27;
+  color: #fff;
+  background: #f5c19a;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #f5c19a 0%, #e69dbb 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5c19a', endColorstr='#e69dbb',GradientType=1 );
+  /* IE6-9 */ }
+  .dropzone .fa {
+    font-size: 2em; }
+  .dropzone.dz-started, .dropzone.dz-complete {
+    padding: 0px; }
+    .dropzone.dz-started .dz-preview.dz-image-preview, .dropzone.dz-complete .dz-preview.dz-image-preview {
+      background: transparent;
+      margin: 0px;
+      width: 100%;
+      min-height: 150px; }
+      .dropzone.dz-started .dz-preview.dz-image-preview .dz-image, .dropzone.dz-complete .dz-preview.dz-image-preview .dz-image {
+        border-radius: 0px;
+        overflow: hidden;
+        width: 100%;
+        height: 150px;
+        position: relative;
+        display: block;
+        z-index: 10; }
+        .dropzone.dz-started .dz-preview.dz-image-preview .dz-image img, .dropzone.dz-complete .dz-preview.dz-image-preview .dz-image img {
+          width: 100%;
+          height: 150px; }
+    .dropzone.dz-started .dz-preview .dz-remove, .dropzone.dz-complete .dz-preview .dz-remove {
+      position: absolute;
+      top: -1.5em;
+      z-index: 100;
+      right: -2px;
+      color: #fff;
+      background: #EB5B27;
+      font-weight: normal;
+      padding: 0 .5em;
+      border-radius: 3px 3px 0px 0px; }
+    .dropzone.dz-started .dz-preview .dz-error-message, .dropzone.dz-complete .dz-preview .dz-error-message {
+      background: #EB5B27;
+      border-radius: 2px;
+      left: 10px;
+      width: 160px; }
+      .dropzone.dz-started .dz-preview .dz-error-message::after, .dropzone.dz-complete .dz-preview .dz-error-message::after {
+        border-bottom-color: #EB5B27; }
 
 .autocomplete-suggestions {
   font-size: 0.9em;

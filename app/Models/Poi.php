@@ -12,4 +12,7 @@ class Poi extends Model
     public function type(){
       return $this->belongsTo('App\Models\PoiType','type_id');
     }
+    public function image(){
+      return $this->belongsTo('App\Models\Photo', 'image_id');
+    }
 }

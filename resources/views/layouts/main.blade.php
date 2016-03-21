@@ -38,7 +38,7 @@
         </ul>
       </div>
     </nav>
-    <div class="row">
+    <div class="row" id="usermenu">
         <div class="col s12 ">
 
         <ul class="pull-right">
@@ -59,13 +59,14 @@
     </div>
     @yield('content')
     <div id="modalLogin" class="modal">
-    <div class="modal-content">
-      @include('includes.forms.login')
+      <div class="modal-content">
+        @include('includes.forms.login')
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Schließen</a>
+      </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Schließen</a>
-    </div>
-  </div>
+
 
     <script src="{!! asset('js/vendor.js') !!}"></script>
     @yield('scriptPlugins')

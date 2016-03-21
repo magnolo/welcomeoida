@@ -25,6 +25,8 @@
     "Materialize": "materialize#^0.97.5",
     "jquery.simple-text-rotator": "*",
     "components-font-awesome": "^4.5.0",
-    "datatables.net": "^1.10.11"
+    "datatables.net": "^1.10.11",
+    "animate.css": "^3.5.1",
+    "dropzone": "^4.3.0"
   }
 }
