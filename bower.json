@@ -27,6 +27,8 @@
     "components-font-awesome": "^4.5.0",
     "datatables.net": "^1.10.11",
     "animate.css": "^3.5.1",
-    "dropzone": "^4.3.0"
+    "dropzone": "^4.3.0",
+    "leaflet-ajax": "^2.0.0",
+    "Leaflet.geojsonCSS": "^0.0.1"
   }
 }

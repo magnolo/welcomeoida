@@ -14,14 +14,33 @@ class PoiController extends Controller
     public function all(){
       $pois = Poi::with(['type', 'image'])->get();
       $data = ["features"=>[],"type" => "FeatureCollection"];
+
+      $eventView = \View::make('includes.map.popups.event', [])->render();
+      $personView = \View::make('includes.map.popups.person', [])->render();
+
       foreach($pois as $poi){
+        $popup = $personView;
+        $icon = "/images/markers/ball.png";
+        if($poi->type_id == 2){
+          $popup = $eventView;
+          $icon = "/images/markers/ball.png";
+        }
         $entry = [
           "type" => "Feature",
           "geometry" => [
             "type" => "Point",
             "coordinates" => [$poi->lat, $poi->lng]
           ],
-          "properties" => $poi->toArray()
+          "properties" => $poi->toArray(),
+          "style" => [
+               "icon" => [
+                   "iconUrl" => $icon,
+                   "iconSize" => [16,16],
+                   "iconAnchor" => [8,8]
+                 ]
+            ],
+          "popupTemplate" => $popup
+
         ];
         $data["features"][] = $entry;
       }
