@@ -106,12 +106,14 @@ class AuthController extends Controller
         $code = Input::get('code');
         if(!$code)
             return redirect()->route('auth.login')
-                ->with('status', 'danger')
-                ->with('message', 'You did not share your profile data with our social app.');
+                ->with('status', 'error')
+                ->with('title','Social Account konnte nicht verbinden')
+                ->with('message', 'You did not share your profile data with our social app?');
         if(!$user->email)
         {
             return redirect()->route('auth.login')
-                ->with('status', 'danger')
+                ->with('status', 'error')
+                ->with('title','Social Account konnte nicht verbinden')
                 ->with('message', 'You did not share your email with our social app. You need to visit App Settings and remove our app, than you can come back here and login again. Or you can create new account.');
         }
         $socialUser = null;
