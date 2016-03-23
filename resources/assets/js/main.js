@@ -1,5 +1,5 @@
 $(function() {
-	
+
   //Sidenav
   $(".button-collapse").sideNav();
 
@@ -40,9 +40,13 @@ $.fn.extend({
     $(this).addClass('animated ' + animationName).one(animationEnd, function() {
       $(this).removeClass('animated ' + animationName);
       $(this).addClass(doneClass);
-      /*$('html, body').animate({
-						 scrollTop: $(element).offset().top
-					 }, 1000);*/
+			if(element){
+				$(element).find('input').first().focus();
+	      $('html, body').animate({
+							 scrollTop: $(element).offset().top
+						 }, 1000);
+			}
+
     });
   }
 });

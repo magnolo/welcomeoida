@@ -165,10 +165,10 @@ $(function() {
   //switch forms
   $('#showEventsForm').on('click', function() {
     if ($('#eventForm').hasClass('hidden')) {
-      $('#eventForm').animateCss('fadeInDown', '', '#event');
+      $('#eventForm').animateCss('fadeInDown', '', '#eventForm');
       $('#solidarischForm').animateCss('zoomOutLeft', 'hidden');
     } else {
-      $('#solidarischForm').animateCss('fadeInDown');
+      $('#solidarischForm').animateCss('fadeInDown','', '#solidarischForm');
       $('#eventForm').animateCss('zoomOutLeft', 'hidden');
     }
   });
@@ -325,14 +325,11 @@ $(function() {
     },
 
     onAdd: function(map) {
-      // create the control container with a particular class name
       var container = L.DomUtil.create('div', 'layer-toogler leaflet-bar');
-
-      this._link = L.DomUtil.create('a', 'leaflet-bar-part leaflet-bar-part-single', container);
+      this._link = L.DomUtil.create('a', 'leaflet-bar-part', container);
       this._link.href = '#';
       this._link.title = "Marker/Heatmap";
       this._icon = L.DomUtil.create('span', 'fa fa-bullseye', this._link);
-
       L.DomEvent
           .on(this._link, 'click', L.DomEvent.stopPropagation)
           .on(this._link, 'click', L.DomEvent.preventDefault)
