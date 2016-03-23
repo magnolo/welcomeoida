@@ -1,5 +1,5 @@
 @import "_colors";
-
+@import "_animation";
 // MAPBOX GL STUFF
 // #wo_map{
 //   width:100%;
@@ -42,64 +42,120 @@
 
       border-radius: 50%;
       animation-name: scaler;
-      animation-duration: 1s;
+      animation-duration: 1.5s;
       animation-iteration-count: infinite;
       animation-timing-function: ease-out;
     }
   }
+  .leaflet-control-container{
+    .leaflet-control-fullscreen {
+      a{
+        background-image: url('/images/markers/fullscreen.png');
+      }
+    }
+    .leaflet-bar{
+      border-radius: 2px;
+      a{
+        color:$color;
+        &:first-child{
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px;
+        }
+        &:last-child{
+           border-bottom-left-radius: 2px;
+           border-bottom-right-radius: 2px;
+        }
+      }
+    }
+  }
   .leaflet-popup{
     .leaflet-popup-close-button{
-
+      top:3px;
     }
     .leaflet-popup-content-wrapper{
       border-radius: 2px;
-      padding:0px;
-
+      padding:8px;
+      color:$color;
       .leaflet-popup-content{
         margin:0px;
         display:flex;
         flex-flow: wrap;
         align-items: flex-start;
+
         .header{
           position: relative;
           display: flex;
-          .image{
-
+          margin-left: -8px;
+          margin-right: -8px;
+          margin-top: -8px;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          width:calc(100% + 16px);
+          min-height: 200px;
+          align-items: center;
+          &::before{
+            content: '';
+            width:100%;
+            height:100%;
+            top:0px;
+            left:0px;
+            background-color: #000;
+            position: absolute;
+            opacity: 0.3;
+            transition: opacity .3s ease-in-out;
           }
           .title{
-            position: absolute;
+            //position: absolute;
             width: 100%;
             height: 100%;
             left: 0px;
-            display: flex;
-            align-items: center;
             text-align: center;
             font-size:2.5em;
             padding:5%;
+            position:relative;
+            z-index:3;
           }
+          /*.image{
+
+            filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+             filter: gray;
+             filter: grayscale(100%);
+          }*/
         }
         .body{
-          padding:16px;
+          padding:0px;
+          padding-right:20px;
           flex-direction: column;
+          &.event{
             width:240px;
+            padding:8px;
+          }
+          .report{
+            text-align: right;
+          }
+          .content{
+            margin:3px 0;
+            .text{
+              font-size:1.2em;
+              margin-left:3px
+            }
+            &.description{
+              margin:10px 10px;
+              margin-left:18px;
+            }
+          }
+
         }
-        img{
-          min-width:120px;
-          min-height:120px;
+        &:hover{
+          .header{
+            &::before{
+              opacity: 0;
+            }
+          }
         }
+
       }
     }
   }
-}
-
-@keyframes scaler {
-    0%   {
-      transform: scale(1);
-      opacity: 0.8;
-    }
-
-    100% {
-      transform: scale(3);
-      opacity: 0;
-    }
 }

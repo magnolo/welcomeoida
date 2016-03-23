@@ -1,1 +1,1 @@
-<div class="body">{title}</div>
+<div class="body person">{title}</div>

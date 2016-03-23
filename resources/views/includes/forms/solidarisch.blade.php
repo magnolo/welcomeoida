@@ -7,25 +7,25 @@
       <div class="row">
       <div class="input-field col s12">
         <input type="text" minlength="3" required name="firstname" id="firstname" />
-        <label>Vorname</label>
+        <label for="firstname">Vorname</label>
       </div>
     </div>
       <div class="row">
       <div class="input-field col s12">
         <input type="text" minlength="3" name="lastname" id="lastname" />
-        <label>Nachname</label>
+        <label for="lastname">Nachname</label>
       </div>
     </div>
       <div class="row">
       <div class="input-field col s12">
         <input type="email" name="email" id="email" />
-        <label>Email</label>
+        <label for="email">Email</label>
       </div>
     </div>
       <div class="row">
       <div class="input-field col s12">
         <input type="text" required name="location" minlength="3" class="location" id="location" />
-        <label>Adresse</label>
+        <label for="location">Adresse</label>
       </div>
     </div>
   </div>

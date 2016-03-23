@@ -288,6 +288,26 @@ form, .form {
   display: block;
   border-bottom: 1px solid #000; }
 
+@-webkit-keyframes scaler {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.8; }
+  100% {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0; } }
+
+@keyframes scaler {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.8; }
+  100% {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0; } }
+
 #wo_map {
   width: 100%;
   height: 600px;
@@ -309,15 +329,30 @@ form, .form {
       border-radius: 50%;
       -webkit-animation-name: scaler;
       animation-name: scaler;
-      -webkit-animation-duration: 1s;
-      animation-duration: 1s;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
       -webkit-animation-iteration-count: infinite;
       animation-iteration-count: infinite;
       -webkit-animation-timing-function: ease-out;
       animation-timing-function: ease-out; }
+  #wo_map .leaflet-control-container .leaflet-control-fullscreen a {
+    background-image: url("/images/markers/fullscreen.png"); }
+  #wo_map .leaflet-control-container .leaflet-bar {
+    border-radius: 2px; }
+    #wo_map .leaflet-control-container .leaflet-bar a {
+      color: #EB5B27; }
+      #wo_map .leaflet-control-container .leaflet-bar a:first-child {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px; }
+      #wo_map .leaflet-control-container .leaflet-bar a:last-child {
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px; }
+  #wo_map .leaflet-popup .leaflet-popup-close-button {
+    top: 3px; }
   #wo_map .leaflet-popup .leaflet-popup-content-wrapper {
     border-radius: 2px;
-    padding: 0px; }
+    padding: 8px;
+    color: #EB5B27; }
     #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content {
       margin: 0px;
       display: -webkit-flex;
@@ -333,50 +368,64 @@ form, .form {
         position: relative;
         display: -webkit-flex;
         display: -ms-flexbox;
-        display: flex; }
-        #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .header .title {
+        display: flex;
+        margin-left: -8px;
+        margin-right: -8px;
+        margin-top: -8px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: calc(100% + 16px);
+        min-height: 200px;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        /*.image{
+
+            filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale");
+             filter: gray;
+             filter: grayscale(100%);
+          }*/ }
+        #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .header::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          background-color: #000;
           position: absolute;
+          opacity: 0.3;
+          transition: opacity .3s ease-in-out; }
+        #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .header .title {
           width: 100%;
           height: 100%;
           left: 0px;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-align-items: center;
-          -ms-flex-align: center;
-          align-items: center;
           text-align: center;
           font-size: 2.5em;
-          padding: 5%; }
+          padding: 5%;
+          position: relative;
+          z-index: 3; }
       #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .body {
-        padding: 16px;
+        padding: 0px;
+        padding-right: 20px;
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
-        flex-direction: column;
-        width: 240px; }
-      #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content img {
-        min-width: 120px;
-        min-height: 120px; }
-
-@-webkit-keyframes scaler {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0.8; }
-  100% {
-    -webkit-transform: scale(3);
-    transform: scale(3);
-    opacity: 0; } }
-
-@keyframes scaler {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0.8; }
-  100% {
-    -webkit-transform: scale(3);
-    transform: scale(3);
-    opacity: 0; } }
+        flex-direction: column; }
+        #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .body.event {
+          width: 240px;
+          padding: 8px; }
+        #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .body .report {
+          text-align: right; }
+        #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .body .content {
+          margin: 3px 0; }
+          #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .body .content .text {
+            font-size: 1.2em;
+            margin-left: 3px; }
+          #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content .body .content.description {
+            margin: 10px 10px;
+            margin-left: 18px; }
+      #wo_map .leaflet-popup .leaflet-popup-content-wrapper .leaflet-popup-content:hover .header::before {
+        opacity: 0; }
 
 .facebook {
   color: #3b5998; }

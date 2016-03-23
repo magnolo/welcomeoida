@@ -28,15 +28,26 @@ class PoiController extends Controller
 
         if($poi->type_id == 2){
           $popup = $eventView;
+          $poi->img = "";
+          if($poi->image_id){
+            $poi->img = $poi->image->path;
+          }
+          if(!$poi->description){
+            $poi->description = "";
+          }
+          $poi->date = date('H:i', strtotime($poi->from_date));
+          if($poi->to_date != "0000-00-00 00:00:00"){
+            $poi->date .= " - ".date('H:i', strtotime($poi->to_date));
+          }
           $icon = [
               "iconUrl" => "/images/markers/bubble.png",
               "iconSize" => [40,33],
               "iconAnchor" => [20,33],
               "popupAnchor" => [0, -20],
-              "shadowUrl" => '/images/markers/bubble_shadow.png',
+              //"shadowUrl" => '/images/markers/bubble_shadow.png',
               //shadowRetinaUrl: 'my-icon-shadow@2x.png',
-              "shadowSize" => [40, 33],
-              "shadowAnchor" => [20, 33]
+              //"shadowSize" => [40, 33],
+              //"shadowAnchor" => [20, 33]
             ];
         }
         $entry = [
@@ -123,25 +134,25 @@ class PoiController extends Controller
       $address = $request->input('address');
       $address = $address['properties'];
 
-
       $event = new Poi();
       $event->image_id = $request->input('image_id');
       $event->lat = $request->input('lat');
       $event->lng = $request->input('lng');
       $event->email = $request->input('email');
       $event->title = $title;
+      $event->description = $request->input('description');
       $event->first_name = $request->input('first_name');
       $event->last_name = $request->input('last_name');
       $event->slug = str_slug($title);
       $event->ip_address = $request->ip();
-      $event->street_name = $address['street'];
+      $event->street_name = isset($address['street']) ? $address['street'] : null ;
       $event->country = $address['country'];
-      $event->building_number = $address['housenumber'];
+      $event->building_number = isset($address['housenumber']) ? $address['housenumber'] : null;
       $event->address = $address['label'];
-      $event->city = $address['locality'];
+      $event->city = $address['layer'] == 'region' ? $address['name'] : $address['locality'];
       $event->type_id = 2;
-      $event->from_date = $request->input('from_date');
-      $event->to_date = $request->input('to_date');
+      $event->from_date = '2016-06-21 '.$request->input('from_date');
+      $event->to_date = $request->input('to_date') != '' ? '2016-06-21 '.$request->input('to_date') : null;
       $event->save();
 
       if($request->input('solidarisch')){
