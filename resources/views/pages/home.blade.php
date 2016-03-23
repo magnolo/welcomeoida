@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('head')
     <!--<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />-->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 @stop
 @section('content')
 <div class="row center-align block">
@@ -22,7 +24,12 @@
 <div id="wo_map"></div>
 </div>
 @stop
+@section('scriptPluginsPre')
+<script src="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+@stop
 @section('scripts')
 <!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>-->
+
  {!! Html::script('/js/map.js') !!}
 @stop

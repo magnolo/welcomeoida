@@ -318,39 +318,7 @@ $(function(){
   		});
   	}
 
-		$('#showEventsForm').on('click', function(){
-	 	 	if( $('#eventForm').hasClass('hidden')){
-	 		 	$('#eventForm').animateCss('fadeInDown','', '#event');
-	 			$('#solidarischForm').animateCss('zoomOutLeft', 'hidden');
-
-	 	 	}
-	 		else{
-	 			$('#solidarischForm').animateCss('fadeInDown');
-	  			$('#eventForm').animateCss('zoomOutLeft', 'hidden');
-	  	 	}
-
-	 	});
+		
 	 	var newImage = null;
-	 	$("#image-upload").dropzone({
-	 		init:function(){
-	 			 this.on("success", function(file) {
-	 					newImage = JSON.parse(file.xhr.response);
-	 			 });
-	 		},
-	 		paramName:'image',
-	 		maxFilesize: 4,
-	 		multiple:false,
-	 		maxFiles:1,
-	 		addRemoveLinks:true,
-	 		acceptedFiles:'image/*',
-	 		url: "/api/images",
-	 		thumbnailWidth:336,
-	 		thumbnailHeight:150,
-	 		dictRemoveFile:'Bild löschen',
-	 		dictInvalidFileType:'Bilddatei?',
-	 		dictFileTooBig:'Die Datei ist zu groß!',
-	 		// success:function(file){
-	 		// 	console.log(JSON.parse(file.xhr.response));
-	 		// }
-	 	});
+
 })

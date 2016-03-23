@@ -67,9 +67,9 @@
       </div>
     </div>
 
-
+    @yield('scriptPluginsPre')
     <script src="{!! asset('js/vendor.js') !!}"></script>
-    @yield('scriptPlugins')
+  @yield('scriptPlugins')
     <script src="{!! asset('js/app.js') !!}"></script>
     @yield('scripts')
     {{--livereload--}}

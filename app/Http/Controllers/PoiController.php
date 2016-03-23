@@ -20,10 +20,24 @@ class PoiController extends Controller
 
       foreach($pois as $poi){
         $popup = $personView;
-        $icon = "/images/markers/ball.png";
+        $icon = [
+            "iconUrl" => "/images/markers/ball.png",
+            "iconSize" => [12,12],
+            "iconAnchor" => [6,6]
+          ];
+
         if($poi->type_id == 2){
           $popup = $eventView;
-          $icon = "/images/markers/ball.png";
+          $icon = [
+              "iconUrl" => "/images/markers/bubble.png",
+              "iconSize" => [40,33],
+              "iconAnchor" => [20,33],
+              "popupAnchor" => [0, -20],
+              "shadowUrl" => '/images/markers/bubble_shadow.png',
+              //shadowRetinaUrl: 'my-icon-shadow@2x.png',
+              "shadowSize" => [40, 33],
+              "shadowAnchor" => [20, 33]
+            ];
         }
         $entry = [
           "type" => "Feature",
@@ -33,11 +47,7 @@ class PoiController extends Controller
           ],
           "properties" => $poi->toArray(),
           "style" => [
-               "icon" => [
-                   "iconUrl" => $icon,
-                   "iconSize" => [16,16],
-                   "iconAnchor" => [8,8]
-                 ]
+               "icon" => $icon
             ],
           "popupTemplate" => $popup
 
