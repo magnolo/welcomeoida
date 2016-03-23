@@ -41,8 +41,8 @@ class PoiController extends Controller
           }
           $icon = [
               "iconUrl" => "/images/markers/bubble.png",
-              "iconSize" => [40,33],
-              "iconAnchor" => [20,33],
+              "iconSize" => [38,33],
+              "iconAnchor" => [19,33],
               "popupAnchor" => [0, -20],
               //"shadowUrl" => '/images/markers/bubble_shadow.png',
               //shadowRetinaUrl: 'my-icon-shadow@2x.png',
@@ -64,6 +64,14 @@ class PoiController extends Controller
 
         ];
         $data["features"][] = $entry;
+      }
+      return $data;
+    }
+    public function raw($type){
+      $pois = Poi::with(['type'])->get();
+      $data = array();
+      foreach ($pois as $key => $poi) {
+        $data[] = [$poi->lng, $poi->lat,500];
       }
       return $data;
     }

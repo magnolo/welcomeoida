@@ -17,6 +17,7 @@ Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
   Route::get('pois/humans', 'PoiController@humans');
   Route::post('pois/humans', 'PoiController@createHuman');
   Route::post('pois/events', 'PoiController@createEvent');
+  Route::get('pois/raw/{type}', 'PoiController@raw');
 
   Route::post('images', 'ImageController@upload');
   Route::group(['middleware' => ['auth:api'], 'prefix' => 'admin'], function(){
