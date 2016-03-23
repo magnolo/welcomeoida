@@ -321,7 +321,7 @@ $(function() {
 
   var HeatSwitch = L.Control.extend({
     options: {
-      position: 'bottomright'
+      position: 'topright'
     },
 
     onAdd: function(map) {
