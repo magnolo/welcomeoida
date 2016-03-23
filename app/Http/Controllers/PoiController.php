@@ -157,7 +157,7 @@ class PoiController extends Controller
       $event->country = $address['country'];
       $event->building_number = isset($address['housenumber']) ? $address['housenumber'] : null;
       $event->address = $address['label'];
-      $event->city = $address['layer'] == 'region' ? $address['name'] : $address['locality'];
+      $event->city = $address['layer'] == 'region' ? $address['name'] : $address['county'];
       $event->type_id = 2;
       $event->from_date = '2016-06-21 '.$request->input('from_date');
       $event->to_date = $request->input('to_date') != '' ? '2016-06-21 '.$request->input('to_date') : null;
