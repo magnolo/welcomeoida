@@ -20,8 +20,15 @@ Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
   Route::get('pois/raw/{type}', 'PoiController@raw');
 
   Route::post('images', 'ImageController@upload');
-  Route::group(['middleware' => ['auth:api'], 'prefix' => 'admin'], function(){
-    Route::get('pois/humans', 'Admin\AdminController@humans');
+  Route::group(['prefix' => 'admin', 'middleware' => 'auth:administrator'], function(){
+    Route::get('pois', 'Admin\AdminController@all');
+    Route::get('users', 'Admin\AdminController@users');
+    Route::put('users/{id}/role', 'Admin\AdminController@usersRole');
+    Route::get('roles', 'Admin\AdminController@roles');
+    Route::put('pois/public', 'Admin\AdminController@bulkPublic');
+    Route::put('pois/{id}', 'Admin\AdminController@update');
+    Route::patch('pois', 'Admin\AdminController@bulkDelete');
+
   });
 });
 

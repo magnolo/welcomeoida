@@ -41,11 +41,10 @@ class Authenticate
             if($request->ajax()){
               return response('Not allowed', 401);
             }
-            else{
+
               return redirect()->route('auth.login')
                   ->with('status', 'error')
                   ->with('message', 'Bitte melde dich an.');
-            }
 
         }
 
@@ -55,9 +54,13 @@ class Authenticate
         }
         if( $this->auth->guest() || !$this->auth->user()->hasRole($role))
         {
-          return redirect()->route('auth.login')
-              ->with('status', 'error')
-              ->with('message', 'Bitte melde dich an.');
+            if($request->ajax()){
+                return response('Not allowed', 401);
+            }
+            return redirect()->route('auth.login')
+                ->with('status', 'error')
+                ->with('message', 'Bitte melde dich an.');
+
         }
         return $next($request);
     }

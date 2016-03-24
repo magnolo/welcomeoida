@@ -12,7 +12,7 @@ class PoiController extends Controller
 {
     //
     public function all(){
-      $pois = Poi::with(['type', 'image'])->get();
+      $pois = Poi::where('is_public', 1)->with(['type', 'image'])->get();
       $data = ["features"=>[],"type" => "FeatureCollection"];
 
       $eventView = \View::make('includes.map.popups.event', [])->render();
