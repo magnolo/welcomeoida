@@ -128,8 +128,8 @@ class PoiController extends Controller
       $human->lng = $request->input('lng');
       $human->email = $request->input('email');
       $human->title = $title;
-      $human->first_name = $request->input('first_name');
-      $human->last_name = $request->input('last_name');
+      $human->first_name = $request->input('firstname');
+      $human->last_name = $request->input('lastname');
       $human->slug = str_slug($title);
       $human->ip_address = $request->ip();
       $human->save();
