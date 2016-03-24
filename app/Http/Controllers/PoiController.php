@@ -132,6 +132,7 @@ class PoiController extends Controller
       $human->last_name = $request->input('lastname');
       $human->slug = str_slug($title);
       $human->ip_address = $request->ip();
+      $human->is_public = 1;
       $human->save();
 
       return $human;
