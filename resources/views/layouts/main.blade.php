@@ -71,6 +71,7 @@
     <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <script src="{!! asset('js/vendor.js') !!}"></script>
+    <script src="js/locale/de-at.js"></script>
   @yield('scriptPlugins')
     <script src="{!! asset('js/app.js') !!}"></script>
     @yield('scripts')
