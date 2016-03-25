@@ -1,13 +1,16 @@
 <div class="row form z-depth-1 hidden" id="eventForm">
   @if(!Auth::check())
-  <div class="row">
+  <div style="margin-bottom:1.5em">
+    <div class="row">
   <p class="col s12 center-align">Bitte logge dich ein um eine Aktion zu erstellen!</p>
 </div>
 <div class="row">
-  <div class="col s12">
+  <div class="col s12 center-align">
        <button data-target="modalLogin" class="waves-effect waves-light btn full modal-trigger">Login</button>
-       <br /> <br />
+       <br /><br />
+       <a href="{{ route('auth.register') }}">Registrieren</a></div>
   </div>
+@include('includes.forms.socials')
 </div>
   @else
 
@@ -62,17 +65,17 @@ Eventfoto hochladen
     </div>
 
     <div class="row">
-        <p class="col s12">Kontaktangaben</p>
+        <p class="col s12">Kontaktangaben <small>(optional)</small></p>
     </div>
     <div class="row">
       <div class="input-field  col s12">
-          <input type="text" minlength="3" required  name="event_phone" id="event_phone" />
+          <input type="text" minlength="3"  name="event_phone" id="event_phone" />
         <label for="event_phone">Telefon</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field  col s12">
-          <input type="text" minlength="3" required  name="event_url" id="event_url" />
+          <input type="text" minlength="3"  name="event_url" id="event_url" />
         <label for="event_url">Website</label>
       </div>
     </div>

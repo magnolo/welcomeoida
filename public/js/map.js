@@ -3,7 +3,7 @@ $(function() {
   $.datas = {
     map: null,
     layer: null,
-    layers:{
+    layers: {
       heat: null,
       base: null,
       markers: null
@@ -160,8 +160,10 @@ $(function() {
   });
 
   //
-  $('.map_overlay').on('click', function(e){
-    $(this).fadeOut(function(){ $(this).remove()});
+  $('.map_overlay').on('click', function(e) {
+    $(this).fadeOut(function() {
+      $(this).remove()
+    });
   });
 
 
@@ -172,7 +174,7 @@ $(function() {
       $('#eventForm').animateCss('fadeInDown', '', '#eventForm');
       $('#solidarischForm').animateCss('zoomOutLeft', 'hidden');
     } else {
-      $('#solidarischForm').animateCss('fadeInDown','', '#solidarischForm');
+      $('#solidarischForm').animateCss('fadeInDown', '', '#solidarischForm');
       $('#eventForm').animateCss('zoomOutLeft', 'hidden');
     }
   });
@@ -252,8 +254,9 @@ $(function() {
         $('#event')[0].reset();
         $('#event label').removeClass('active');
         $('#event .btn').removeAttr('disabled');
+        //$("#image-upload").removeAllFiles();
       }).error(function(response) {
-        if(response.status == 401){
+        if (response.status == 401) {
           swal({
             title: "Nicht erlaubt!",
             text: "Bitte logge dich ein um ein Event zu erstellen!",
@@ -261,7 +264,7 @@ $(function() {
             confirmButtonText: "Ok!",
             confirmButtonColor: "#EB5B27"
           });
-        }else{
+        } else {
           swal({
             title: "Ouch!",
             text: "Da ist etwas schiefgelaufen!",
@@ -309,7 +312,7 @@ $(function() {
 
 
   //define image uploader
-  $("#image-upload").dropzone({
+  var uploader = $("#image-upload").dropzone({
     init: function() {
       this.on("success", function(file) {
         $.datas.newImage = JSON.parse(file.xhr.response);
@@ -346,24 +349,23 @@ $(function() {
       this._link.title = "Marker/Heatmap";
       this._icon = L.DomUtil.create('span', 'fa fa-bullseye', this._link);
       L.DomEvent
-          .on(this._link, 'click', L.DomEvent.stopPropagation)
-          .on(this._link, 'click', L.DomEvent.preventDefault)
-          .on(this._link, 'click', function() {
-              if($.datas.map.hasLayer($.datas.layers.heat)){
-                L.DomUtil.removeClasses(this._icon, 'fa fa-circle');
-                L.DomUtil.addClasses(this._icon, 'fa fa-bullseye');
-                $.datas.map.removeLayer($.datas.layers.heat);
-                $.datas.map.addLayer($.datas.layers.markers);
-              }
-              else{
+        .on(this._link, 'click', L.DomEvent.stopPropagation)
+        .on(this._link, 'click', L.DomEvent.preventDefault)
+        .on(this._link, 'click', function() {
+          if ($.datas.map.hasLayer($.datas.layers.heat)) {
+            L.DomUtil.removeClasses(this._icon, 'fa fa-circle');
+            L.DomUtil.addClasses(this._icon, 'fa fa-bullseye');
+            $.datas.map.removeLayer($.datas.layers.heat);
+            $.datas.map.addLayer($.datas.layers.markers);
+          } else {
 
-                L.DomUtil.removeClasses(this._icon, 'fa fa-bullseye');
-                L.DomUtil.addClasses(this._icon, 'fa fa-circle');
-                $.datas.map.removeLayer($.datas.layers.markers);
-                $.datas.map.addLayer($.datas.layers.heat);
-              }
-          }, this)
-          .on(this._link, 'dblclick', L.DomEvent.stopPropagation);
+            L.DomUtil.removeClasses(this._icon, 'fa fa-bullseye');
+            L.DomUtil.addClasses(this._icon, 'fa fa-circle');
+            $.datas.map.removeLayer($.datas.layers.markers);
+            $.datas.map.addLayer($.datas.layers.heat);
+          }
+        }, this)
+        .on(this._link, 'dblclick', L.DomEvent.stopPropagation);
 
       return container;
     }
@@ -400,5 +402,4 @@ $(function() {
   }
 
 });
-
 //# sourceMappingURL=map.js.map

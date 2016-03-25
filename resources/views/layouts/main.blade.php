@@ -15,21 +15,29 @@
     @include('layouts.nav')
     <div class="row" id="usermenu">
         <div class="col s12 ">
-
+        @if(!Auth::check())
         <ul class="pull-right">
 
-          @if(!Auth::check())
                <li><a href="#modalLogin" class="modal-trigger">Login</a></li>
-          @else
-               <li><a href="#">{{ Auth::user()->first_name }}</a></li>
-               @if(Auth::user()->hasRole("administrator"))
-                 <li><a href="{{ route('admin.home') }}">Admin</a></li>
-              @endif
-               <li><a href="{{ route('authenticated.logout') }}">Logout</a></li>
-          @endif
 
 
         </ul>
+        @else
+
+        <a class='dropdown-button btn-flat pull-right' href='#' data-activates='dropdown1'>Account</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#">Profil</a></li>
+          <li><a href="#">Events</a></li>
+          @if(Auth::user()->hasRole("administrator"))
+            <li><a href="{{ route('admin.home') }}">Admin</a></li>
+         @endif
+
+          <li class="divider"></li>
+          <li><a href="{{ route('authenticated.logout') }}">Logout</a></li>
+        </ul>
+        @endif
       </div>
     </div>
     @yield('content')
