@@ -1,4 +1,17 @@
 <div class="row form z-depth-1 hidden" id="eventForm">
+  @if(!Auth::check())
+  <div class="row">
+  <p class="col s12 center-align">Bitte logge dich ein um eine Aktion zu erstellen!</p>
+</div>
+<div class="row">
+  <div class="col s12">
+       <button data-target="modalLogin" class="waves-effect waves-light btn full modal-trigger">Login</button>
+       <br /> <br />
+  </div>
+</div>
+  @else
+
+
     <div class="row">
     <p class="col s12 center-align">Was planst du!</p>
   </div>
@@ -63,12 +76,13 @@ Eventfoto hochladen
         <label for="event_url">Website</label>
       </div>
     </div>
-    <div class="row">
+    <!--<div class="row">
     <div class="col s12">
        {!! app('captcha')->display(); !!}
      </div>
-   </div>
+   </div>-->
  </div>
    <button class="waves-effect waves-light btn full" type="submit" >Absenden</button>
     </form>
+      @endif
   </div>
