@@ -15,4 +15,10 @@ class UserMailer extends Mailer {
         $fromEmail  = env('FROM_MAIL');
         $this->sendTo($email, $subject, $fromEmail, $view, $data);
     }
+    public function newEvent($email, $data){
+      $view       = 'emails.new-event';
+      $subject    = $data['subject'];
+      $fromEmail  = env('FROM_MAIL');
+      $this->sendTo($email, $subject, $fromEmail, $view, $data, true);
+    }
 }

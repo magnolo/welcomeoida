@@ -104,6 +104,7 @@
   .leaflet-popup{
     .leaflet-popup-close-button{
       top:3px;
+      z-index: 1;
     }
     .leaflet-popup-content-wrapper{
       border-radius: 2px;

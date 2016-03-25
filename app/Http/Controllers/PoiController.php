@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Models\Poi;
+use App\Logic\User\UserRepository;
 
 class PoiController extends Controller
 {
@@ -138,7 +139,7 @@ class PoiController extends Controller
       return $human;
     }
 
-    public function createEvent(Request $request){
+    public function createEvent(Request $request, UserRepository $userRepository){
       $title = $request->input('title');
       $address = $request->input('address');
       $address = $address['properties'];
@@ -166,6 +167,7 @@ class PoiController extends Controller
       $event->to_date = $request->input('to_date') != '' ? '2016-06-21 '.$request->input('to_date') : null;
       $event->user_id = $user->id;
       $event->save();
+      $userRepository->newEvent( $user, $event );
 
       if($request->input('solidarisch')){
         $this->createHuman($request);

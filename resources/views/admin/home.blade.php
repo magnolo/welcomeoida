@@ -63,25 +63,25 @@
           <tr>
               <th><span><input ng-click="vm.selectAll(vm.personFilter)" ng-model="vm.selectedAllPersons" type="checkbox" id="select_all_persons" class="filled-in" />
                    <label for="select_all_persons"></label></span></th>
-              <th data-field="data">
+              <th class="added">
                 <a href="#" ng-click="vm.sortType = 'created_at'; vm.sortReverse = !vm.sortReverse">
                   Hinzugefügt
                   <span ng-show="vm.sortType == 'created_at' && !vm.sortReverse" class="fa fa-caret-down"></span>
                   <span ng-show="vm.sortType == 'created_at' && vm.sortReverse" class="fa fa-caret-up"></span>
                 </a>
               </th>
-              <th data-field="title"><a href="#" ng-click="vm.sortType = 'title'; vm.sortReverse = !vm.sortReverse">
+              <th ><a href="#" ng-click="vm.sortType = 'title'; vm.sortReverse = !vm.sortReverse">
                 Anzeige
                 <span ng-show="vm.sortType == 'title' && !vm.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="vm.sortType == 'title' && vm.sortReverse" class="fa fa-caret-up"></span>
               </a></th>
-              <th data-field="name">Name</th>
-              <th data-field="email"><a href="#" ng-click="vm.sortType = 'email'; vm.sortReverse = !vm.sortReverse">
+              <th>Name</th>
+              <th><a href="#" ng-click="vm.sortType = 'email'; vm.sortReverse = !vm.sortReverse">
                 Email
                 <span ng-show="vm.sortType == 'email' && !vm.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="vm.sortType == 'email' && vm.sortReverse" class="fa fa-caret-up"></span>
               </a></th>
-              <th data-field="public"><a href="#" ng-click="vm.sortType = 'is_public'; vm.sortReverse = !vm.sortReverse">
+              <th><a href="#" ng-click="vm.sortType = 'is_public'; vm.sortReverse = !vm.sortReverse">
                 Öffentlich
                 <span ng-show="vm.sortType == 'is_public' && !vm.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="vm.sortType == 'is_public' && vm.sortReverse" class="fa fa-caret-up"></span>
@@ -132,10 +132,19 @@
        </div>
      </div>
      <div class="row">
-       <div class="col s12">
+       <div class="col s6">
           @{{ (vm.pois | filter:{type_id: 2}).length }} Einträge |
           @{{ vm.eventFilter.length }} durch Filter |
           @{{ vm.selection.length}} ausgewählt
+        </div>
+        <div class="col s6 right-align">
+          <div class="switch">
+             <label>
+              <input type="checkbox"  ng-true-value="true" ng-false-value="false" ng-model="vm.showDescriptions">
+               <span class="lever"></span>
+               Beschreibungen
+             </label>
+           </div>
         </div>
      </div>
      <table class="striped display" >
@@ -143,7 +152,7 @@
           <tr>
             <th><span><input ng-change="vm.selectAll(vm.eventFilter)" ng-model="vm.selectedAllEvents" type="checkbox" id="select_all_events" class="filled-in" />
                  <label for="select_all_events"></label></span></th>
-              <th >
+              <th class="added">
                 <a href="#" ng-click="vm.sortType = 'created_at'; vm.sortReverse = !vm.sortReverse">
                   Hinzugefügt
                   <span ng-show="vm.sortType == 'created_at' && !vm.sortReverse" class="fa fa-caret-down"></span>
@@ -191,7 +200,7 @@
                  <label for="check_@{{ event.id}}"></label></span></td>
             <td ><small am-time-ago="event.created_at"></small></td>
             <td><img style="max-height:50px; max-width:50px" ng-src="@{{ event.image.path}}" /></td>
-            <td>@{{ event.title }} <br /><small><strong>@{{ event.address }}</strong></small></td>
+            <td>@{{ event.title }} <br /><small><strong>@{{ event.address }}</strong></small><div class="description" ng-if="event.description" ng-show="vm.showDescriptions">@{{ event.description}}</div></td>
             <td>@{{event.from_date | amDateFormat:'HH:mm'}}</td>
             <td>@{{event.to_date | amDateFormat:'HH:mm'}}</td>
             <td><div class="switch">

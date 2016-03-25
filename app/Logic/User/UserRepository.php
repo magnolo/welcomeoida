@@ -2,6 +2,7 @@
 use App\Logic\Mailers\UserMailer;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Poi;
 use App\Models\Password;
 use Hash, Carbon\Carbon;
 
@@ -38,5 +39,14 @@ class UserRepository {
             'email'         => $user->email
         ];
         $this->userMailer->passwordReset($user->email, $data);
+    }
+    public function newEvent(User $user, Poi $poi){
+      $data = [
+          'first_name'    => $user->first_name,
+          'subject'       => 'welcomeoida.at: '. $poi->title,
+          'email'         => $user->email,
+          'title'         => $poi->title
+      ];
+      $this->userMailer->newEvent($user->email, $data);
     }
 }
