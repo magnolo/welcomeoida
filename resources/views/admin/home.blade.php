@@ -3,11 +3,11 @@
 @stop
 @section('content')
 <div ng-app="wo">
-<div class="container" ng-controller="AdminController as vm" ng-init="vm.loggedUser == {{ Auth::user()->id}}">
+<div class="container ng-cloak" ng-controller="AdminController as vm" ng-init="vm.loggedUser == {{ Auth::user()->id}}">
 <div class="row">
-  <h2 class="col s12">Admin @{{ vm.loggedUser }}</h3>
+  <h2 class="col s12">Admin</h3>
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;" ng-if="vm.selection.length > 0">
-      <span>  @{{ vm.selection.length }} items </span>
+      <span> @{{ vm.selection.length }} items </span>
       <a class="btn-floating btn-large red">
         <i class="large material-icons">mode_edit</i>
 
@@ -31,27 +31,70 @@
      </ul>
    </div>
    <div id="solidarisch" class="col s12">
-
-
-     <table class="striped display">
+     <div class="row ">
+       <div class="input-field col s12 m6 l4 ">
+         <i class="material-icons prefix">search</i>
+         <input id="icon_prefix" type="text" ng-model="vm.peopleSearch" class="validate">
+         <label for="icon_prefix">Suchen</label>
+       </div>
+       <div class="col s12 m6 l4">
+         &nbsp;
+       </div>
+       <div class="col s12 m6 l4">
+         <label>Anzeige</label>
+          <select class="browser-default" ng-model="vm.searchLimit">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="">Alle</option>
+          </select>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col s12">
+          @{{ (vm.pois | filter:{type_id: 1}).length }} Einträge |
+          @{{ vm.personFilter.length }} durch Filter |
+          @{{ vm.selection.length}} ausgewählt
+        </div>
+     </div>
+     <table class="striped display ">
         <thead>
           <tr>
-              <th><span><input ng-change="vm.selectAll(1)" ng-model="vm.selectedAllPersons" type="checkbox" id="select_all_persons" class="filled-in" />
+              <th><span><input ng-click="vm.selectAll(vm.personFilter)" ng-model="vm.selectedAllPersons" type="checkbox" id="select_all_persons" class="filled-in" />
                    <label for="select_all_persons"></label></span></th>
-              <th data-field="data">Hinzügefügt</th>
-              <th data-field="title">Anzeige</th>
+              <th data-field="data">
+                <a href="#" ng-click="vm.sortType = 'created_at'; vm.sortReverse = !vm.sortReverse">
+                  Hinzugefügt
+                  <span ng-show="vm.sortType == 'created_at' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="vm.sortType == 'created_at' && vm.sortReverse" class="fa fa-caret-up"></span>
+                </a>
+              </th>
+              <th data-field="title"><a href="#" ng-click="vm.sortType = 'title'; vm.sortReverse = !vm.sortReverse">
+                Anzeige
+                <span ng-show="vm.sortType == 'title' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="vm.sortType == 'title' && vm.sortReverse" class="fa fa-caret-up"></span>
+              </a></th>
               <th data-field="name">Name</th>
-              <th data-field="email">Email</th>
-              <th data-field="public">Öffentlich</th>
+              <th data-field="email"><a href="#" ng-click="vm.sortType = 'email'; vm.sortReverse = !vm.sortReverse">
+                Email
+                <span ng-show="vm.sortType == 'email' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="vm.sortType == 'email' && vm.sortReverse" class="fa fa-caret-up"></span>
+              </a></th>
+              <th data-field="public"><a href="#" ng-click="vm.sortType = 'is_public'; vm.sortReverse = !vm.sortReverse">
+                Öffentlich
+                <span ng-show="vm.sortType == 'is_public' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="vm.sortType == 'is_public' && vm.sortReverse" class="fa fa-caret-up"></span>
+              </a></th>
               <th data-field="ip">IP</th>
           </tr>
         </thead>
         <tbody>
 
-           <tr ng-repeat="person in vm.pois | filter:{type_id: 1} | orderBy: vm.order">
-             <td><span><input type="checkbox" id="check_@{{ person.id}}" ng-model="person.selected" ng-change="vm.toggleSelected(person)" class="filled-in" ng-checked="vm.isSelected(person)"/>
+           <tr ng-repeat="person in (vm.personFilter = (vm.pois | filter:{type_id: 1} | filter:vm.peopleSearch | orderBy:vm.sortType:vm.sortReverse | limitTo:vm.searchLimit))">
+             <td><span><input type="checkbox" id="check_@{{ person.id}}" ng-model="person.selected" ng-click="vm.toggleSelected(person)" class="filled-in" ng-checked="vm.isSelected(person)"/>
                   <label for="check_@{{ person.id}}"></label></span></td>
-             <td am-time-ago="person.created_at"></td>
+             <td><small am-time-ago="person.created_at"></small></td>
              <td>@{{ person.title }}</td>
              <td>@{{ person.first_name + " " + person.last_name }}</td>
              <td>@{{ person.email}}</td>
@@ -61,41 +104,104 @@
                   <span class="lever"></span>
                 </label>
               </div></td>
-             <td>@{{ person.ip_address }}</td>
+             <td ng-click="vm.peopleSearch = person.ip_address"><small>@{{ person.ip_address }}</small></td>
            </tr>
 
        </tbody>
      </table>
    </div>
    <div id="events" class="col s12">
+     <div class="row ">
+       <div class="input-field col s12 m6 l4 ">
+         <i class="material-icons prefix">search</i>
+         <input id="icon_prefix" type="text" ng-model="vm.eventSearch" class="validate">
+         <label for="icon_prefix">Suchen</label>
+       </div>
+       <div class="col s12 m6 l4">
+         &nbsp;
+       </div>
+       <div class="col s12 m6 l4">
+         <label>Anzeige</label>
+          <select class="browser-default" ng-model="vm.searchLimit">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="">Alle</option>
+          </select>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col s12">
+          @{{ (vm.pois | filter:{type_id: 2}).length }} Einträge |
+          @{{ vm.eventFilter.length }} durch Filter |
+          @{{ vm.selection.length}} ausgewählt
+        </div>
+     </div>
      <table class="striped display" >
         <thead>
           <tr>
-            <th><span><input ng-change="vm.selectAll(2)" ng-model="vm.selectedAllEvents" type="checkbox" id="select_all_events" class="filled-in" />
+            <th><span><input ng-change="vm.selectAll(vm.eventFilter)" ng-model="vm.selectedAllEvents" type="checkbox" id="select_all_events" class="filled-in" />
                  <label for="select_all_events"></label></span></th>
-              <th data-field="id">Erstellt</th>
-              <th></th>
-              <th data-field="data">Title</th>
-              <th data-field="public">Public</th>
-              <th data-field="ip">IP</th>
+              <th >
+                <a href="#" ng-click="vm.sortType = 'created_at'; vm.sortReverse = !vm.sortReverse">
+                  Hinzugefügt
+                  <span ng-show="vm.sortType == 'created_at' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="vm.sortType == 'created_at' && vm.sortReverse" class="fa fa-caret-up"></span>
+                </a>
+              </th>
+              <th>Bild</th>
+              <th ><a href="#" ng-click="vm.sortType = 'title'; vm.sortReverse = !vm.sortReverse">
+                Titel
+                <span ng-show="vm.sortType == 'title' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="vm.sortType == 'title' && vm.sortReverse" class="fa fa-caret-up"></span>
+              </a></th>
+              <th>
+                <a href="#" ng-click="vm.sortType = 'from_date'; vm.sortReverse = !vm.sortReverse">
+                  von
+                  <span ng-show="vm.sortType == 'from_date' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="vm.sortType == 'from_date' && vm.sortReverse" class="fa fa-caret-up"></span>
+                </a>
+              </th>
+              <th>
+                <a href="#" ng-click="vm.sortType = 'to_date'; vm.sortReverse = !vm.sortReverse">
+                  bis
+                  <span ng-show="vm.sortType == 'to_date' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="vm.sortType == 'to_date' && vm.sortReverse" class="fa fa-caret-up"></span>
+                </a>
+              </th>
+              <th><a href="#" ng-click="vm.sortType = 'is_public'; vm.sortReverse = !vm.sortReverse">
+                Öffentlich
+                <span ng-show="vm.sortType == 'is_public' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="vm.sortType == 'is_public' && vm.sortReverse" class="fa fa-caret-up"></span>
+              </a></th>
+              <th><a href="#" ng-click="vm.sortType = 'user.last_name'; vm.sortReverse = !vm.sortReverse">
+                Benutzer
+                <span ng-show="vm.sortType == 'user.last_name' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="vm.sortType == 'user.last_name' && vm.sortReverse" class="fa fa-caret-up"></span>
+              </a></th>
+              <th >IP</th>
           </tr>
         </thead>
         <tbody>
 
-          <tr ng-repeat="event in vm.pois | filter:{type_id: 2}">
+          <tr ng-repeat="event in vm.eventFilter = (vm.pois | filter:{type_id: 2}  | filter:vm.eventSearch | orderBy:vm.sortType:vm.sortReverse | limitTo: vm.searchLimit)">
 
-            <td><span><input type="checkbox" id="check_@{{ event.id}}" ng-model="event.selected" ng-change="vm.toggleSelected(event)" class="filled-in" ng-checked="vm.isSelected(event)"/>
+            <td><span><input type="checkbox" id="check_@{{ event.id}}" ng-model="event.selected" ng-click="vm.toggleSelected(event)" class="filled-in" ng-checked="vm.isSelected(event)"/>
                  <label for="check_@{{ event.id}}"></label></span></td>
-            <td am-time-ago="event.created_at"></td>
+            <td ><small am-time-ago="event.created_at"></small></td>
             <td><img style="max-height:50px; max-width:50px" ng-src="@{{ event.image.path}}" /></td>
-            <td>@{{ event.title }}</td>
+            <td>@{{ event.title }} <br /><small><strong>@{{ event.address }}</strong></small></td>
+            <td>@{{event.from_date | amDateFormat:'HH:mm'}}</td>
+            <td>@{{event.to_date | amDateFormat:'HH:mm'}}</td>
             <td><div class="switch">
                <label>
                 <input type="checkbox" ng-change="vm.updatePoi(event)" ng-true-value="1" ng-false-value="0" ng-model="event.is_public">
                  <span class="lever"></span>
                </label>
              </div></td>
-            <td>@{{ event.ip_address }}</td>
+             <td>@{{ event.user.first_name + " " + event.user.last_name}}</td>
+            <td ng-click="vm.eventSearch = event.ip_address"><small>@{{ event.ip_address }}</small></td>
           </tr>
        </tbody>
      </table>
@@ -110,7 +216,7 @@
               <th data-field="id">Erstellt</th>
               <th></th>
               <th data-field="data">Name</th>
-              <th data-field="user">Rolle</th>
+              <th data-field="user">Rechte</th>
 
           </tr>
         </thead>

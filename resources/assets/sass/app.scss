@@ -135,6 +135,7 @@ form, .form {
   }
   div.error {
     position: absolute;
+    z-index:1;
     font-size: 0.7em;
     top: 1em;
     left: 100%;

@@ -15,4 +15,7 @@ class Poi extends Model
     public function image(){
       return $this->belongsTo('App\Models\Photo', 'image_id');
     }
+    public function user(){
+      return $this->belongsTo('App\Models\User', 'user_id');
+    }
 }

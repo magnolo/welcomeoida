@@ -159,6 +159,10 @@ $(function() {
     $.datas.layers.markers.addTo($.datas.map);
   });
 
+  //
+  $('.map_overlay').on('click', function(e){
+    $(this).fadeOut(function(){ $(this).remove()});
+  });
 
 
   //FROM STUFF

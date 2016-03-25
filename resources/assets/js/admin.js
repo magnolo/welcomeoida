@@ -3,10 +3,18 @@
     .run(function(amMoment) {
       amMoment.changeLocale('de-at');
     })
+    .filter('as', function($parse){
+      return function(value, context, path){
+        return $parse(path).assign(context, value);
+      }
+    })
     .controller('AdminController', function($http) {
       var vm = this;
 
       vm.pois = [], vm.users = [], vm.roles = [], vm.selection = [];
+      vm.sortType     = 'created_at'; // set the default sort type
+      vm.sortReverse  = true;  // set the default sort order
+      vm.searchLimit = "25";
       vm.updatePoi = updatePoi;
       vm.selectAll = selectAll;
       vm.isSelected = isSelected;
@@ -52,6 +60,7 @@
       }
 
       function toggleSelected(item) {
+        console.log(isSelected(item));
         if (isSelected(item)) {
           vm.selection.splice(vm.selection.indexOf(item), 1);
         } else {
@@ -59,12 +68,11 @@
         }
       }
 
-      function selectAll(type_id) {
-
-        angular.forEach(vm.pois, function(item) {
-          if (item.type_id == type_id) {
+      function selectAll(items) {
+        angular.forEach(items, function(item) {
+          //if (item.type_id == type_id) {
             toggleSelected(item);
-          }
+          //}
 
         });
       }

@@ -21,7 +21,13 @@
 <div class="row relative">
 @include('includes.forms.solidarisch')
 @include('includes.forms.events')
-<div id="wo_map"></div>
+<div class="map_wrapper">
+  <div id="wo_map" class="map"></div>
+  <div class="map_overlay">
+    <div class="info">
+      Klick auf die Karte zum aktivieren
+    </div>
+  </div>
 </div>
 @stop
 @section('scriptPluginsPre')

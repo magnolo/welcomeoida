@@ -16,10 +16,13 @@ Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
   Route::get('pois/all', 'PoiController@all');
   Route::get('pois/humans', 'PoiController@humans');
   Route::post('pois/humans', 'PoiController@createHuman');
-  Route::post('pois/events', 'PoiController@createEvent');
+
   Route::get('pois/raw/{type}', 'PoiController@raw');
 
-  Route::post('images', 'ImageController@upload');
+  Route::group(['middleware' => 'auth:all'], function(){
+    Route::post('images', 'ImageController@upload');
+    Route::post('pois/events', 'PoiController@createEvent');
+  });
   Route::group(['prefix' => 'admin', 'middleware' => 'auth:administrator'], function(){
     Route::get('pois', 'Admin\AdminController@all');
     Route::get('users', 'Admin\AdminController@users');

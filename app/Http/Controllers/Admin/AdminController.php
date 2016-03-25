@@ -18,7 +18,7 @@ class AdminController extends Controller{
       //->with('user', $this->auth->user());
   }
   public function all(){
-    $people =  Poi::with('type', 'image')->orderBy('created_at', 'DESC')->get();
+    $people =  Poi::with('type', 'image', 'user')->orderBy('created_at', 'DESC')->get();
     return $people;
   }
   public function roles(){

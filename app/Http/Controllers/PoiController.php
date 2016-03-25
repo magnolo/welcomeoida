@@ -143,6 +143,8 @@ class PoiController extends Controller
       $address = $request->input('address');
       $address = $address['properties'];
 
+      $user =  \Auth::user();
+
       $event = new Poi();
       $event->image_id = $request->input('image_id');
       $event->lat = $request->input('lat');
@@ -162,6 +164,7 @@ class PoiController extends Controller
       $event->type_id = 2;
       $event->from_date = '2016-06-21 '.$request->input('from_date');
       $event->to_date = $request->input('to_date') != '' ? '2016-06-21 '.$request->input('to_date') : null;
+      $event->user_id = $user->id;
       $event->save();
 
       if($request->input('solidarisch')){
