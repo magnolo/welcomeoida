@@ -235,7 +235,7 @@ $(function() {
       newEvent.description = $('#event_description').val();
       newEvent.lat = $.datas.newPoint.address.geometry.coordinates[0];
       newEvent.lng = $.datas.newPoint.address.geometry.coordinates[1];
-      if ($.datas.newImage.id) {
+      if ($.datas.newImage) {
         newEvent.image_id = $.datas.newImage.id;
       }
 
@@ -253,13 +253,24 @@ $(function() {
         $('#event label').removeClass('active');
         $('#event .btn').removeAttr('disabled');
       }).error(function(response) {
-        swal({
-          title: "Ouch!",
-          text: "Da ist etwas schiefgelaufen!",
-          type: "error",
-          confirmButtonText: "Ok!",
-          confirmButtonColor: "#EB5B27"
-        });
+        if(response.status == 401){
+          swal({
+            title: "Nicht erlaubt!",
+            text: "Bitte logge dich ein um ein Event zu erstellen!",
+            type: "error",
+            confirmButtonText: "Ok!",
+            confirmButtonColor: "#EB5B27"
+          });
+        }else{
+          swal({
+            title: "Ouch!",
+            text: "Da ist etwas schiefgelaufen!",
+            type: "error",
+            confirmButtonText: "Ok!",
+            confirmButtonColor: "#EB5B27"
+          });
+        }
+
         $('#event .btn').removeAttr('disabled');
       });
     }

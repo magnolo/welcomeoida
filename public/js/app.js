@@ -15,6 +15,14 @@ $.extend($.validator.messages, {
   creditcard: "Geben Sie bitte eine gültige Kreditkarten-Nummer ein."
 });
 $(function() {
+  //Setup AJAX CALLS
+  $.ajaxSetup({
+    statusCode: {
+        401: function(){
+            console.log("sfsdf");
+        }
+    }
+  });
 
   //Sidenav
   $(".button-collapse").sideNav();

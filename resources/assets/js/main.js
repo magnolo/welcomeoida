@@ -1,4 +1,12 @@
 $(function() {
+  //Setup AJAX CALLS
+  $.ajaxSetup({
+    statusCode: {
+        401: function(){
+            console.log("sfsdf");
+        }
+    }
+  });
 
   //Sidenav
   $(".button-collapse").sideNav();
