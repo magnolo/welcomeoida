@@ -83,7 +83,14 @@ img{
   }
   .dropdown-button {
     margin: 1em 0;
+    padding:0;
     text-transform: capitalize;
+  }
+  @media screen and (max-width: 600px){
+    position: static;
+    .dropdown-button{
+      margin:.5em;
+    }
   }
 }
 #solidarischForm {
