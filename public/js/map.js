@@ -297,7 +297,7 @@ $(function() {
       error.appendTo(element.parent(".input-field"));
     },
     submitHandler: function(form) {
-      debugger;
+
       newPartner.name = $('#partner_name').val();
       newPartner.email = $('#partner_email').val();
       newPartner.address = $('#partner_location').val();
@@ -308,6 +308,16 @@ $(function() {
       newPartner.image_id = 0;
       if ($.datas.partnerImage) {
         newPartner.image_id = $.datas.partnerImage.id;
+      }
+      else{
+        swal({
+          title: "Kein Logo?",
+          text: "Wir benötigen dein Logo für unsere Website!",
+          type: "error",
+          confirmButtonText: "Ok!",
+          confirmButtonColor: "#EB5B27"
+        });
+        return false;
       }
 
       $('#partner .btn').attr('disabled', true);
