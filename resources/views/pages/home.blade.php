@@ -38,7 +38,7 @@
   </div>
   <div class="col s12 m7">
     <a href="#modalPartner" class="modal-trigger btn big waves-effect waves-light">Partner*in werden</a>
-  </div>
+
   <div class="row">
     @foreach($partners as $partner)
       <div class="col s6 m3">
@@ -48,6 +48,7 @@
       </div>
     @endforeach
   </div>
+    </div>
 </div>
 </div>
 <div id="modalPartner" class="modal">
