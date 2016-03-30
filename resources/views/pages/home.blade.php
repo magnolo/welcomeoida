@@ -39,6 +39,15 @@
   <div class="col s12 m7">
     <a href="#modalPartner" class="modal-trigger btn big waves-effect waves-light">Partner*in werden</a>
   </div>
+  <div class="row">
+    @foreach($partners as $partner)
+      <div class="col s6 m3">
+        <a href="http://{{ $partner->url}}" target="_blank">
+          <img src="{{ $partner->image->path}}" />
+        </a>
+      </div>
+    @endforeach
+  </div>
 </div>
 </div>
 <div id="modalPartner" class="modal">
