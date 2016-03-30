@@ -54,10 +54,20 @@ class AdminController extends Controller{
 
     return $poi;
   }
-  public function bulkPublic(Request $request){
-    $pois = Poi::whereIn('id', $request->input('ids'))->update([
+  public function bulkPublic(Request $request, UserRepository $userRepository){
+    $pois = Poi::whereIn('id', $request->input('ids'));
+    $pois->update([
       'is_public' => $request->input('is_public')
     ]);
+    if($request->input('is_public')){
+      foreach ($pois as $key => $poi) {
+        if($poi->user_id){
+          $user = User::find($poi->user_id);
+          $userRepository->publicEvent( $user, $poi );
+        }
+      }
+    }
+
     return $pois;
   }
   public function bulkDelete(Request $request){
