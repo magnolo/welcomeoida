@@ -1,69 +1,85 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 @import "_colors";
-
-html,
-body {
+body,
+html {
   padding: 0;
   margin: 0;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 body {
   background: #fff;
-font-family: 'Sarala', sans-serif;
+  font-family: 'Sarala', sans-serif;
   font-size: 16px;
 }
-h1,h2,h3,h4{
-  color:$color;
+h1,
+h2,
+h3,
+h4 {
+  color: $color;
 }
-.mt1{
-  margin-top:1em;
+.mt1 {
+  margin-top: 1em;
 }
-.mb1{
+.mb1 {
   margin-bottom: 1em;
 }
-.blued{
-  color:$blued;
+.blued {
+  color: $blued;
 }
-.greeny{
-  color:$greeny;
+.greeny {
+  color: $greeny;
 }
-.relative{
-  position:relative;
+.relative {
+  position: relative;
 }
-.overflow-none{
+.overflow-none {
   overflow: hidden;
 }
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
-#loader{
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
+.banner{
+  font-size:3em;
+  text-align: center;
+  max-width: 300px;
+  .title{
+    color:$white;
+    background: $color;
+    padding: .2em;
+  }
+  .slogan{
+    color:$color;
+    padding:.2em;
+    line-height: 1.2em;
+    background-color: lighten($color, 25);
+  }
+}
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   z-index: 1;
-  .preloader-wrapper{
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-32px;
-    margin-top:-32px;
+  .preloader-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
   }
 }
-#usermenu{
+#usermenu {
   position: absolute;
-  right:0px;
-  a{
-    color:$color;
-    font-size:1.5em;
+  right: 0;
+  a {
+    color: $color;
+    font-size: 1.5em;
   }
-  .dropdown-button{
-    margin:1em 0;
-
+  .dropdown-button {
+    margin: 1em 0;
     text-transform: capitalize;
   }
 }
@@ -73,40 +89,39 @@ h1,h2,h3,h4{
   left: 40px;
   width: 347px;
   z-index: 2;
-  @media screen and (max-width: 699px){
+  @media screen and (max-width: 699px) {
     position: static;
-    margin:0 auto;
+    margin: 0 auto;
     width: 100%;
-
   }
 }
 #eventForm {
   position: absolute;
-  top: -180px;
+  top: -300px;
   left: 40px;
   width: 347px;
   z-index: 2;
-  @media screen and (max-width: 699px){
+  @media screen and (max-width: 699px) {
     position: static;
-    margin:0 auto;
+    margin: 0 auto;
     width: 100%;
-
   }
 }
-form, .form {
-  background-color: $white ;
+.form,
+form {
+  background-color: $white;
   border-radius: 2px;
   h3,
-  small,
-  p {
+  p,
+  small {
     color: $color;
   }
   .row {
     margin-bottom: 0;
   }
-  input[type=text],
   input[type=email],
-  input[type=password] {
+  input[type=password],
+  input[type=text] {
     height: 2.5rem;
     border-bottom-color: $color;
     &:focus {
@@ -124,7 +139,7 @@ form, .form {
       }
     }
   }
-  textarea{
+  textarea {
     border-bottom-color: $color;
     &:focus {
       border-bottom-color: $color !important;
@@ -146,7 +161,7 @@ form, .form {
   }
   div.error {
     position: absolute;
-    z-index:1;
+    z-index: 1;
     font-size: 0.7em;
     top: 1em;
     left: 100%;
@@ -166,17 +181,17 @@ form, .form {
       left: -11px;
       top: 0;
     }
-    @media screen and (max-width:991px){
-      position:relative;
-      left:0;
-      top:-2px;
-      &::before{
-        border-top: 0px solid transparent;
+    @media screen and (max-width:991px) {
+      position: relative;
+      left: 0;
+      top: -2px;
+      &::before {
+        border-top: 0 solid transparent;
         border-bottom: 11px solid $color;
         border-right: 11px solid transparent;
         border-left: 11px solid transparent;
-        left:0px;
-        top:-11px;
+        left: 0;
+        top: -11px;
       }
     }
   }
@@ -186,28 +201,59 @@ form, .form {
     border: 3px solid $color;
     background-color: #fff;
     color: $color;
-
     cursor: pointer;
     height: auto;
     min-height: 48px;
-    &.full{
+    &.full {
       width: 100%;
     }
-
     &[disabled] {
       border: 3px solid #DFDFDF;
     }
-    &:hover{
+    &:hover {
       background-color: $color;
+      color: $white;
+    }
+    &.big{
+      background-color:$color;
       color:$white;
+      width:100%;
     }
   }
 }
-.icon{
-  width:48px;
-  text-align:center;
+.btn {
+
+  padding: 0 0.5em;
+  border: 3px solid $color;
+  background-color: #fff;
+  color: $color;
+  cursor: pointer;
+  height: auto;
+  min-height: 48px;
+  &.full {
+    width: 100%;
+  }
+  &[disabled] {
+    border: 3px solid #DFDFDF;
+  }
+  &:hover {
+    background-color: $color;
+    color: $white;
+  }
+  &.big{
+    background-color:$color;
+    color:$white;
+    width:100%;
+    font-size:1.5em;
+    padding:.5em;
+    text-transform: none;
+  }
 }
-.modal{
+.icon {
+  width: 48px;
+  text-align: center;
+}
+.modal {
   background-color: $white;
   max-width: 600px;
 }
@@ -217,58 +263,68 @@ form, .form {
     border-radius: 2px;
   }
 }
-.block{
-  margin:3rem 0;
-  margin-bottom:1rem;
-  h1,h2,h3,h3,h4,h5{
-    margin:.5rem 0;
+.block {
+  margin: 3rem 0 1rem;
+  h1,
+  h2,
+  h3,
+  h3,
+  h4,
+  h5 {
+    margin: 0.5rem 0;
   }
-  h2{
-    font-size:2.5rem;
+  h2 {
+    font-size: 2.5rem;
   }
-  p{
+  p {
     max-width: 50%;
-    margin:2rem auto;
+    margin: 2rem auto;
   }
 }
-.dropzone{
-  margin:1rem 0;
-  .fa{
-    font-size:2em;
+.dropzone {
+  margin: 1rem 0;
+  .fa {
+    font-size: 2em;
   }
-  border:2px solid $color;
-  color:$white;
-  background: #f5c19a; /* Old browsers */
-background: -moz-linear-gradient(left,  #f5c19a 0%, #e69dbb 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  #f5c19a 0%,#e69dbb 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  #f5c19a 0%,#e69dbb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5c19a', endColorstr='#e69dbb',GradientType=1 ); /* IE6-9 */
-background-position: center center;
-background-repeat: no-repeat;
-background-size: cover;
-  &.dz-started,&.dz-complete{
-    padding:0px;
-    .dz-preview{
-      &.dz-image-preview{
-        background:transparent;
-        margin:0px;
-        width:100%;
-        min-height:150px;
-        .dz-image{
-          border-radius: 0px;
+  border: 2px solid $color;
+  color: $white;
+  background: #f5c19a;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #f5c19a 0%, #e69dbb 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #f5c19a 0%,#e69dbb 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #f5c19a 0%,#e69dbb 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#f5c19a', endColorstr='#e69dbb',GradientType=1 );
+  /* IE6-9 */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &.dz-complete,
+  &.dz-started {
+    padding: 0;
+    .dz-preview {
+      &.dz-image-preview {
+        background: transparent;
+        margin: 0;
+        width: 100%;
+        min-height: 150px;
+        .dz-image {
+          border-radius: 0;
           overflow: hidden;
           width: 100%;
           height: 150px;
           position: relative;
           display: block;
           z-index: 10;
-          img{
-            width:100%;
-            height:150px;
+          img {
+            width: 100%;
+            height: 150px;
           }
         }
       }
-      .dz-remove{
+      .dz-remove {
         position: absolute;
         top: -1.5em;
         z-index: 100;
@@ -276,16 +332,16 @@ background-size: cover;
         color: $white;
         background: $color;
         font-weight: normal;
-        padding:0 .5em;
-        border-radius: 3px 3px 0px 0px;
+        padding: 0 0.5em;
+        border-radius: 3px 3px 0 0;
       }
-      .dz-error-message{
-        background:$color;
-        border-radius:2px;
+      .dz-error-message {
+        background: $color;
+        border-radius: 2px;
         left: 10px;
         width: 160px;
-        &::after{
-          border-bottom-color:$color;
+        &::after {
+          border-bottom-color: $color;
         }
       }
     }

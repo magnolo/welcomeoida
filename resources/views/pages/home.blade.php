@@ -21,6 +21,7 @@
 <div class="row relative">
 @include('includes.forms.solidarisch')
 @include('includes.forms.events')
+</div>
 <div class="map_wrapper">
   <div id="wo_map" class="map"></div>
   <div class="map_overlay">
@@ -29,7 +30,19 @@
     </div>
   </div>
 </div>
+<div class="container mt1">
+<div class="row">
+  <div class="col s12 m5">
+      @include('includes.banner')
+      @include('pages.public.partials.was-wir-tun')
+  </div>
+  <div class="col s12 m7">
+    <button class="btn big waves-effect waves-light">Partner*in werden</button>
+  </div>
+</div>
+</div>
 @stop
+
 @section('scriptPluginsPre')
 
 @stop
