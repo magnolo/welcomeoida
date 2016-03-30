@@ -12,6 +12,58 @@ use App\Logic\User\UserRepository;
 class PoiController extends Controller
 {
     //
+    public function byId($id){
+      $poi = Poi::where('id', $id)->with(['type', 'image'])->first();
+      $data = ["features"=>[],"type" => "FeatureCollection"];
+      $eventView = \View::make('includes.map.popups.event', [])->render();
+      $personView = \View::make('includes.map.popups.person', [])->render();
+      $popup = $personView;
+      $icon = [
+          "iconUrl" => "/images/markers/ball.png",
+          "iconSize" => [12,12],
+          "iconAnchor" => [6,6]
+        ];
+
+      if($poi->type_id == 2){
+        $popup = $eventView;
+        $poi->img = "";
+        if($poi->image_id){
+          $poi->img = $poi->image->path;
+        }
+        if(!$poi->description){
+          $poi->description = "";
+        }
+        $poi->date = date('H:i', strtotime($poi->from_date));
+        if($poi->to_date != "0000-00-00 00:00:00"){
+          $poi->date .= " - ".date('H:i', strtotime($poi->to_date));
+        }
+        $icon = [
+            "iconUrl" => "/images/markers/bubble.png",
+            "iconSize" => [38,33],
+            "iconAnchor" => [19,33],
+            "popupAnchor" => [0, -20],
+            //"shadowUrl" => '/images/markers/bubble_shadow.png',
+            //shadowRetinaUrl: 'my-icon-shadow@2x.png',
+            //"shadowSize" => [40, 33],
+            //"shadowAnchor" => [20, 33]
+          ];
+      }
+      $entry = [
+        "type" => "Feature",
+        "geometry" => [
+          "type" => "Point",
+          "coordinates" => [$poi->lat, $poi->lng]
+        ],
+        "properties" => $poi->toArray(),
+        "style" => [
+             "icon" => $icon
+          ],
+        "popupTemplate" => $popup
+
+      ];
+      $data["features"][] = $entry;
+      return $data;
+    }
     public function all(){
       $pois = Poi::where('is_public', 1)->with(['type', 'image'])->get();
       $data = ["features"=>[],"type" => "FeatureCollection"];

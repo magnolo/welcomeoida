@@ -1,5 +1,5 @@
 @if(Session::has('message'))
-    @section('scripts')
+    @section('scriptsPost')
     <script>
       swal({
         title:"{{ Session::get('title') }}",

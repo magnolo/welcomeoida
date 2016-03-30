@@ -5,7 +5,7 @@
 <div ng-app="wo">
 <div class="container ng-cloak" ng-controller="AdminController as vm" ng-init="vm.loggedUser == {{ Auth::user()->id}}">
 <div class="row">
-  <h2 class="col s12">Admin</h3>
+  <h3 class="col s12">Admin</h3>
     <div class="fixed-action-btn" style="bottom: 45px; right: 24px;" ng-if="vm.selection.length > 0">
       <span> @{{ vm.selection.length }} items </span>
       <a class="btn-floating btn-large red">

@@ -42,6 +42,12 @@ body {
 h1, h2, h3, h4 {
   color: #EB5B27; }
 
+.mt1 {
+  margin-top: 1em; }
+
+.mb1 {
+  margin-bottom: 1em; }
+
 .blued {
   color: #11A0D2; }
 
@@ -249,7 +255,10 @@ form, .form {
   background: linear-gradient(to right, #f5c19a 0%, #e69dbb 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5c19a', endColorstr='#e69dbb',GradientType=1 );
-  /* IE6-9 */ }
+  /* IE6-9 */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; }
   .dropzone .fa {
     font-size: 2em; }
   .dropzone.dz-started, .dropzone.dz-complete {

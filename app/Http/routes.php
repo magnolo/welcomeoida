@@ -13,10 +13,11 @@
 
 
 Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
+
   Route::get('pois/all', 'PoiController@all');
   Route::get('pois/humans', 'PoiController@humans');
   Route::post('pois/humans', 'PoiController@createHuman');
-
+  Route::get('pois/{id}', 'PoiController@byId');
   Route::get('pois/raw/{type}', 'PoiController@raw');
 
   Route::group(['middleware' => 'auth:all'], function(){
@@ -66,6 +67,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::group(['middleware' => 'auth:all'], function(){
         Route::get('/logout', ['as' => 'authenticated.logout', 'uses' => 'Auth\AuthController@getLogout']);
+        Route::get('/events', ['as' => 'user.events', 'uses' => 'EventController@userEvents']);
+        Route::get('/events/{id}', ['as' => 'user.event', 'uses' => 'EventController@showEvent']);
+        Route::put('/events/{id}', ['as' => 'user.event-update', 'uses' => 'EventController@updateEvent']);
     });
 
     Route::group(['middleware' => 'auth:administrator'], function(){

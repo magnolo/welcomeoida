@@ -23,6 +23,7 @@ elixir(function(mix) {
     .sass('./resources/assets/sass/**/*.scss', 'public/css')
     .scripts(['translation.js', 'main.js'], 'public/js/app.js')
     .scripts(['map.js'], 'public/js/map.js')
+    .scripts(['event.js'], 'public/js/event.js')
     .scripts(['admin.js'], 'public/js/admin.js')
     .livereload([
       'resources/views/**/*.php',

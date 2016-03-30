@@ -29,21 +29,30 @@
 </div>
 </div>
 <div class="row">
-<p class="col s12">
-        {!! Form::checkbox('remember', true) !!}
-           <label for="remember">Angemeldet bleiben</label>
-</p>
-</div>
-<div class="row">
-<div class="col s12 right-align">
+<div class="col s12">
 <button class="btn" type="submit">Anmelden</button>
 </div>
 </div>
 <div class="row">
-<div class="col s6"><a href="{{ route('auth.password') }}">Passwort vergessen?</a></div>
-<div class="col s6"><a href="{{ route('auth.register') }}">Keinen Account?</a></div>
+<div class="col s12 mt1"><a href="{{ route('auth.password') }}">Passwort vergessen?</a></div>
+
+</div>
+@include('includes.forms.socials')
+<div class="row ">
+<p class="col s12 ">
+        {!! Form::checkbox('remember', true) !!}
+           <label for="remember">Angemeldet bleiben</label>
+</p>
 </div>
 
-@include('includes.forms.socials')
+
+<div class="row">
+<div class="col s12"><a href="{{ route('auth.register') }}">Noch nicht registriert?</a></div>
+</div>
+<div class="row">
+<div class="col s12"><a class="btn" href="{{ route('auth.register') }}">registrieren</a></div>
+</div>
+
+
 </div>
 {!! Form::close() !!}

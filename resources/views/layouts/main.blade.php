@@ -28,8 +28,8 @@
 
         <!-- Dropdown Structure -->
         <ul id='dropdown1' class='dropdown-content'>
-          <li><a href="#">Profil</a></li>
-          <li><a href="#">Events</a></li>
+          <!--<li><a href="#">Profil</a></li>-->
+          <li><a href="{{ route('user.events') }}">Events</a></li>
           @if(Auth::user()->hasRole("administrator"))
             <li><a href="{{ route('admin.home') }}">Admin</a></li>
          @endif
@@ -54,10 +54,11 @@
     <script src="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.js"></script>
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <script src="{!! asset('js/vendor.js') !!}"></script>
-    <script src="js/locale/de-at.js"></script>
-  @yield('scriptPlugins')
+    <script src="/js/locale/de-at.js"></script>
+    @yield('scriptPlugins')
     <script src="{!! asset('js/app.js') !!}"></script>
     @yield('scripts')
+    @yield('scriptsPost')
     {{--livereload--}}
     @if ( env('APP_ENV') === 'local' )
     <script type="text/javascript">
