@@ -49,4 +49,13 @@ class UserRepository {
       ];
       $this->userMailer->newEvent($user->email, $data);
     }
+    public function publicEvent(User $user, Poi $poi){
+      $data = [
+          'first_name'    => $user->first_name,
+          'subject'       => 'welcomeoida.at: '. $poi->title. ' Freischaltung',
+          'email'         => $user->email,
+          'title'         => $poi->title
+      ];
+      $this->userMailer->publicEvent($user->email, $data);
+    }
 }

@@ -7,6 +7,7 @@ use App\Models\Poi;
 use App\Models\User;
 use App\Models\Role;
 use Illuminate\Http\Request;
+use App\Logic\User\UserRepository;
 
 use App\Http\Requests;
 
@@ -39,10 +40,18 @@ class AdminController extends Controller{
     return $role;
 
   }
-  public function update(Request $request, $id ){
+  public function update(Request $request, UserRepository $userRepository, $id ){
     $poi = Poi::findOrFail($id);
     $poi->is_public = $request->input('is_public');
     $poi->save();
+    if($poi->is_public){
+      if($poi->user_id){
+        $user = User::find($poi->user_id);
+        $userRepository->publicEvent( $user, $poi );
+      }
+
+    }
+
     return $poi;
   }
   public function bulkPublic(Request $request){
