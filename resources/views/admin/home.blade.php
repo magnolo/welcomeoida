@@ -225,6 +225,7 @@
               <th></th>
               <th data-field="data">Name</th>
               <th data-field="data">Email</th>
+              <th data-field="data">Tel.</th>
               <th data-field="data">Org.</th>
               <th data-field="user">Öffentlich</th>
 
@@ -240,6 +241,7 @@
                 <td><img style="max-height:50px; max-width:50px" ng-src="@{{ partner.image.path}}" /></td>
               <td>@{{ partner.name }}</td>
               <td>@{{ partner.email }}</td>
+              <td>@{{ partner.phone }}</td>
               <td>@{{ partner.organisation }}</td>
               <td>
                 <div class="switch">

@@ -64,7 +64,7 @@ class UserRepository {
           'name'    => $partner->name,
           'subject'       => 'welcomeoida.at: Freischaltung als Partner',
           'email'         => $partner->email,
-          'title'         => $partner->title
+          'title'         => $partner->name
       ];
       $this->userMailer->publicPartner($partner->email, $data);
     }
