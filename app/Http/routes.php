@@ -75,4 +75,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => 'auth:administrator'], function(){
       Route::get('/admin', ['as' => 'admin.home', 'uses' => 'Admin\AdminController@home']);
     });
+
+    Route::get('/{page}',['as' => 'page', 'uses' => 'PageController@show']);
 });
