@@ -437,7 +437,7 @@ form {
     position: absolute;
     width: 100%;
     height: 600px;
-    max-height: 80%;
+    max-height: 100%;
     z-index: 1;
     top: 0px;
     left: 0px;
@@ -464,12 +464,12 @@ form {
       opacity: .5; }
     @media screen and (max-height: 600px) {
       .map_wrapper .map_overlay {
-        height: 400px; } }
+        height: 420px; } }
 
 #wo_map {
   width: 100%;
   height: 600px;
-  max-height: 80%;
+  max-height: 100%;
   color: #EB5B27;
   z-index: 1;
   opacity: 1; }
@@ -611,7 +611,7 @@ form {
         transform: scale(0.9); }
   @media screen and (max-height: 600px) {
     #wo_map {
-      height: 400px; } }
+      height: 420px; } }
 
 .facebook {
   color: #3b5998; }

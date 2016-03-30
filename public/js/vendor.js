@@ -33292,43 +33292,51 @@ L.HeatLayer=(L.Layer?L.Layer:L.Class).extend({initialize:function(t,i){this._lat
  * @author Alexander Burtsev, http://burtsev.me, 2014
  * @license MIT
  */
-(function (window, document, undefined) {
-	if ( !window.L || !L.GeoJSON ) {
-		return;
-	}
+(function(window, document, undefined) {
+  if (!window.L || !L.GeoJSON) {
+    return;
+  }
 
-	L.GeoJSON.CSS = L.GeoJSON.extend({
-		initialize: function (geojson, options) {
-			var styledOptions = L.extend({}, options, {
-				onEachFeature: function(geojson, layer) {
-					if ( options && options.onEachFeature ) {
-						options.onEachFeature(geojson, layer);
-					}
+  L.GeoJSON.CSS = L.GeoJSON.extend({
+    initialize: function(geojson, options) {
+      var styledOptions = L.extend({}, options, {
+        onEachFeature: function(geojson, layer) {
+          if (options && options.onEachFeature) {
+            options.onEachFeature(geojson, layer);
+          }
 
-					var style = geojson.style;
-					if ( style ) {
-						if ( layer instanceof L.Marker && style.icon ) {
-							layer.setIcon(L.icon(style.icon));
-						} else {
-							layer.setStyle(style);
-						}
-					}
-				}
-			});
+          var style = geojson.style,
+            template = geojson.popupTemplate;
 
-			L.setOptions(this, styledOptions);
+          if (style) {
+            if (layer instanceof L.Marker) {
+              if (style.icon) {
+                layer.setIcon(L.icon(style.icon));
+              }
+            } else {
+              layer.setStyle(style);
+            }
+          }
 
-			this._layers = {};
+          if (template && geojson.properties) {
+            layer.bindPopup(L.Util.template(template, geojson.properties));
+          }
+        }
+      });
 
-			if (geojson) {
-				this.addData(geojson);
-			}
-		}
-	});
+      L.setOptions(this, styledOptions);
 
-	L.geoJson.css = function (geojson, options) {
-		return new L.GeoJSON.CSS(geojson, options);
-	};
+      this._layers = {};
+
+      if (geojson) {
+        this.addData(geojson);
+      }
+    }
+  });
+
+  L.geoJson.css = function(geojson, options) {
+    return new L.GeoJSON.CSS(geojson, options);
+  };
 })(window, document);
 
 /*
