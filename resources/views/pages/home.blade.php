@@ -37,9 +37,17 @@
       @include('pages.public.partials.was-wir-tun')
   </div>
   <div class="col s12 m7">
-    <button class="btn big waves-effect waves-light">Partner*in werden</button>
+    <a href="#modalPartner" class="modal-trigger btn big waves-effect waves-light">Partner*in werden</a>
   </div>
 </div>
+</div>
+<div id="modalPartner" class="modal">
+  <div class="modal-content">
+    @include('includes.forms.partner')
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Schließen</a>
+  </div>
 </div>
 @stop
 

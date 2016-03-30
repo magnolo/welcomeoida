@@ -215,7 +215,44 @@
        </tbody>
      </table>
    </div>
-   <div id="partners" class="col s12">Test 3</div>
+   <div id="partners" class="col s12">
+     <table class="striped display">
+        <thead>
+          <tr>
+            <!--<th><span><input type="checkbox" id="select_all_partners" class="filled-in" ng-checked="" />
+                 <label for="select_all_partners"></label></span></th>-->
+              <th data-field="id">Erstellt</th>
+              <th></th>
+              <th data-field="data">Name</th>
+              <th data-field="data">Email</th>
+              <th data-field="data">Org.</th>
+              <th data-field="user">Öffentlich</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="partner in vm.partners">
+              <!--<td>
+                <span><input type="checkbox" id="checkuser_@{{ partner.id}}" ng-model="partner.selected"  class="filled-in" />
+                     <label for="checkuser_@{{ partner.id}}"></label></span>
+              </td>-->
+              <td am-time-ago="partner.created_at"></td>
+                <td><img style="max-height:50px; max-width:50px" ng-src="@{{ partner.image.path}}" /></td>
+              <td>@{{ partner.name }}</td>
+              <td>@{{ partner.email }}</td>
+              <td>@{{ partner.organisation }}</td>
+              <td>
+                <div class="switch">
+                   <label>
+                     <input type="checkbox" ng-change="vm.updatePartner(partner)" ng-true-value="1" ng-false-value="0" ng-model="partner.is_public">
+                     <span class="lever"></span>
+                   </label>
+                 </div>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+   </div>
    <div id="users" class="col s12">
      <table class="striped display">
         <thead>
@@ -245,6 +282,8 @@
                   </p>
               </td>
           </tr>
+        </tbody>
+      </table>
    </div>
  </div>
 </div>

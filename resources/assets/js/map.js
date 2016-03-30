@@ -37,7 +37,8 @@ $(function() {
       address: null,
       marker: null
     },
-    newImage: null
+    newImage: null,
+    partnerImage:null
   }
   var newHuman = {
     name: '',
@@ -48,6 +49,16 @@ $(function() {
     name: '',
     email: '',
     address: null
+  };
+  var newPartner = {
+    name:'',
+    email:'',
+    phone:'',
+    address: '',
+    url: '',
+    image_id: '',
+    organisation:'',
+    message:''
   };
 
 
@@ -279,6 +290,65 @@ $(function() {
     }
   });
 
+  //validate and submit solidarisch form
+  $('#partner').validate({
+    errorElement: 'div',
+    errorPlacement: function(error, element) {
+      error.appendTo(element.parent(".input-field"));
+    },
+    submitHandler: function(form) {
+      debugger;
+      newPartner.name = $('#partner_name').val();
+      newPartner.email = $('#partner_email').val();
+      newPartner.address = $('#partner_location').val();
+      newPartner.phone = $('#partner_phone').val();
+      newPartner.url = $('#partner_url').val();
+      newPartner.organisation = $('#partner_organisation').val();
+      newPartner.message = $('#partner_message').val();
+      newPartner.image_id = 0;
+      if ($.datas.partnerImage) {
+        newPartner.image_id = $.datas.partnerImage.id;
+      }
+
+      $('#partner .btn').attr('disabled', true);
+      $.post('/api/partners', newPartner, function(response) {
+        $('#modalPartner').closeModal();
+        swal({
+          title: "Baam!",
+          text: "Deine Partneranfrage wurde erfolgreich gesendet!",
+          type: "success",
+          confirmButtonText: "Ok!",
+          confirmButtonColor: "#EB5B27"
+        });
+
+        $('#partner')[0].reset();
+        $('#partner label').removeClass('active');
+        $('#partner .btn').removeAttr('disabled');
+        $('#modalPartner').closeModal();
+        //$("#image-upload").removeAllFiles();
+      }).error(function(response) {
+        if (response.status == 401) {
+          swal({
+            title: "Nicht erlaubt!",
+            text: "Bitte logge dich ein um ein Event zu erstellen!",
+            type: "error",
+            confirmButtonText: "Ok!",
+            confirmButtonColor: "#EB5B27"
+          });
+        } else {
+          swal({
+            title: "Ouch!",
+            text: "Da ist etwas schiefgelaufen!",
+            type: "error",
+            confirmButtonText: "Ok!",
+            confirmButtonColor: "#EB5B27"
+          });
+        }
+
+        $('#partner .btn').removeAttr('disabled');
+      });
+    }
+  });
 
   //autocomplete address input with mapzen remote
   $('.location').autocomplete({
@@ -325,6 +395,26 @@ $(function() {
     addRemoveLinks: true,
     acceptedFiles: 'image/*',
     url: "/api/images",
+    thumbnailWidth: 336,
+    thumbnailHeight: 150,
+    dictRemoveFile: 'Bild löschen',
+    dictInvalidFileType: 'Bilddatei?',
+    dictFileTooBig: 'Die Datei ist zu groß!',
+
+  });
+  var uploader = $("#logo-uploader").dropzone({
+    init: function() {
+      this.on("success", function(file) {
+        $.datas.partnerImage = JSON.parse(file.xhr.response);
+      });
+    },
+    paramName: 'image',
+    maxFilesize: 4,
+    multiple: false,
+    maxFiles: 1,
+    addRemoveLinks: true,
+    acceptedFiles: 'image/*',
+    url: "/api/images/public",
     thumbnailWidth: 336,
     thumbnailHeight: 150,
     dictRemoveFile: 'Bild löschen',

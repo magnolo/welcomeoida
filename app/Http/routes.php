@@ -17,6 +17,7 @@ Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
   Route::get('pois/all', 'PoiController@all');
   Route::get('pois/humans', 'PoiController@humans');
   Route::post('pois/humans', 'PoiController@createHuman');
+  Route::post('partners', 'PartnerController@createPartner');
   Route::get('pois/{id}', 'PoiController@byId');
   Route::get('pois/raw/{type}', 'PoiController@raw');
 
@@ -26,6 +27,8 @@ Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
   });
   Route::group(['prefix' => 'admin', 'middleware' => 'auth:administrator'], function(){
     Route::get('pois', 'Admin\AdminController@all');
+    Route::get('partners', 'Admin\AdminController@partners');
+    Route::put('partners/{id}', 'Admin\AdminController@updatePartner');
     Route::get('users', 'Admin\AdminController@users');
     Route::put('users/{id}/role', 'Admin\AdminController@usersRole');
     Route::get('roles', 'Admin\AdminController@roles');
@@ -34,6 +37,7 @@ Route::group(['middleware' => ['api'], 'prefix' => 'api'], function(){
     Route::patch('pois', 'Admin\AdminController@bulkDelete');
 
   });
+  Route::post('images/public', 'ImageController@uploadPartner');
 });
 
 /*

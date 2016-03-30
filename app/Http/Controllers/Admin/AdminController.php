@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Poi;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 use App\Logic\User\UserRepository;
 
@@ -27,6 +28,9 @@ class AdminController extends Controller{
   }
   public function users(){
     return User::with('roles')->get();
+  }
+  public function partners(){
+    return Partner::with('image')->orderBy('created_at', 'DESC')->get();
   }
   public function usersRole(Request $request, $id){
     $roles = Role::all();
@@ -53,6 +57,16 @@ class AdminController extends Controller{
     }
 
     return $poi;
+  }
+  public function updatePartner(Request $request, UserRepository $userRepository, $id ){
+    $partner = Partner::findOrFail($id);
+    $partner->is_public = $request->input('is_public');
+    $partner->save();
+    if($partner->is_public){
+        $userRepository->publicPartner( $partner );
+    }
+
+    return $partner;
   }
   public function bulkPublic(Request $request, UserRepository $userRepository){
     $pois = Poi::whereIn('id', $request->input('ids'));

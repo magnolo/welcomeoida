@@ -17,10 +17,7 @@
         <div class="col s12 ">
         @if(!Auth::check())
         <ul class="pull-right">
-
                <li><a href="#modalLogin" class="modal-trigger">Login</a></li>
-
-
         </ul>
         @else
 

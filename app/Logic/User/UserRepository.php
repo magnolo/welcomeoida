@@ -3,6 +3,7 @@ use App\Logic\Mailers\UserMailer;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Poi;
+use App\Models\Partner;
 use App\Models\Password;
 use Hash, Carbon\Carbon;
 
@@ -57,5 +58,14 @@ class UserRepository {
           'title'         => $poi->title
       ];
       $this->userMailer->publicEvent($user->email, $data);
+    }
+    public function publicPartner(Partner $partner){
+      $data = [
+          'name'    => $partner->name,
+          'subject'       => 'welcomeoida.at: Freischaltung als Partner',
+          'email'         => $partner->email,
+          'title'         => $partner->title
+      ];
+      $this->userMailer->publicPartner($partner->email, $data);
     }
 }

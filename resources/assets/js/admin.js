@@ -11,7 +11,7 @@
     .controller('AdminController', function($http) {
       var vm = this;
 
-      vm.pois = [], vm.users = [], vm.roles = [], vm.selection = [];
+      vm.pois = [], vm.users = [], vm.roles = [], vm.selection = [], vm.partners = [];
       vm.sortType     = 'created_at'; // set the default sort type
       vm.sortReverse  = true;  // set the default sort order
       vm.searchLimit = "25";
@@ -23,6 +23,7 @@
       vm.deleteItems = deleteItems;
       vm.hasRole = hasRole;
       vm.setUserRole = setUserRole;
+      vm.updatePartner = updatePartner;
 
       activate();
 
@@ -42,11 +43,24 @@
         }, function error(response) {
 
         });
+        $http.get('/api/admin/partners').then(function success(response) {
+          vm.partners = response.data;
+        }, function error(response) {
+
+        });
       }
 
       function updatePoi(item) {
         $http.put('/api/admin/pois/' + item.id, item).then(function(response) {
           Materialize.toast(item.title + " gespeichert!", 2000);
+        }, function(response) {
+
+        });
+      }
+
+      function updatePartner(partner) {
+        $http.put('/api/admin/partners/' + partner.id, partner).then(function(response) {
+          Materialize.toast(partner.name + " gespeichert!", 2000);
         }, function(response) {
 
         });
@@ -60,7 +74,6 @@
       }
 
       function toggleSelected(item) {
-        console.log(isSelected(item));
         if (isSelected(item)) {
           vm.selection.splice(vm.selection.indexOf(item), 1);
         } else {
