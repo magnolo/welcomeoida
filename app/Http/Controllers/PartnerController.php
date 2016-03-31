@@ -6,11 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Models\Partner;
+use App\Logic\User\UserRepository;
 
 class PartnerController extends Controller
 {
     //
-    public function createPartner(Request $request){
+    public function createPartner(Request $request,  UserRepository $userRepository){
       $partner = new Partner();
 
       $partner->name = $request->input('name');
@@ -24,7 +25,8 @@ class PartnerController extends Controller
       $partner->image_id = $request->input('image_id');
 
       $partner->save();
-
+      $partner->load('image');
+      $userRepository->newPartner($partner );
       return $partner;
     }
 }

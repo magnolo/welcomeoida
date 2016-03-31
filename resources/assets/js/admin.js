@@ -8,6 +8,17 @@
         return $parse(path).assign(context, value);
       }
     })
+    .directive('materialboxed', function($timeout){
+      return {
+        restrict:'A',
+        link: function(scope, elem){
+          $timeout(function(){
+              elem.materialbox();
+          })
+
+        }
+      }
+    })
     .controller('AdminController', function($http) {
       var vm = this;
 
@@ -139,5 +150,6 @@
           Materialize.toast(user.first_name + " " + user.last_name + " ist nun " + response.data.name, 2000);
         });
       }
+
     })
 })();

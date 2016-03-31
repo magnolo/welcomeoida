@@ -28,6 +28,9 @@ $(function() {
   $('body').removeClass('overflow-none');
   $('#loader').fadeOut();
 
+  //imageModal
+  $('.materialboxed').materialbox();
+
   //Init DataTables
   $('.dataTable').DataTable();
 

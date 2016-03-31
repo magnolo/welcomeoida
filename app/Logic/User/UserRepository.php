@@ -59,6 +59,16 @@ class UserRepository {
       ];
       $this->userMailer->publicEvent($user->email, $data);
     }
+    public function newPartner(Partner $partner){
+      $data = [
+          'name'    => $partner->name,
+          'subject'       => 'welcomeoida.at: Anmeldung als Partner',
+          'email'         => $partner->email,
+          'title'         => $partner->name
+      ];
+      $this->userMailer->newPartner($partner->email, $data);
+      $this->userMailer->newPartnerAdmin($partner, $data);
+    }
     public function publicPartner(Partner $partner){
       $data = [
           'name'    => $partner->name,

@@ -199,7 +199,7 @@
             <td><span><input type="checkbox" id="check_@{{ event.id}}" ng-model="event.selected" ng-click="vm.toggleSelected(event)" class="filled-in" ng-checked="vm.isSelected(event)"/>
                  <label for="check_@{{ event.id}}"></label></span></td>
             <td ><small am-time-ago="event.created_at"></small></td>
-            <td><img style="max-height:50px; max-width:50px" ng-src="@{{ event.image.path}}" /></td>
+            <td><img  materialboxed ng-if="event.image_id" class="materialboxed" style="max-height:50px; max-width:50px" ng-src="@{{ event.image.path}}" /></td>
             <td>@{{ event.title }} <br /><small><strong>@{{ event.address }}</strong></small><div class="description" ng-if="event.description" ng-show="vm.showDescriptions">@{{ event.description}}</div></td>
             <td>@{{event.from_date | amDateFormat:'HH:mm'}}</td>
             <td>@{{event.to_date | amDateFormat:'HH:mm'}}</td>
@@ -237,8 +237,8 @@
                 <span><input type="checkbox" id="checkuser_@{{ partner.id}}" ng-model="partner.selected"  class="filled-in" />
                      <label for="checkuser_@{{ partner.id}}"></label></span>
               </td>-->
-              <td am-time-ago="partner.created_at"></td>
-                <td><img style="max-height:50px; max-width:50px" ng-src="@{{ partner.image.path}}" /></td>
+              <td ><small am-time-ago="partner.created_at"></small></td>
+                <td><img  materialboxed ng-if="partner.image_id" class="materialboxed" style="max-height:50px; max-width:50px" ng-src="@{{ partner.image.path}}" /></td>
               <td>@{{ partner.name }}</td>
               <td>@{{ partner.email }}</td>
               <td>@{{ partner.phone }}</td>
