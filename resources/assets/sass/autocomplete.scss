@@ -11,7 +11,7 @@
 }
 .autocomplete-suggestion {
   padding: 5px;
-  opacity: 0.5;
+  opacity: 1;
   white-space: nowrap;
   overflow: hidden;
   border-bottom: 1px solid #f0f0f0;
@@ -22,8 +22,8 @@
   opacity: 1;
 }
 .autocomplete-suggestions strong {
-  font-weight: normal;
-  color: $color;
+  font-weight: bold;
+  color: $dark;
 }
 .autocomplete-group {
   padding: 2px 5px;

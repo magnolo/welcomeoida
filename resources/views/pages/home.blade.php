@@ -9,7 +9,7 @@
   <div class="col s12">
   <h2>20. Juni</h2>
   <h2 class="green-text text-lighten-3">Weltflüchtlingstag</h2>
-  <h1><span class="green-text text-lighten-3">#</span>welcome<span class="green-text text-lighten-3">oida</span></h1>
+  <!--<h1><span class="green-text text-lighten-3">#</span>welcome<span class="green-text text-lighten-3">oida</span></h1>-->
   <h4 class="blued rotateText">Konzert,Parties,Performances,Soli-Feste,Kinovorführungen,Theaterstücke,Lesungen,Wasserschlachten</h4>
 </div>
 </div>

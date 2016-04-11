@@ -16,7 +16,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: $color;
+  color: $dark;
 }
 img{
   max-width: 100%;
@@ -47,15 +47,15 @@ img{
   text-align: center;
   max-width: 300px;
   .title{
-    color:$white;
-    background: $color;
+    color:$dark;
+    background: $gold;
     padding: .2em;
   }
   .slogan{
-    color:$color;
+    color:$dark;
     padding:.2em;
     line-height: 1.2em;
-    background-color: lighten($color, 25);
+    background-color: lighten($gold, 25);
   }
 }
 #loader {
@@ -84,8 +84,21 @@ img{
   }
   .dropdown-button {
     margin: 1em 0;
-    padding:0;
+    padding:0 .5em;
     text-transform: capitalize;
+  }
+  .dropdown-content{
+    li{
+
+      a{
+        position: static;
+        background-color: transparent !important;
+        color:$dark !important;
+        border:0px !important;
+        padding:0.5em;
+      }
+    }
+
   }
   @media screen and (max-width: 600px){
     position: static;
@@ -125,7 +138,7 @@ form {
   h3,
   p,
   small {
-    color: $color;
+    color: $dark;
   }
   .row {
     margin-bottom: 0;
@@ -134,12 +147,12 @@ form {
   input[type=password],
   input[type=text] {
     height: 2.5rem;
-    border-bottom-color: $color;
+    border-bottom-color: $dark;
     &:focus {
-      border-bottom-color: $color;
-      box-shadow: 0 1px 0 $color;
+      border-bottom-color: $dark;
+      box-shadow: 0 1px 0 $dark;
       + label {
-        color: $color;
+        color: $dark;
       }
     }
     &.valid {
@@ -149,14 +162,20 @@ form {
         color: $green !important;
       }
     }
+    &.error{
+        border-bottom: 1px solid $color;
+        + label {
+          color: $color !important;
+        }
+    }
   }
   textarea {
-    border-bottom-color: $color;
+    border-bottom-color: $dark;
     &:focus {
-      border-bottom-color: $color !important;
-      box-shadow: 0 1px 0 $color !important;
+      border-bottom-color: $dark !important;
+      box-shadow: 0 1px 0 $dark !important;
       + label {
-        color: $color !important;
+        color: $dark !important;
       }
     }
     &.valid {
@@ -168,7 +187,7 @@ form {
     }
   }
   label {
-    color: $color;
+    color: $dark;
   }
   div.error {
     position: absolute;
@@ -214,7 +233,7 @@ form {
     color: $color;
     cursor: pointer;
     height: auto;
-    min-height: 48px;
+    min-height: 2em;
     &.full {
       width: 100%;
     }
@@ -358,4 +377,16 @@ form {
       }
     }
   }
+}
+.btn{
+  background: gold !important;
+border-radius: 3px !important;
+border-top:0px !important;
+border-left:0px !important;
+border-right:0px !important;
+
+border-bottom: 3px solid #333 !important;
+
+color: #444 !important;
+padding: 7px 10px;
 }

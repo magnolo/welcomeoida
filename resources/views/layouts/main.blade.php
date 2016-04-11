@@ -9,34 +9,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
+    <link rel="stylesheet" href="{!! asset('css/layout.css') !!}">
     @yield('head')
   </head>
   <body class="overflow-none">
     @include('layouts.nav')
-    <div class="row" id="usermenu">
-        <div class="col s12 ">
-        @if(!Auth::check())
-        <ul class="pull-right">
-               <li><a href="#modalLogin" class="modal-trigger">Login</a></li>
-        </ul>
-        @else
-
-        <a class='dropdown-button btn-flat pull-right' href='#' data-activates='dropdown1'>Account</a>
-
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-          <!--<li><a href="#">Profil</a></li>-->
-          <li><a href="{{ route('user.events') }}">Events</a></li>
-          @if(Auth::user()->hasRole("administrator"))
-            <li><a href="{{ route('admin.home') }}">Admin</a></li>
-         @endif
-
-          <li class="divider"></li>
-          <li><a href="{{ route('authenticated.logout') }}">Logout</a></li>
-        </ul>
-        @endif
-      </div>
-    </div>
+  
     @yield('content')
     <div id="modalLogin" class="modal">
       <div class="modal-content">

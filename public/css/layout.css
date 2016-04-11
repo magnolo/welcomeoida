@@ -1,0 +1,45 @@
+.logo {margin-top: 30px;}
+
+h2 {font-size: 2rem; color: #444;}
+h3 {font-size: 1.4rem; color: #444; display: block;}
+
+.contentheader {border: 2px solid #efefef; border-radius: 5px; display: block; padding: 1px; margin-bottom: 40px;}
+
+.nav-wrapper.green.lighten-3 {background: #444 !important;}
+
+
+nav ul.left {background: #444 !important; }
+	nav ul.left a:link, nav ul.left a:visited {color: gold !important; font-size: 1.1rem;}
+	nav ul.left a:hover {}
+
+
+.midbar {background: #DFDED2; padding: 16px 0 13px 0;}
+
+
+.button {background: gold; border-radius: 3px; border-bottom: 3px solid #333; color: #444; padding: 7px 10px;}
+	.button:hover {background: #43609C; color: #FFF;}
+
+.button.small {background: #FFF; border: 3px solid gold; font-size: 0.9rem;}
+	.button.small:hover {border: 3px solid #444; color: #444;}
+
+.navtwo {margin: 40px 0 20px 0;}
+	.navtwo a {margin: 0px 3px 10px 3px; display: inline-block;}
+	.navtwo a:link, .navtwo a:visited {}
+	.navtwo a:hover {}
+
+
+.graybox {padding: 20px; border-radius: 5px; background: #EFEFEF; margin-bottom: 25px; line-height: 1.5em; color: #555;}
+	.graybox h3 {margin-top: 0;}
+	.graybox img {border-radius: 500px;}
+
+.graybox.outline {background: #FFF; border: 3px solid #EFEFEF; }
+
+
+#usermenu a	{background: #DDD; position: absolute; right: 0px; padding: 0 15px; font-site: 1.1rem; border-radius: 20px 0 0 20px;}
+#usermenu a:link, #usermenu a:visited {background: #444; color: #FFF; border: 2px solid #444; border-right-width: 0 !important;}
+#usermenu a:hover {background: #FFF; color: #444;}
+
+nav .button-collapse i {margin-left: 10px;}
+
+
+.copyright {text-align: center; font-size: 0.9rem; color: #AAA; margin-top: 100px;}
