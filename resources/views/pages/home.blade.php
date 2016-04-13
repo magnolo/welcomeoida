@@ -6,13 +6,14 @@
 	<link type="text/css" rel="stylesheet" href="http://www.craftandvalue.com/_welcomeOida/layout.css" />    
 @stop
 @section('content')
-<div class="row center-align block sandy" style="padding-bottom:3rem">
+<div class="row center-align block sandy" style="padding-bottom: 3rem;">
   <div class="col s12">
-	  <h2>20. Juni - Weltflüchtlingstag</h2>
-	  <h4 class="blued rotateText">Konzert,Parties,Performances,Soli-Feste,Kinovorführungen,Theaterstücke,Lesungen,Wasserschlachten</h4>
+	  <h3 style="font-size: 1.4em; margin-top: -20px; margin-bottom: 30px; color: #888;">In unserer Stadt sind Flüchtlinge willkommen - Wien bleibt solidarisch!</h3>	  
+	  <h2 style="font-size: 2em; margin-bottom: 30px;">20. Juni - Weltflüchtlingstag</h2>
    </div>
   <div class="col s12 center-align">
-      <button class="btn waves-effect waves-light" id="showEventsForm">Planst du eine Aktion?</button>
+      <button class="btn waves-effect waves-light" id="showEventsForm">Tragt euer <span style="text-transform: none;">WELCOMEoida</span>-Event ein!</button>
+	  <h4 class="blued rotateText"  style="font-size: 1.7em; margin-top: 20px;">Feste, Filme, Kochen, Treffen, Konzerte, Sportveranstaltungen, Diskussionen, Parties, Lesungen, Performances, Theater</h4>      
   </div>
 </div>
 <div class="row relative">
@@ -29,17 +30,19 @@
 </div>
 <div class="container mt1">
 <div class="row">
-  <div class="col s12 m5">
+  <div class="col s12 m12">
       <!-- @include('includes.banner') -->
       @include('pages.public.partials.was-wir-tun')
   </div>
-  <div class="col s12 m7">
-    <a href="#modalPartner" class="modal-trigger btn big waves-effect waves-light">Partner*in werden</a>
+  <div class="col s12 m12">
+    <!-- a href="#modalPartner" class="modal-trigger btn big waves-effect waves-light">Partnerin werden</a -->
     <br> <br>
-  <div class="row">
+  <!-- div class="row">
     <div class="col s6 m3">
+	    <h2>Netzwerk</h2>
+	     <br>
 	    <img src="http://www.fokuskind.com/files/design/FOKUSKINDMedien-Logo.png" />
-    </div>
+    </div -->
     @foreach($partners as $partner)
       <div class="col s6 m3">	      
         <a href="http://{{ $partner->url}}" target="_blank">

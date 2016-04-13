@@ -16,19 +16,37 @@
         </div>	    
 	    
         <div class="col s12 center-align contentheader">
-	        <h2>UnterstützerInnen</h2>
-			<p>---</p>	        
+	        <h2>Team</h2>
+			<p>Wir sind ein buntes Team engagierter Menschen, die sich über Unterstützung freuen!</p>	        
         </div>
       </div>
 
 
     <!-- Hier ist der HauptContent -->
 
-      <div class="row">        
+      <div class="row">
+	      
 	      <div class="col m12 s12">
+   		      <div class="graybox">
+	   		      <img src="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeoida-team.jpg" /><br />
+   		      </div>		      
 	      </div>
+	      	            
+	      <div class="col m12 s12">
+   		      <div class="graybox">
+	   		       Wir sind ein Team engagierter Menschen aus den
+	   			   verschiedensten Bereichen: Wir sind
+	   			   ProgrammiererInnen, MappingexpertInnen,
+	   			   GraphikerInnen, KünstlerInnen, MenschenrechtsexpertInnen,
+	   			   PhotographInnen, ÖkonomInnen,
+	   			   AppentwicklerInnen und vieles mehr. Unser
+	   			   gemeinsames Anliegen ist es, in Wien ankommenden,
+	   			   schutzsuchenden Menschen ihren Alltag in der Stadt zu
+	   			   erleichtern.
+   		      </div>
+	      </div>
+	      	      	            		      	      	      	      
       </div>
-      
       
     <!-- Hier ist der Footer --> 
       <div class="row">        
@@ -38,6 +56,7 @@
 		      </div>
 	      </div>
       </div>      
+      
       
 @stop
 @section('scripts')
