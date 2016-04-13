@@ -186,6 +186,7 @@ class PoiController extends Controller
       $human->slug = str_slug($title);
       $human->ip_address = $request->ip();
       $human->is_public = 1;
+      $human->newsletter = boolval($request->input('newsletter'));
       $human->save();
 
       return $human;

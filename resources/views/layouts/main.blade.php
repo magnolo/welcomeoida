@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="{!! asset('css/layout.css') !!}">
     @yield('head')
   </head>
-  <body class="overflow-none">
+  <body class="overflow-none {{ Route::current()->getName() == 'admin.home' ? ' admin' : '' }}">
     @include('layouts.nav')
-  
+
     @yield('content')
     <div id="modalLogin" class="modal">
       <div class="modal-content">

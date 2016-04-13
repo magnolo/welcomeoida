@@ -200,6 +200,7 @@ $(function() {
       newHuman.firstname = $('#firstname').val();
       newHuman.lastname = $('#lastname').val();
       newHuman.email = $('#email').val();
+      newHuman.newsletter = $('#newsletter').is(":checked");
       newHuman.lat = $.datas.newPoint.address.geometry.coordinates[0];
       newHuman.lng = $.datas.newPoint.address.geometry.coordinates[1];
       $('#solidarisch .btn').attr('disabled', true);

@@ -71,11 +71,11 @@
                 </a>
               </th>
               <th ><a href="#" ng-click="vm.sortType = 'title'; vm.sortReverse = !vm.sortReverse">
-                Anzeige
+                Name
                 <span ng-show="vm.sortType == 'title' && !vm.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="vm.sortType == 'title' && vm.sortReverse" class="fa fa-caret-up"></span>
               </a></th>
-              <th>Name</th>
+              <!--<th>Name</th>-->
               <th><a href="#" ng-click="vm.sortType = 'email'; vm.sortReverse = !vm.sortReverse">
                 Email
                 <span ng-show="vm.sortType == 'email' && !vm.sortReverse" class="fa fa-caret-down"></span>
@@ -83,6 +83,11 @@
               </a></th>
               <th><a href="#" ng-click="vm.sortType = 'is_public'; vm.sortReverse = !vm.sortReverse">
                 Öffentlich
+                <span ng-show="vm.sortType == 'is_public' && !vm.sortReverse" class="fa fa-caret-down"></span>
+                <span ng-show="vm.sortType == 'is_public' && vm.sortReverse" class="fa fa-caret-up"></span>
+              </a></th>
+              <th><a href="#" ng-click="vm.sortType = 'is_public'; vm.sortReverse = !vm.sortReverse">
+                Newsletter
                 <span ng-show="vm.sortType == 'is_public' && !vm.sortReverse" class="fa fa-caret-down"></span>
                 <span ng-show="vm.sortType == 'is_public' && vm.sortReverse" class="fa fa-caret-up"></span>
               </a></th>
@@ -96,7 +101,7 @@
                   <label for="check_@{{ person.id}}"></label></span></td>
              <td><small am-time-ago="person.created_at"></small></td>
              <td>@{{ person.title }}</td>
-             <td>@{{ person.first_name + " " + person.last_name }}</td>
+             <!--<td>@{{ person.first_name + " " + person.last_name }}</td>-->
              <td>@{{ person.email}}</td>
              <td><div class="switch">
                 <label>
@@ -104,6 +109,12 @@
                   <span class="lever"></span>
                 </label>
               </div></td>
+              <td>
+                <div class="input-field" style="margin-top:0px">
+                     <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="person.newsletter">
+                    <label></label>
+                 </div>
+              </div>
              <td ng-click="vm.peopleSearch = person.ip_address"><small>@{{ person.ip_address }}</small></td>
            </tr>
 
