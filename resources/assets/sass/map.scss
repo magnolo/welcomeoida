@@ -113,7 +113,7 @@
     .leaflet-popup-content-wrapper{
       border-radius: 2px;
       padding:8px;
-      color:$color;
+      color:$dark;
       .leaflet-popup-content{
         margin:0px;
         display:flex;
@@ -132,7 +132,7 @@
           width:calc(100% + 16px);
           min-height: 200px;
           align-items: center;
-          background-color: $greeny;
+          background-color: $dark;
           &::before{
             content: '';
             width:100%;
@@ -155,7 +155,7 @@
             position:relative;
             z-index:3;
             color:#fff;
-            text-shadow: 1px 1px 8px $color;
+            text-shadow: 1px 1px 4px $gold;
             transition: all .3s ease-in-out;
           }
           /*.image{
@@ -176,7 +176,7 @@
           }
           .report{
             text-align: right;
-            color:$greeny;
+            color:$gold;
             text-transform: uppercase;
           }
           .content{
@@ -199,6 +199,11 @@
           .share{
             text-transform: uppercase;
             font-weight: 500;
+            color:$gold;
+          }
+          &.person{
+            color:$dark;
+            font-weight: bold;
           }
 
         }
