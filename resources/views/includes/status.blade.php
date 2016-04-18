@@ -8,7 +8,7 @@
         type:"{{ Session::get('status') }}"
       });
       @if(Session::has('response'))
-      console.log({!! Session::get('response') !!})
+      console.log({!! serialize(Session::get('response')) !!})
       @endif
     </script>
     @stop
