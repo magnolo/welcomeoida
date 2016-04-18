@@ -104,7 +104,7 @@ class AuthController extends Controller
     {
         $user = Socialite::driver( $provider )->user();
         $code = Input::get('code');
-        $oauth_token = Input::get('oauth_token')
+        $oauth_token = Input::get('oauth_token');
         if(!$code && !$oauth_token )
             return redirect()->route('auth.login')
                 ->with('status', 'error')
