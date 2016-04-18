@@ -109,6 +109,7 @@ class AuthController extends Controller
                 ->with('status', 'error')
                 ->with('title','Social Account konnte nicht verbinden')
                 ->with('response', Input::all())
+                ->with('user', $user)
                 ->with('message', 'Hast du deine Profildaten für unserer SocialApp freigegeben?');
         if(!$user->email)
         {
