@@ -7,9 +7,7 @@
 
         type:"{{ Session::get('status') }}"
       });
-      @if(Session::has('user'))
-      console.log({!! dd(Session::all()) !!})
-      @endif
+
     </script>
     @stop
 @endif
