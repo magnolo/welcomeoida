@@ -7,7 +7,9 @@
 
         type:"{{ Session::get('status') }}"
       });
-      console.log({{ Session::get('response') }})
+      @if(Session::has('response'))
+      console.log({!! Session::get('response') !!})
+      @endif
     </script>
     @stop
 @endif
