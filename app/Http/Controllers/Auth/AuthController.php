@@ -110,13 +110,14 @@ class AuthController extends Controller
                 ->with('status', 'error')
                 ->with('title','Social Account konnte nicht verbinden')
                 ->with('response', Input::all())
-                ->with('user', $user)
+
                 ->with('message', 'Hast du deine Profildaten für unserer SocialApp freigegeben?');
         if(!$user->email)
         {
             return redirect()->route('auth.login')
                 ->with('status', 'error')
                 ->with('title','Social Account konnte nicht verbinden')
+                ->with('user', $user)
                 ->with('message', 'You did not share your email with our social app. You need to visit App Settings and remove our app, than you can come back here and login again. Or you can create new account.');
         }
         $socialUser = null;
