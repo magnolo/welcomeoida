@@ -17,8 +17,8 @@
     <ul class="right hide-on-med-and-down">
       <li></li>
       <li><a href="https://www.facebook.com/events/1140455429322099/" target="_blank" class="icon"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="badges.html" class="icon"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="collapsible.html" class="icon"><i class="fa fa-google"></i></a></li>
+      <li><a href="https://twitter.com/welcomeoida_at" class="icon"><i class="fa fa-twitter"></i></a></li>
+      <!-- li><a href="collapsible.html" class="icon"><i class="fa fa-google"></i></a></li -->
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="/" class="orange-text text-darken-4">Home</a></li>
@@ -68,7 +68,7 @@
     <!--<div class="col s12 center-align navtwo">
   <a href="https://www.facebook.com/New-Here-1671751599752159/?fref=ts" class="button">Join us on Facebook</a>
   <a href="https://twitter.com/welcomeoida_at" class="button">Follow us on Twitter</a>
-  <a href="mailto:hallo@welcomeoida.at" class="button">E-Mail us!</a>
+  <a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a>
   <a href="http://test.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
 </div>-->
   </div>

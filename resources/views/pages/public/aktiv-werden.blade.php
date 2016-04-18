@@ -12,8 +12,8 @@
         <div class="col s12 center-align navtwo">
 			<a href="https://www.facebook.com/events/1140455429322099/" class="button">Join us on Facebook</a>
 			<a href="https://twitter.com/welcomeoida_at" class="button">Follow us on Twitter</a>
-			<a href="mailto:infos@welcomeoida.at" class="button">E-Mail us!</a>
-			<a href="http://test.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
+			<a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a>
+			<a href="http://www.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
         </div>	    
 	    
         <div class="col s12 center-align contentheader">
@@ -48,7 +48,7 @@
 		      <div class="graybox">
  			      <h3>Werde Teil vom Team:</h3>
  				  <p>Wir sind ein buntes Team engagierter Menschen, die sich über Unterstützung freuen!</p>
- 				  <a href="mailto:infos@welcomeoida.at" class="button">E-Mail us!</a> 				  
+ 				  <a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a> 				  
  			  </div>
 		      <div class="graybox">
  			      <h3>Unterstütze uns finanziell:</h3>
@@ -59,14 +59,14 @@
 		      <div class="graybox">
  			      <h3>Macht Kunst!</h3>
 					Wir freuen uns über KünstlerInnen und Kulturschaffende, die bereit sind am 20. Juni ihr Können zur Verfügung zu stellen. Falls ihr auf der Suche nach PartnerInnen sind, helfen wir gerne weiter!<br /><br />
-					<a href="mailto:infos@welcomeoida.at" class="button">E-Mail us!</a>
+					<a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a>
 				</div> 						  
 	      </div>
 		  
 	      <div class="col m4 s12">
 		      <div class="graybox">
    			      <h3>Nutze Facebook um auf #WELCOMEoida aufmerksam zu machen</h3>
-   				  <img src="http://menschenrechte-grenzenlos.eu/_images/_involved/facebooklogo.png" style="border-radius: 400px; margin: 0 0 25px 0;" />
+   				  <img src="http://menschenrechte-grenzenlos.eu/_images/_involved/facebooklogo.png" style="border-radius: 400px; margin: 0 0 25px 0;" /><br />
    				  <a href="https://www.facebook.com/events/1140455429322099/" class="button">Join us on Facebook</a>   				  
    			  </div>
 		      <div class="graybox">

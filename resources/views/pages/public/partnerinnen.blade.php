@@ -12,8 +12,8 @@
         <div class="col s12 center-align navtwo">
 			<a href="https://www.facebook.com/events/1140455429322099/" class="button">Join us on Facebook</a>
 			<a href="https://twitter.com/welcomeoida_at" class="button">Follow us on Twitter</a>
-			<a href="mailto:infos@welcomeoida.at" class="button">E-Mail us!</a>
-			<a href="http://test.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
+			<a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a>
+			<a href="http://www.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
         </div>	    
 	    
         <div class="col s12 center-align contentheader">
@@ -35,10 +35,12 @@
 		      <div class="graybox">
 			      <h3>FOKUS KIND Medien</h3>
 				  <p><a href="http://www.fokuskind.com/"><img src="https://www.kindaktuell.at/tl_files/_design/_logos/fokuskindlogo-impressum.png" /></a></p> 			      
+				  <p>„Als Teil einer unabhängigen Medienlandschaft, verhandeln wir das Miteinander von Familien und insbesondere von Kindern jeden Tag aufs Neue mit. Das Kinder besonders schutzlos und oft Hauptleidtragende ausschließender Diskurse sind, wollen und können wir im Interesse einer Gesellschaft des Miteinanders, nicht zulassen. Wir helfen mit, wenn es darum geht eine durch verschiedene Interessen in Abrede gestellte, jedoch in der Realität freundschaftliche und großartig funktionierende Willkommenskultur sichtbar zu machen. #WELCOMEoida.“</p>
  			  </div>
 		      <div class="graybox">
  			      <h3>P2 network communication</h3>
-				  <pstyle="text-align: center;"><img src="http://www.craftandvalue.com/_welcomeOida/welcomeOidaLogo.png" /></p> 			      
+				  <pstyle="text-align: center;"><img src="http://www.craftandvalue.com/_welcomeOida/welcomeOidaLogo.png" /></p>
+<p>“In einer Zeit, in der Menschenrechte und die Menschlichkeit im Allgemeinen mit Füßen getreten werden, stellt sich die Frage nicht, ob man Initiativen wie "New Here." und "#WELCOMEoida" unterstützen soll. Sondern nur, wie man mithelfen kann." (Peter Puller)</p>				  
  			      <p></p>
  			  </div>    			  			   
 	      </div>
@@ -58,8 +60,7 @@
 	      <div class="col m4 s12">
 		      <div class="graybox">
    			      <h3>Boomerang Medien</h3>
-				  <p><a href="http://www.boomerang.at/"><img src="http://www.boomerang.at/images/allg/Logo_Boomerangheader_2.png" /></a></p>
-				  <p>“In einer Zeit, in der Menschenrechte und die Menschlichkeit im Allgemeinen mit Füßen getreten werden, stellt sich die Frage nicht, ob man Initiativen wie "New Here." und "#WELCOMEoida" unterstützen soll. Sondern nur, wie man mithelfen kann." (Peter Puller)</p>
+				  <p><a href="http://www.boomerang.at/"><img src="http://www.boomerang.at/images/allg/Logo_Boomerangheader_2.png" /></a></p>				  
    			  </div>
 		      <div class="graybox">
  			      <h3>Respekt.net</h3>

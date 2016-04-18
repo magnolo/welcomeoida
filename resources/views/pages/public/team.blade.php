@@ -11,8 +11,8 @@
         <div class="col s12 center-align navtwo">
 			<a href="https://www.facebook.com/events/1140455429322099/" class="button">Join us on Facebook</a>
 			<a href="https://twitter.com/welcomeoida_at" class="button">Follow us on Twitter</a>
-			<a href="mailto:infos@welcomeoida.at" class="button">E-Mail us!</a>
-			<a href="http://test.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
+			<a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a>
+			<a href="http://www.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
         </div>	    
 	    
         <div class="col s12 center-align contentheader">
@@ -29,11 +29,9 @@
 	      <div class="col m12 s12">
    		      <div class="graybox">
 	   		      <img src="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeoida-team.jpg" /><br />
-   		      </div>		      
-	      </div>
-	      	            
-	      <div class="col m12 s12">
-   		      <div class="graybox">
+	   			  
+	   			  <br />
+	   			  
 	   		       Wir sind ein Team engagierter Menschen aus den
 	   			   verschiedensten Bereichen: Wir sind
 	   			   ProgrammiererInnen, MappingexpertInnen,

@@ -11,8 +11,8 @@
         <div class="col s12 center-align navtwo">
 			<a href="https://www.facebook.com/New-Here-1671751599752159/?fref=ts" class="button">Join us on Facebook</a>
 			<a href="https://twitter.com/welcomeoida_at" class="button">Follow us on Twitter</a>
-			<a href="mailto:hallo@welcomeoida.at" class="button">E-Mail us!</a>
-			<a href="http://test.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
+			<a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a>
+			<a href="http://www.welcomeoida.at/aktiv-werden" class="button">Get involved!</a>
         </div>	    
 	    
         <div class="col s12 center-align contentheader">

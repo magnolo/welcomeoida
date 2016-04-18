@@ -12,8 +12,8 @@
 
       
       <div >
-        <a href="/social/redirect/facebook">FB</a>
-        <a href="/social/redirect/twitter">Twitter</a>
+        <a href="https://www.facebook.com/events/1140455429322099/">FB</a>
+        <a href="https://twitter.com/welcomeoida_at">Twitter</a>
       </div>
       <ul>
       @if(!Auth::check())

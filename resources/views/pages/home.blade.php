@@ -8,8 +8,8 @@
 @section('content')
 <div class="row center-align block sandy" style="padding-bottom: 3rem;">
   <div class="col s12">
-	  <h3 style="font-size: 1.4em; margin-top: -20px; margin-bottom: 30px; color: #888;">In unserer Stadt sind Flüchtlinge willkommen - Wien bleibt solidarisch!</h3>	  
-	  <h2 style="font-size: 2em; margin-bottom: 30px;">20. Juni - Weltflüchtlingstag</h2>
+	  <h3 class="inunsererstadt" >In unserer Stadt sind Flüchtlinge willkommen - Wien bleibt solidarisch!</h3>	  
+	  <h2 class="juni">20. Juni - Weltflüchtlingstag</h2>
    </div>
   <div class="col s12 center-align">
       <button class="btn waves-effect waves-light" id="showEventsForm">Tragt euer <span style="text-transform: none;">WELCOMEoida</span>-Event ein!</button>
