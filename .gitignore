@@ -2,7 +2,6 @@
 /node_modules
 /public/storage
 /resources/assets/bower
-/resources/views/layouts/pages/public
 Homestead.yaml
 Homestead.json
 .env
