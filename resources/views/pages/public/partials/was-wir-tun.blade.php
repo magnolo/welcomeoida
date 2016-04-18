@@ -6,5 +6,5 @@
 		Seit dem vergangenen Sommer trägt die Zivilgesellschaft in Wien entscheidend zur Versorgung und Betreuung von geflüchteten Menschen bei.
 		Damit hat sie wesentlichen Anteil daran, dass Schutzsuchende eine menschenwürdige Aufnahme in unserer Stadt finden.<br />
 		<br />		
-		<a href="" class="button">Mehr über uns...</a>
+		<a href="http://www.welcomeoida.at/ueberuns" class="button">Mehr über uns...</a>
 	</p>

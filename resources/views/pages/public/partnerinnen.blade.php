@@ -30,6 +30,7 @@
 		      <div class="graybox">
 			      <h3>23° Degree</h3>
 				  <p style="text-align: center;"><a href="https://www.23degree.org/"><img src="https://www.23degree.org/images/logos/23.svg" width="100" /></a></p>
+			      <p>“Gesellschaftlicher Diskurs braucht mehr als eine Seite. Wir halten es für nötig, die gelebte Solidarität und ganz konkrete Hilfsbereitschaft der Bevölkerung sichtbar zu machen. Für einen menschlichen Umgang miteinander und mit den Konflikten, die Gesellschaft immer mit sich bringt. Wir alle waren mal New Here, und daher: #WELCOMEoida.”</p>				  
 			   </div>
 		      <div class="graybox">
 			      <h3>FOKUS KIND Medien</h3>
@@ -46,7 +47,7 @@
 		      <div class="graybox">
  			      <h3>#aufstehn</h3>
 				  <p style="text-align: center;"><a href="https://www.aufstehn.at/"><img src="https://www.aufstehn.at/wp-content/themes/aufstehn/images/logo.png" /></a></p>
- 				  <p></p>
+ 				  <p>“Im vergangenen Jahr sind viele von uns aufgestanden, haben die Ärmel hochgekrempelt und sich dort engagiert, wo Hilfe nötig war. Gemeinsam haben wir zu Tausenden in den Bahnhöfen und Notunterkünften geholfen und Schutzsuchenden ein warmes Willkommen in unserer Stadt bereitet. Und wir hören nicht auf: Wir werden das Feld nicht denen überlassen, die mit Angst und Zwietracht einen Keil in die Mitte der Gesellschaft treiben wollen. Wir stehen auf für ein positives Miteinander!” (Maria Mayrhofer und Nelson Carr)</p>
  			  </div>
 		      <div class="graybox">
  			      <h3>Practice and Theory</h3>
@@ -58,6 +59,7 @@
 		      <div class="graybox">
    			      <h3>Boomerang Medien</h3>
 				  <p><a href="http://www.boomerang.at/"><img src="http://www.boomerang.at/images/allg/Logo_Boomerangheader_2.png" /></a></p>
+				  <p>“In einer Zeit, in der Menschenrechte und die Menschlichkeit im Allgemeinen mit Füßen getreten werden, stellt sich die Frage nicht, ob man Initiativen wie "New Here." und "#WELCOMEoida" unterstützen soll. Sondern nur, wie man mithelfen kann." (Peter Puller)</p>
    			  </div>
 		      <div class="graybox">
  			      <h3>Respekt.net</h3>
