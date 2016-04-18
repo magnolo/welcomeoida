@@ -29,9 +29,9 @@
 	      <div class="col m12 s12 center-align">
 		      <div class="graybox">
 		      <h3>Logo Download</h3>
-			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-goldLogo.eps" class="button small">EPS-Datei</a>
-			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-goldLogo.jpg" class="button small">JPG-Datei (RGB)</a>
-			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-goldLogo.TIFF" class="button small">TIFF-Datei (CMYK)</a>
+			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-goldLogo.eps" class="button">EPS-Datei</a>
+			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-goldLogo.jpg" class="button">JPG-Datei (RGB)</a>
+			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-goldLogo.TIFF" class="button">TIFF-Datei (CMYK)</a>
 			      <br />
 			      <br />
 	      	</div>			      
@@ -40,7 +40,7 @@
 	      <div class="col m6 s12 center-align">
 		      <div class="graybox">
 			      <h3>Infomappe Deutsch</h3>
-			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-Logo.eps" class="button small">PDF-Datei</a>	      
+			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/Infomappe_DE.pdf" class="button">PDF-Datei</a>	      
 			      <br />
 			      <br />		      
 	      	</div>			      
@@ -49,7 +49,7 @@
 	      <div class="col m6 s12 center-align">
 		      <div class="graybox">
 			      <h3>Infomappe Englisch</h3>
-			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-Logo.eps" class="button small">PDF-Datei</a>	      
+			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/Infomappe_EN.pdf" class="button">PDF-Datei</a>	      
 			      <br />
 			      <br />		      
 	      	</div>
@@ -57,7 +57,7 @@
 	      <!-- div class="col m6 s12 center-align">
 		      <div class="graybox">
 			      <h3>Facebook Profilbild Ballon</h3>
-			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-Logo.eps" class="button small">PDF-Datei</a>	      
+			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-Logo.eps" class="button">PDF-Datei</a>	      
 			      <br />
 			      <br />		      
 	      	</div>			      
@@ -66,7 +66,7 @@
 	      <div class="col m6 s12 center-align">
 		      <div class="graybox">
 			      <h3>More</h3>
-			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-Logo.eps" class="button small">PDF-Datei</a>	      
+			      <a href="http://www.craftandvalue.com/_welcomeOida/downloads/welcomeOida-Logo.eps" class="button">PDF-Datei</a>	      
 			      <br />
 			      <br />		      
 	      	</div -->		      	

@@ -34,12 +34,11 @@
 		      <div class="graybox">
 			      <h3>FOKUS KIND Medien</h3>
 				  <p><a href="http://www.fokuskind.com/"><img src="https://www.kindaktuell.at/tl_files/_design/_logos/fokuskindlogo-impressum.png" /></a></p> 			      
- 				  Wir sind viele, damit man das am 20. Juni auch sieht, sprich deine LieblingswirtInnen, WürtselstandInnhaberInnen, KinobetreiberInnen, TheatermacherInnen und wer dir sonst noch einfällt an, sich #WELCOMEoida anzuschliessen.
  			  </div>
 		      <div class="graybox">
  			      <h3>P2 network communication</h3>
 				  <pstyle="text-align: center;"><img src="http://www.craftandvalue.com/_welcomeOida/welcomeOidaLogo.png" /></p> 			      
- 			      <p>Lade dir unsere Logo herunter und drucke es auf Plakate, Poster oder T-Shirts und nimm an der Kundgebung am 20. Mai teil. Lass uns die Solidarität zeigen, die wir jedem und jeder, ob alt oder jung und aus Gründen der Flucht in unsere Stadt kommt, geben möchten.
+ 			      <p></p>
  			  </div>    			  			   
 	      </div>
 	      
@@ -47,12 +46,11 @@
 		      <div class="graybox">
  			      <h3>#aufstehn</h3>
 				  <p style="text-align: center;"><a href="https://www.aufstehn.at/"><img src="https://www.aufstehn.at/wp-content/themes/aufstehn/images/logo.png" /></a></p>
- 				  <p>Wir sind ein buntes Team engagierter Menschen, die sich über Unterstützung freuen!</p>			  
+ 				  <p></p>
  			  </div>
 		      <div class="graybox">
  			      <h3>Practice and Theory</h3>
-				  <p style="text-align: center;"><a href="http://www.practiceandtheory.co.uk/"><img src="http://www.practiceandtheory.co.uk/images/pt-logo2.png" /></a></p> 			      
-					Wir alle arbeiten ehrenamtlich und versuchen sovieles wie möglich kostenlos zu bekommen. Für jene Dinge die  bezahlt werden müssen, brauchen wir  eure Unterstützung!<br />
+				  <p style="text-align: center;"><a href="http://www.practiceandtheory.co.uk/"><img src="http://www.practiceandtheory.co.uk/images/pt-logo2.png" /></a></p>
  			  </div> 			  
 	      </div>
 		  
@@ -63,8 +61,8 @@
    			  </div>
 		      <div class="graybox">
  			      <h3>Respekt.net</h3>
-				  <pstyle="text-align: center;"><a href=""><img src="http://www.respekt.net/uploads/media/respekt.net.png" /></a></p> 			      
- 			      <p>Lade dir unsere Logo herunter und drucke es auf Plakate, Poster oder T-Shirts und nimm an der Kundgebung am 20. Mai teil. Lass uns die Solidarität zeigen, die wir jedem und jeder, ob alt oder jung und aus Gründen der Flucht in unsere Stadt kommt, geben möchten.
+				  <p style="text-align: center;"><a href="http://www.respekt.net"><img src="http://www.respekt.net/uploads/media/respekt.net.png" /></a></p> 			      
+ 			      <p></p>
  			  </div>   			  
 	      </div>
 	      

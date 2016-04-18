@@ -44,7 +44,7 @@
 	   			   schutzsuchenden Menschen ihren Alltag in der Stadt zu
 	   			   erleichtern.
    		      </div>
-	      </div>
+	      </div>	      
 	      	      	            		      	      	      	      
       </div>
       

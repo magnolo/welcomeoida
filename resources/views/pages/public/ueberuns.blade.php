@@ -39,7 +39,7 @@
 						</p>
 						
 						<p>
-							Die Realität allerdings zeichnet ein ganz anderes Bild. Zahllose Flüchtlinge werden nach wie vor von Privatpersonen versorgt und betreut, 
+							Die Realität zeichnet allerdings ein ganz anderes Bild. Zahllose Flüchtlinge werden nach wie vor von Privatpersonen versorgt und betreut, 
 							zivilgesellschaftliche Initiativen unterstützen Flüchtlinge weiterhin dabei, in ihrem neuen Leben Fuß zu fassen.
 							Es wird gekocht, übersetzt, Deutsch gelernt, Behördengänge werden erledigt, es wird gebastelt, organisiert und gemeinsam an Lösungen für die kleinen 
 							und großen Fragen des Alltags gearbeitet.<br />
@@ -49,8 +49,8 @@
 					
 						<p>
 							Unser Beitrag dazu ist der interaktive, mehrsprachige Stadtplan <strong>New Here</strong>, der geflüchteten Menschen einen Überblick über Angebote in der 
-							Stadt bietet und sie dabei unterstützt, sich selbstbestimmt in Wien orientieren.<br /><br />
-							Erfahre mehr unter: <a href="newhere.html" class="button small">New Here.</a><br /><br />
+							Stadt bietet und sie dabei unterstützt, sich selbstbestimmt in Wien zu orientieren.<br /><br />
+							Erfahre mehr unter: <a href="newhere.html" class="button">New Here.</a><br /><br />
 						</p>
 					
 						<p>
@@ -64,15 +64,18 @@
 							Bild der zivilgesellschaftlichen Solidarität zu zeichnen: Einzelpersonen, 
 							Kultureinrichtungen, Kultur- und Sportvereine, NGOs, Gewerkschaften, StudentInnenorganisationen, Restaurants, Kinos, Beisl, Bars, Würstel- und 
 							KebabstandbetreiberInnen, Gallerien und Museen. Dabei können Konzerte, Parties, Performances, Soli-Feste, Kinovorführungen, Theaterstücke, Lesungen, 
-							das Ausschenken von Soligetränken, Grätzelfeste, Interventionen organisiert werden.
+							das Ausschenken von Soligetränken, Grätzelfeste, Interventionen, etc. organisiert werden.
 						</p>
 					
 						<p>
 							Jede Aktion, die am 20. Juni stattfindet, kann auf auf der Karte eingetragen werden und scheint als Punkt „Bei uns sind Flüchtlinge willkommen“ auf. 
 							So entsteht ein interaktives Bild der zivilgesellschaftlichen Solidarität in Wien.
 						</p>
-   		      </div>   		         		      
-	      </div>
+		   		      <p style="text-align: center;"><br />
+			   		      <img src="http://www.craftandvalue.com/_welcomeOida/downloads/bild8.jpg" />
+		   		      </p>
+   		      </div>         		      
+	      </div>     	      
       </div>	
       
       
