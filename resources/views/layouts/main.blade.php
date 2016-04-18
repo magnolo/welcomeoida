@@ -10,7 +10,7 @@
     <meta property="og:description" content="Wir sind New Here. und sagen WELCOMEoida. Seit dem vergangenen Sommer trägt die Zivilgesellschaft in Wien entscheidend zur Versorgung und Betreuung von geflüchteten Menschen bei. Damit hat sie wesentlichen Anteil daran, dass Schutzsuchende eine menschenwürdige Aufnahme in unserer Stadt finden.">
     <meta property="fb:app_id" content="1698074447072192">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://www.welcomeoida/images/welcomeOidaLogoBig.png"/>
+    <meta property="og:image" content="http://www.welcomeoida.at/images/welcomeOidaLogoBig.png"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Sarala:400,700' rel='stylesheet' type='text/css'>
