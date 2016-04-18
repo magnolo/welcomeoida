@@ -3,17 +3,17 @@
     <!--<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />-->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-beta.2/leaflet.css" />
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-	<link type="text/css" rel="stylesheet" href="http://www.craftandvalue.com/_welcomeOida/layout.css" />    
+	<link type="text/css" rel="stylesheet" href="http://www.craftandvalue.com/_welcomeOida/layout.css" />
 @stop
 @section('content')
 <div class="row center-align block sandy" style="padding-bottom: 3rem;">
   <div class="col s12">
-	  <h3 class="inunsererstadt" >In unserer Stadt sind Flüchtlinge willkommen - Wien bleibt solidarisch!</h3>	  
+	  <h3 class="inunsererstadt" >In unserer Stadt sind Flüchtlinge willkommen - Wien bleibt solidarisch!</h3>
 	  <h2 class="juni">20. Juni - Weltflüchtlingstag</h2>
    </div>
   <div class="col s12 center-align">
       <button class="btn waves-effect waves-light" id="showEventsForm">Tragt euer <span style="text-transform: none;">WELCOMEoida</span>-Event ein!</button>
-	  <h4 class="blued rotateText"  style="font-size: 1.7em; margin-top: 20px;">Feste, Filme, Kochen, Treffen, Konzerte, Sportveranstaltungen, Diskussionen, Parties, Lesungen, Performances, Theater</h4>      
+	  <h4 class="blued rotateText hide-on-small-only"  style="font-size: 1.7em; margin-top: 20px;">Feste, Filme, Kochen, Treffen, Konzerte, Sportveranstaltungen, Diskussionen, Parties, Lesungen, Performances, Theater</h4>      
   </div>
 </div>
 <div class="row relative">
@@ -44,7 +44,7 @@
 	    <img src="http://www.fokuskind.com/files/design/FOKUSKINDMedien-Logo.png" />
     </div -->
     @foreach($partners as $partner)
-      <div class="col s6 m3">	      
+      <div class="col s6 m3">
         <a href="http://{{ $partner->url}}" target="_blank">
           <img src="{{ $partner->image->path}}" />
         </a>
@@ -63,14 +63,14 @@
   </div>
 </div>
 
-    <!-- Hier ist der Footer --> 
-      <div class="row">        
+    <!-- Hier ist der Footer -->
+      <div class="row">
 	      <div class="col m12 s12">
 		      <div class="copyright">
 			      &copy;2016 - NewHere.
 		      </div>
 	      </div>
-      </div>	
+      </div>
 
 @stop
 
