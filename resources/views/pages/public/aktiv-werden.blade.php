@@ -31,7 +31,7 @@
 			      <h3>Mach mit bei #WELCOMEoida!</h3>
    				  <img src="http://www.craftandvalue.com/_welcomeOida/downloads/ballonPattern.png" style="border-radius: 400px; margin: 0 0 15px 0;" />
 				  <p>Wir wollen zeigen dass sehr, sehr viele WienerInnen solidarisch mit geflüchteten Menschen sind. Jeder Eintrag hilft das breite Engagement in unserer Stadt abzubilden. Hier kannst du dich registrieren.</p>
-   				  <a href="https://www.welcomeoida.at" class="button">In die Karte eintragen!</a> 
+   				  <a href="http://www.welcomeoida.at" class="button">In die Karte eintragen!</a>
 			   </div>
 		      <div class="graybox">
  			      <h3>Spann‘ deinen Schirm auf!</h3>
@@ -72,7 +72,7 @@
 		      <div class="graybox">
  			      <h3>Komm zu den Veranstaltungen am 20. Juni</h3>
  			      <p>Lade dir unsere Logo herunter und drucke es auf Plakate, Poster oder T-Shirts und nimm am Umbrellamarch am 20. Juni teil. Lass uns Solidarität zeigen, die wir mit den Menschen haben die in unserer Stadt Schutz suchen!</p>
-   				<a href="http://test.welcomeoida.at/downloads" class="button" />Downloads</a>
+   				<a href="http://www.welcomeoida.at/downloads" class="button" />Downloads</a>
  			  </div>
 		      <div class="graybox">
  			      <h3>Sagt als Organisation #WELCOMEoida!</h3>
