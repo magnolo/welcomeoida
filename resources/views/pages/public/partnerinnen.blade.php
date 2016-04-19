@@ -28,7 +28,7 @@
       <div class="row">        
 	      <div class="col m4 s12">
 		      <div class="graybox">
-			      <h3>23° Degree</h3>
+			      <h3>23°</h3>
 				  <p style="text-align: center;"><a href="https://www.23degree.org/"><img src="https://www.23degree.org/images/logos/23.svg" width="100" /></a></p>
 			      <p>“Gesellschaftlicher Diskurs braucht mehr als eine Seite. Wir halten es für nötig, die gelebte Solidarität und ganz konkrete Hilfsbereitschaft der Bevölkerung sichtbar zu machen. Für einen menschlichen Umgang miteinander und mit den Konflikten, die Gesellschaft immer mit sich bringt. Wir alle waren mal New Here, und daher: #WELCOMEoida.”</p>				  
 			   </div>

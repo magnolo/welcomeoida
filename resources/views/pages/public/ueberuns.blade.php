@@ -60,7 +60,7 @@
 						</p>
 
 						<p>
-							Wir laden ein sich dem Motto "#WELCOMEoida: In unserer Stadt sind Flüchtlinge willkommen. - Wien bleibt solidarisch!" anzuschließen und gemeinsam ein interaktives
+							Wir laden ein, sich dem Motto "#WELCOMEoida: In unserer Stadt sind Flüchtlinge willkommen. - Wien bleibt solidarisch!" anzuschließen und gemeinsam ein interaktives
 							Bild der zivilgesellschaftlichen Solidarität zu zeichnen: Einzelpersonen,
 							Kultureinrichtungen, Kultur- und Sportvereine, NGOs, Gewerkschaften, StudentInnenorganisationen, Restaurants, Kinos, Beisl, Bars, Würstel- und
 							KebabstandbetreiberInnen, Gallerien und Museen. Dabei können Konzerte, Parties, Performances, Soli-Feste, Kinovorführungen, Theaterstücke, Lesungen,
