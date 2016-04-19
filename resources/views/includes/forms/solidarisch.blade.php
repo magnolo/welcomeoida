@@ -29,7 +29,7 @@
     </div>
     <div class="row">
       	<div class="col s12">
-	      	<p style="font-size: 0.9em; color: #777;">Deine Daten werden nicht veröffentlich oder anderweitig verwendet. Wir setzen auf der Karte der Solidarität lediglich einen Marker mit deinem Namen an deiner gewünschten Adresse.</p>
+	      	<p style="font-size: 0.9em; color: #777;">Deine Daten werden nicht veröffentlicht oder anderweitig verwendet. Wir setzen auf der Karte der Solidarität lediglich einen Marker mit deinem Namen an deiner gewünschten Adresse.</p>
       	</div>
       </div>
     </div>

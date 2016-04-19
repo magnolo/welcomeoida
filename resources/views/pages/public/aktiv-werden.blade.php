@@ -18,7 +18,7 @@
 	    
         <div class="col s12 center-align contentheader">
 	        <h2>Aktiv werden!</h2>
-			<p>Wir freuen uns über viele Menschen die sich einbringen wollen.</p>	        
+			<p>Wir freuen uns über viele Menschen, die sich einbringen wollen.</p>	        
         </div>
       </div>
 
@@ -30,7 +30,7 @@
 		      <div class="graybox">
 			      <h3>Mach mit bei #WELCOMEoida!</h3>
    				  <img src="http://www.craftandvalue.com/_welcomeOida/downloads/ballonPattern.png" style="border-radius: 400px; margin: 0 0 15px 0;" />			      
-				  <p>Wir wollen zeigen dass sehr, sehr viele WienerInnen solidarisch mit geflüchteten Menschen sind. Jeder Eintrag hilft das breite Engagement in unserer Stadt abzubilden. Hier kannst du dich registrieren.</p>
+				  <p>Wir wollen zeigen, dass sehr, sehr viele WienerInnen solidarisch mit geflüchteten Menschen sind. Jeder Eintrag hilft, das breite Engagement in unserer Stadt abzubilden. Hier kannst du dich registrieren.</p>
    				  <a href="https://www.welcomeoida.at" class="button">In die Karte eintragen!</a> 
 			   </div>
 		      <div class="graybox">
@@ -53,19 +53,19 @@
 		      <div class="graybox">
  			      <h3>Unterstütze uns finanziell:</h3>
  				  <img src="http://www.craftandvalue.com/_welcomeOida/downloads/respektNet.png" style="border-radius: 400px; width: 100%; margin: 0 0 25px 0;" />  			      
- 				  <p>Wir alle arbeiten ehrenamtlich und versuchen so Vieles wie möglich kostenlos zu bekommen. Für jene Dinge die  bezahlt werden müssen, brauchen wir eure Unterstützung!</p>
+ 				  <p>Wir alle arbeiten ehrenamtlich und versuchen, so Vieles wie möglich kostenlos zu bekommen. Für jene Dinge die  bezahlt werden müssen, brauchen wir eure Unterstützung!</p>
    				<a href="http://www.respekt.net/projekte-unterstuetzen/details/projekt/1231/" class="button" />Crowdfunder Respekt.net</a>	
 				</div>
 		      <div class="graybox">
  			      <h3>Macht Kunst!</h3>
-					Wir freuen uns über KünstlerInnen und Kulturschaffende, die bereit sind am 20. Juni ihr Können zur Verfügung zu stellen. Falls ihr auf der Suche nach PartnerInnen sind, helfen wir gerne weiter!<br /><br />
+					Wir freuen uns über KünstlerInnen und Kulturschaffende, die bereit sind, am 20. Juni ihr Können zur Verfügung zu stellen. Falls ihr auf der Suche nach PartnerInnen sind, helfen wir gerne weiter!<br /><br />
 					<a href="mailto:info@welcomeoida.at" class="button">E-Mail us!</a>
 				</div> 						  
 	      </div>
 		  
 	      <div class="col m4 s12">
 		      <div class="graybox">
-   			      <h3>Nutze Facebook um auf #WELCOMEoida aufmerksam zu machen</h3>
+   			      <h3>Nutze Facebook, um auf #WELCOMEoida aufmerksam zu machen</h3>
    				  <img src="http://menschenrechte-grenzenlos.eu/_images/_involved/facebooklogo.png" style="border-radius: 400px; margin: 0 0 25px 0;" /><br />
    				  <a href="https://www.facebook.com/events/1140455429322099/" class="button">Join us on Facebook</a>   				  
    			  </div>
